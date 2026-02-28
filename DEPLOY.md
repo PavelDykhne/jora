@@ -121,7 +121,8 @@ cp -r skills/* "$SKILLS_DIR/"
 
 # Проверить
 ls "$SKILLS_DIR"
-# → doc-generator  job-coordinator  keyword-expander  source-discovery  source-validator
+# → doc-generator  google-workspace  job-coordinator  keyword-expander
+# → sheet-importer  source-discovery  source-validator
 ```
 
 ---
@@ -152,18 +153,35 @@ mongo       running (healthy)
 
 ## Шаг 7: Запустить OpenClaw gateway
 
-```bash
-# Если systemd доступен:
-openclaw service install
-openclaw gateway start
+Проект использует **systemd-сервис** (`/etc/systemd/system/openclaw.service`).
 
-# Если systemd НЕ доступен (контейнер, нет linger):
-openclaw gateway start --no-service
+Важно: в файле сервиса должен быть указан реальный пользователь системы (не группа):
+```ini
+[Service]
+User=oc          # замени на своё имя пользователя (не группу)
+WorkingDirectory=/home/oc
+ExecStart=/home/oc/.npm-global/bin/openclaw gateway run
+```
+
+```bash
+# Запустить через systemd (рекомендуется):
+sudo systemctl daemon-reload
+sudo systemctl enable openclaw
+sudo systemctl start openclaw
+sudo systemctl status openclaw
+
+# Если systemd недоступен (контейнер, нет linger):
+HOME=/home/oc /home/oc/.npm-global/bin/openclaw gateway run &
 
 # Или через screen/tmux:
 screen -S openclaw
-openclaw gateway start --foreground
+HOME=/home/oc openclaw gateway run
 # Ctrl+A, D чтобы отсоединиться
+```
+
+Проверить что модель применилась (в логах должна быть строка):
+```
+[gateway] agent model: anthropic/claude-haiku-4-5-20251001
 ```
 
 ---

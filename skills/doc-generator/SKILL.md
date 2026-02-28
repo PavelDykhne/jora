@@ -1,6 +1,7 @@
 ---
 name: doc-generator
 description: "Generates the full application package: adapted resume (PDF), cover letter (PDF), company dossier, referral contacts, and recruiter contacts. Also generates personalized outreach messages. Uses Enrichment Layer 3 (deep research) to customize everything. Triggers on: '/docs {id}', '/referrals {id}', '/outreach {id}', 'prepare documents for', 'generate resume for', 'cover letter for', 'find referrals for', or when user selects a vacancy for application."
+model: anthropic/claude-sonnet-4-6
 ---
 
 # Doc Generator Skill

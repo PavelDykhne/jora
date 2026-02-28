@@ -1,4 +1,4 @@
-# 🦞 OpenClaw Job Offer Radar Agent
+# JORA — Job Offer Radar Agent
 
 AI-powered job search assistant for **Head of QA / QA Director** roles.
 
@@ -24,12 +24,25 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 | **MongoDB** | Shared storage | Docker |
 | **Telegram Bot** | User interface | OpenClaw channel |
 
+## OpenClaw Skills
+
+| Skill | Trigger | Description |
+|-------|---------|-------------|
+| **keyword-expander** | `"Ищи вакансии Head of QA"` | Generates 25+ keyword variations |
+| **source-discovery** | `"find sources"` | Discovers job boards and career pages |
+| **source-validator** | `/add_source`, `/sources` | Manages source lifecycle and health |
+| **sheet-importer** | `"импортируй из таблицы"` | Batch-imports companies from Google Sheets (1000 per run, ~3 API calls) |
+| **doc-generator** | `/docs {id}` | Resume, cover letter, referrals, outreach |
+| **job-coordinator** | `/status`, `/report` | Pipeline overview and weekly reports |
+| **google-workspace** | `"запиши в таблицу"` | Read/write Google Sheets and Docs |
+
 ## Commands (Telegram)
 
 | Command | Action |
 |---------|--------|
 | `Ищи вакансии "Head of QA"` | Expand keywords + discover sources |
-| `/add_source {url}` | Add a job source |
+| `Импортируй компании из таблицы {url}` | Batch-import up to 1000 companies from Google Sheets |
+| `/add_source {url}` | Add a single job source |
 | `/sources` | List all sources |
 | `/docs {id}` | Generate resume + CL + referrals |
 | `/referrals {id}` | Find referrals + recruiters |
@@ -37,9 +50,24 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 | `/status` | Pipeline overview |
 | `/report` | Weekly summary |
 
+## Rate Limit Optimisation
+
+OpenClaw is configured to minimise Anthropic API calls:
+
+| Setting | Value | Reason |
+|---------|-------|--------|
+| Default model | `claude-haiku-4-5` | Higher throughput, lower rate pressure |
+| `doc-generator` model | `claude-sonnet-4-6` | Best quality for resume/CL generation |
+| `maxConcurrent` | 1 | Single-user bot — no need for parallelism |
+| `subagents.maxConcurrent` | 2 | Prevents burst of parallel LLM calls |
+| `sheet-importer` | batch Python script | 1000 companies → ~3 LLM calls (vs ~2000) |
+
+Config: `~/.openclaw/openclaw.json`
+
 ## Docs
 
-- [Setup Guide](docs/SETUP_GUIDE.md) — full deployment walkthrough
+- [Deploy Guide](DEPLOY.md) — step-by-step VPS deployment
+- [Setup Guide](docs/SETUP_GUIDE.md) — architecture and concepts
 - [Infrastructure](docs/INFRASTRUCTURE.md) — IaC, CI/CD, monitoring
 
 ## Cost

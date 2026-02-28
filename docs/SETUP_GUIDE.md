@@ -30,10 +30,12 @@
 | Расширение ключевых слов | **keyword-expander** (OpenClaw skill) | Claude AI |
 | Поиск источников | **source-discovery** (OpenClaw skill) | Claude AI + web search |
 | Одобрение источников | **source-validator** (OpenClaw skill) | JSON configs + TG |
+| Пакетный импорт из таблицы | **sheet-importer** (OpenClaw skill) | Python batch script + Claude AI |
 | Сканирование сайтов | **job-scanner-tg** (Docker) | Node.js + Cheerio + Puppeteer |
 | Обогащение + дедупликация | **enrichment-svc** (Docker) | Node.js + MongoDB |
-| Генерация документов | **doc-generator** (OpenClaw skill) | Claude AI + PDF |
+| Генерация документов | **doc-generator** (OpenClaw skill) | Claude AI (Sonnet) + PDF |
 | Трекинг и отчёты | **job-coordinator** (OpenClaw skill) | Claude AI + MongoDB |
+| Таблицы и документы | **google-workspace** (OpenClaw skill) | Google Sheets/Docs API |
 | Хранение данных | **MongoDB** (Docker) | MongoDB 7 |
 
 ### Потоки данных
@@ -47,6 +49,9 @@
                                               ▼                    ▼
                                     source-discovery ──▶ jobSites.json
                                               │          tg_sources.json
+                                              │
+                          Google Sheet ──▶ sheet-importer (batch, ~3 API calls / 1000 компаний)
+                                              │
                                               ▼
                                     source-validator ──▶ Одобрение → конфиг сканера
 
