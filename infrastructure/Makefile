@@ -1,4 +1,4 @@
-.PHONY: help install up down restart logs status backup update health
+.PHONY: help install up down restart logs status backup update health sync-skills
 
 COMPOSE = docker compose -f docker-compose.yml
 
@@ -46,6 +46,18 @@ health: ## Health check
 
 mongo-shell: ## Open MongoDB shell
 	docker exec -it $$($(COMPOSE) ps -q mongo) mongosh job_hunter_db
+
+sync-skills: ## Sync skills from repo to OpenClaw workspace
+	@SKILLS_SRC="$(shell git -C .. rev-parse --show-toplevel 2>/dev/null || echo ..)/skills"; \
+	SKILLS_DST="$$HOME/.openclaw/workspace/skills"; \
+	echo "Syncing $$SKILLS_SRC → $$SKILLS_DST"; \
+	for skill in $$SKILLS_SRC/*/; do \
+		name=$$(basename $$skill); \
+		mkdir -p "$$SKILLS_DST/$$name"; \
+		cp "$$skill/SKILL.md" "$$SKILLS_DST/$$name/SKILL.md"; \
+		echo "  ✓ $$name"; \
+	done; \
+	echo "Done."
 
 clean: ## Remove all data (DANGER!)
 	@read -p "Delete ALL data? [y/N] " c && [ "$$c" = "y" ] && $(COMPOSE) down -v || echo "Cancelled"
