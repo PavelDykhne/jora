@@ -59,9 +59,60 @@ found → notified → shortlisted → docs_ready → applied →
 | 14 | Reminder: "No response — send follow-up?" |
 | 30 | Mark as "likely rejected" |
 
+## Pending Import Check (on every /status and on first message after restart)
+
+Check for unfinished sheet imports and notify the user if any are pending:
+
+```bash
+python3 -c "
+import json, os
+path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+if not os.path.exists(path):
+    exit(0)
+q = json.loads(open(path).read())
+pending = [j for j in q if j['status'] == 'pending_approval']
+if pending:
+    print(json.dumps(pending, ensure_ascii=False))
+"
+```
+
+If any jobs have `status = pending_approval`:
+
+1. Read results from `results_file` path stored in the job entry
+2. Notify the user:
+
+```
+⏸️ Незавершённый импорт
+
+Найден импорт из Google Sheets от {created_at}:
+  📋 Таблица: {sheet_url}
+  🏢 Компаний обработано: {processed}
+  ⏳ Ждёт одобрения
+
+→ "Продолжить" — показать результаты для одобрения
+→ "Отменить" — удалить задачу
+```
+
+3. If user says "Продолжить" — re-run Step 3 (Analyze) from the saved `results.json` file.
+   Do NOT re-fetch URLs — results are already saved.
+4. If user says "Отменить":
+```bash
+python3 -c "
+import json, os, datetime
+path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+q = json.loads(open(path).read())
+for j in q:
+    if j['id'] == 'JOB_ID':
+        j['status'] = 'cancelled'
+        j['updated_at'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+open(path,'w').write(json.dumps(q, ensure_ascii=False, indent=2))
+"
+```
+
 ## Data Sources
 
 - `sources.json` — source stats
 - MongoDB `vacancies` — vacancy data
 - MongoDB `applications` — application tracking
 - `~/openclaw/workspace/jobs/applications/` — generated docs
+- `~/.openclaw/workspace/jobs/import_queue.json` — pending sheet imports

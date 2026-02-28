@@ -17,10 +17,95 @@ Batch-import company career pages from a Google Sheet into the job scanner (`job
 ## Batch Processing Architecture
 
 ```
-Sheet read (1 bash call) → Batch fetch script (1 bash call) → Analyze all results (1 LLM turn per 100 companies) → Write config (1 bash call) → User approval
+Save job to queue → Sheet read (1 bash call) → Batch fetch script (1 bash call) → Save results → Analyze (1 LLM turn per 100) → Write config → User approval → Mark done
 ```
 
 Total LLM API calls: 3–5 regardless of company count (up to 1000).
+
+**State is persisted to disk at every step** so the job survives OpenClaw restarts.
+
+---
+
+## Queue File (persistent state)
+
+All import jobs are stored at:
+```
+~/.openclaw/workspace/jobs/import_queue.json
+```
+
+Schema:
+```json
+[
+  {
+    "id": "import_20260301_143000",
+    "created_at": "2026-03-01T14:30:00Z",
+    "updated_at": "2026-03-01T14:35:00Z",
+    "status": "pending_approval",
+    "sheet_id": "1BxiMVs0XRA5...",
+    "sheet_url": "https://docs.google.com/spreadsheets/d/...",
+    "sheet_range": "Sheet1!A:Z",
+    "total_companies": 42,
+    "processed": 42,
+    "results_file": "~/.openclaw/workspace/jobs/imports/import_20260301_143000/results.json"
+  }
+]
+```
+
+Statuses: `queued` → `fetching` → `pending_approval` → `done` / `cancelled`
+
+### Queue helpers (run these as needed)
+
+```bash
+QUEUE=~/.openclaw/workspace/jobs/import_queue.json
+
+# Read queue
+cat "$QUEUE" 2>/dev/null || echo "[]"
+
+# Update job status
+python3 -c "
+import json, sys
+q = json.loads(open('$QUEUE').read())
+for j in q:
+    if j['id'] == sys.argv[1]:
+        j['status'] = sys.argv[2]
+        import datetime; j['updated_at'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+open('$QUEUE','w').write(json.dumps(q, ensure_ascii=False, indent=2))
+" JOB_ID NEW_STATUS
+```
+
+---
+
+## Step 0: Create Job Entry (BEFORE any processing)
+
+**Do this first, before reading the sheet.** This ensures state is saved even if something fails.
+
+```bash
+QUEUE=~/.openclaw/workspace/jobs/import_queue.json
+JOB_ID="import_$(date +%Y%m%d_%H%M%S)"
+IMPORTS_DIR=~/.openclaw/workspace/jobs/imports/$JOB_ID
+mkdir -p "$IMPORTS_DIR"
+mkdir -p ~/.openclaw/workspace/jobs
+
+# Create or update queue file
+python3 -c "
+import json, os, datetime
+path = os.path.expanduser('$QUEUE')
+q = json.loads(open(path).read()) if os.path.exists(path) else []
+q.append({
+    'id': '$JOB_ID',
+    'created_at': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
+    'updated_at': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
+    'status': 'queued',
+    'sheet_url': '$SHEET_URL',
+    'sheet_id': '$SHEET_ID',
+    'sheet_range': 'Sheet1!A:Z',
+    'total_companies': 0,
+    'processed': 0,
+    'results_file': '$IMPORTS_DIR/results.json'
+})
+open(path,'w').write(json.dumps(q, ensure_ascii=False, indent=2))
+"
+```
 
 ---
 
@@ -227,6 +312,30 @@ python3 /tmp/jora_batch_fetch.py '<JSON_ARRAY_OF_COMPANIES>'
 
 Where JSON array format: `[{"name": "Revolut", "url": "https://revolut.com"}, ...]`
 
+**Immediately after the script finishes — save results and update queue status:**
+
+```bash
+# Save results to disk
+python3 /tmp/jora_batch_fetch.py '<JSON>' > "$IMPORTS_DIR/results.json"
+
+# Update queue: fetching → pending_approval
+python3 -c "
+import json, os, datetime
+path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+q = json.loads(open(path).read())
+for j in q:
+    if j['id'] == '$JOB_ID':
+        j['status'] = 'pending_approval'
+        j['processed'] = len(json.loads(open('$IMPORTS_DIR/results.json').read()))
+        j['updated_at'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+open(path,'w').write(json.dumps(q, ensure_ascii=False, indent=2))
+print('Queue updated')
+"
+```
+
+From this point on, **results are safe on disk**. If OpenClaw restarts, the job-coordinator will
+detect status `pending_approval` and restore the context automatically.
+
 ---
 
 ## Step 3: Analyze Results (1 LLM turn per ≤100 companies)
@@ -315,7 +424,20 @@ Also update `~/openclaw/workspace/jobs/sources.json` with full metadata.
 ```bash
 cd /home/oc/jora/infrastructure && docker compose restart job-scanner
 ```
-4. Confirm: "✅ Добавлено {N} источников. Следующее сканирование через ~30 мин."
+4. Mark job as done in queue:
+```bash
+python3 -c "
+import json, os, datetime
+path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+q = json.loads(open(path).read())
+for j in q:
+    if j['id'] == '$JOB_ID':
+        j['status'] = 'done'
+        j['updated_at'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+open(path,'w').write(json.dumps(q, ensure_ascii=False, indent=2))
+"
+```
+5. Confirm: "✅ Добавлено {N} источников. Следующее сканирование через ~30 мин."
 
 ---
 
