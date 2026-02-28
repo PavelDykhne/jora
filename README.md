@@ -32,6 +32,7 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 | **source-discovery** | `"find sources"` | Discovers job boards and career pages |
 | **source-validator** | `/add_source`, `/sources` | Manages source lifecycle and health |
 | **sheet-importer** | `"импортируй из таблицы"` | Batch-imports companies from Google Sheets (1000 per run, ~3 API calls) |
+| **sheet-scanner** | `"обработай 20 компаний"`, `"продолжи"` | Scans companies from Google Sheets for matching vacancies; auto-reads keywords from config, auto-resumes from last position |
 | **doc-generator** | `/docs {id}` | Resume, cover letter, referrals, outreach |
 | **job-coordinator** | `/status`, `/report` | Pipeline overview and weekly reports |
 | **google-workspace** | `"запиши в таблицу"` | Read/write Google Sheets and Docs |
@@ -42,6 +43,8 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 |---------|--------|
 | `Ищи вакансии "Head of QA"` | Expand keywords + discover sources |
 | `Импортируй компании из таблицы {url}` | Batch-import up to 1000 companies from Google Sheets |
+| `Обработай следующие 20 компаний` | Scan next N companies from sheet for vacancies |
+| `Продолжи там где остановился` | Resume sheet scanning from last saved position |
 | `/add_source {url}` | Add a single job source |
 | `/sources` | List all sources |
 | `/docs {id}` | Generate resume + CL + referrals |

@@ -122,7 +122,7 @@ cp -r skills/* "$SKILLS_DIR/"
 # Проверить
 ls "$SKILLS_DIR"
 # → doc-generator  google-workspace  job-coordinator  keyword-expander
-# → sheet-importer  source-discovery  source-validator
+# → sheet-importer  sheet-scanner  source-discovery  source-validator
 ```
 
 ---
