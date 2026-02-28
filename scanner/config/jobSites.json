@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Revolut Careers",
+    "url": "https://revolut.com/careers/?query=quality",
+    "jobTitleSelector": ".sc-jMGMwj",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Stripe Jobs",
+    "url": "https://stripe.com/jobs/search?query=quality",
+    "jobTitleSelector": ".JobsListings__title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "N26 Careers",
+    "url": "https://n26.com/en/careers?q=quality",
+    "jobTitleSelector": ".job-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Wise Careers",
+    "url": "https://www.wise.jobs/search/?t=quality",
+    "jobTitleSelector": ".job-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Bolt Careers",
+    "url": "https://bolt.eu/en/careers/positions/?search=quality",
+    "jobTitleSelector": ".job-position-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Miro Careers",
+    "url": "https://miro.com/careers/open-positions/?searchText=quality",
+    "jobTitleSelector": ".position-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "JetBrains Jobs (Greenhouse)",
+    "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
+    "jobTitleSelector": ".opening a",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Acronis Careers",
+    "url": "https://www.acronis.com/en/careers/?search=quality",
+    "jobTitleSelector": ".job-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Semrush Careers",
+    "url": "https://www.semrush.com/company/careers/?query=quality",
+    "jobTitleSelector": ".vacancy-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "EPAM Careers",
+    "url": "https://www.epam.com/careers/job-listings?query=head+of+qa",
+    "jobTitleSelector": ".search-result__item-name",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Greenhouse - QA Director roles",
+    "url": "https://boards.greenhouse.io/search?query=qa+director",
+    "jobTitleSelector": ".opening a",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Lever - Head of QA roles",
+    "url": "https://jobs.lever.co/search?query=head+of+qa",
+    "jobTitleSelector": ".posting-title h5",
+    "antiBotCheck": false
+  },
+  {
+    "name": "RemoteOK - QA",
+    "url": "https://remoteok.com/remote-qa-jobs",
+    "jobTitleSelector": "h2[itemprop='title']",
+    "antiBotCheck": false
+  },
+  {
+    "name": "WeWorkRemotely - QA",
+    "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
+    "jobTitleSelector": ".title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "BuiltIn - QA Director",
+    "url": "https://builtin.com/jobs?search=qa+director",
+    "jobTitleSelector": "[data-id='job-title']",
+    "antiBotCheck": false
+  },
+  {
+    "name": "InGameJob - QA Director",
+    "url": "https://ingamejob.com/en/jobs/p/qa-director",
+    "jobTitleSelector": ".job-title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Habr Career - Head of QA",
+    "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
+    "jobTitleSelector": ".vacancy-card__title",
+    "antiBotCheck": false
+  },
+  {
+    "name": "Djinni - QA Lead/Director",
+    "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
+    "jobTitleSelector": ".profile",
+    "antiBotCheck": false
+  }
+]

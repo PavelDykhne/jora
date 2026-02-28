@@ -1,0 +1,74 @@
+{
+  "seed_role": "Head of QA",
+  "generated_at": "2026-02-27T10:00:00Z",
+  "keywords": {
+    "exact_match": [
+      "Head of QA",
+      "Head of Quality Assurance",
+      "Head of Quality Engineering"
+    ],
+    "close_variations": [
+      "QA Director",
+      "Director of QA",
+      "Director of Quality Assurance",
+      "Director of Quality Engineering",
+      "Director of Quality",
+      "Quality Engineering Director",
+      "VP of QA",
+      "VP of Quality Assurance",
+      "VP Quality Engineering",
+      "VP Quality",
+      "Vice President Quality",
+      "Head of Testing",
+      "Head of Test Engineering",
+      "Head of Quality"
+    ],
+    "stretch_titles": [
+      "Senior Director of QA",
+      "Senior Director Quality Engineering",
+      "Global Head of QA",
+      "Global Head of Quality",
+      "Global QA Director",
+      "Associate VP Quality",
+      "Group Head of Quality",
+      "Chief Quality Officer"
+    ],
+    "exclude_patterns": [
+      "QA Manager",
+      "QA Lead",
+      "Senior QA Engineer",
+      "QA Analyst",
+      "Test Manager",
+      "QA Automation Engineer",
+      "SDET",
+      "QA Engineer"
+    ]
+  },
+  "flat_list_for_scanner": [
+    "Head of QA",
+    "Head of Quality Assurance",
+    "Head of Quality Engineering",
+    "Head of Quality",
+    "Head of Testing",
+    "Head of Test Engineering",
+    "QA Director",
+    "Director of QA",
+    "Director of Quality Assurance",
+    "Director of Quality Engineering",
+    "Director of Quality",
+    "Quality Engineering Director",
+    "VP of QA",
+    "VP of Quality Assurance",
+    "VP Quality Engineering",
+    "VP Quality",
+    "Vice President Quality",
+    "Senior Director of QA",
+    "Senior Director Quality Engineering",
+    "Global Head of QA",
+    "Global Head of Quality",
+    "Global QA Director",
+    "Associate VP Quality",
+    "Group Head of Quality",
+    "Chief Quality Officer"
+  ]
+}

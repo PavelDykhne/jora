@@ -1,0 +1,34 @@
+{
+  "JOB_KEYWORDS": [
+    "Head of QA",
+    "Head of Quality Assurance",
+    "Head of Quality Engineering",
+    "Head of Quality",
+    "Head of Testing",
+    "Head of Test Engineering",
+    "QA Director",
+    "Director of QA",
+    "Director of Quality Assurance",
+    "Director of Quality Engineering",
+    "Director of Quality",
+    "Quality Engineering Director",
+    "VP of QA",
+    "VP of Quality Assurance",
+    "VP Quality Engineering",
+    "VP Quality",
+    "Vice President Quality",
+    "Senior Director of QA",
+    "Senior Director Quality Engineering",
+    "Global Head of QA",
+    "Global Head of Quality",
+    "Global QA Director",
+    "Associate VP Quality",
+    "Group Head of Quality",
+    "Chief Quality Officer"
+  ],
+  "SCAN_INTERVAL_MINUTES": 30,
+  "TELEGRAM": {
+    "TOKEN": "YOUR_BOT_TOKEN_HERE",
+    "CHAT_ID": "YOUR_CHAT_ID_HERE"
+  }
+}

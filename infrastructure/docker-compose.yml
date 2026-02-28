@@ -1,0 +1,78 @@
+services:
+  scanner:
+    build:
+      context: ../scanner
+    volumes:
+      - scanner_config:/app/config
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/job_hunter_db
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - backend
+
+  enrichment:
+    build:
+      context: ../enrichment
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/job_hunter_db
+      - TG_TOKEN=${TG_BOT_TOKEN}
+      - TG_CHAT_ID=${TG_CHAT_ID}
+      - DUPLICATE_THRESHOLD=${DUPLICATE_THRESHOLD:-0.85}
+      - RELEVANCE_SCORE_MIN=${RELEVANCE_SCORE_MIN:-0}
+      - POLL_INTERVAL_MS=${POLL_INTERVAL_MS:-60000}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: *logging
+    networks:
+      - backend
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    logging: *logging
+    networks:
+      - backend
+
+  mongo-backup:
+    image: mongo:7
+    volumes:
+      - mongo_backups:/backups
+    entrypoint: >
+      sh -c 'while true; do
+        mongodump --uri="mongodb://mongo:27017/job_hunter_db"
+          --out=/backups/$$(date +%Y%m%d_%H%M%S) &&
+        find /backups -maxdepth 1 -mtime +7 -exec rm -rf {} \; ;
+        sleep 86400;
+      done'
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - backend
+
+volumes:
+  mongo_data:
+  mongo_backups:
+  scanner_config:
+
+networks:
+  backend:
+    driver: bridge

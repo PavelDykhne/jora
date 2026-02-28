@@ -1,0 +1,23 @@
+# Secrets
+.env
+*.env.local
+
+# User data (not in git)
+workspace/
+
+# Runtime
+node_modules/
+*.log
+
+# MongoDB data
+data/
+
+# Backups
+backups/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scanner config with real credentials (template is tracked)
+scanner/config/default.json

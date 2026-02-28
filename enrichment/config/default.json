@@ -1,0 +1,11 @@
+{
+  "MONGO_URI": "mongodb://mongo:27017",
+  "DB_NAME": "job_hunter_db",
+  "TELEGRAM": {
+    "TOKEN": "YOUR_BOT_TOKEN_HERE",
+    "CHAT_ID": "YOUR_CHAT_ID_HERE"
+  },
+  "DUPLICATE_THRESHOLD": 0.85,
+  "RELEVANCE_SCORE_MIN": 0,
+  "POLL_INTERVAL_MS": 60000
+}

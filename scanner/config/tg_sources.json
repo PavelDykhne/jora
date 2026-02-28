@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tg_remote_qa",
+    "type": "telegram_public",
+    "name": "Remote QA Jobs",
+    "channel": "@remote_qa_jobs",
+    "url": "https://t.me/remote_qa_jobs",
+    "status": "pending",
+    "notes": "Needs manual validation — check if channel exists and has relevant posts"
+  },
+  {
+    "id": "tg_qa_vacancies_ru",
+    "type": "telegram_public",
+    "name": "QA Вакансии",
+    "channel": "@qa_vacancies",
+    "url": "https://t.me/qa_vacancies",
+    "status": "pending",
+    "notes": "Russian-language QA vacancies"
+  },
+  {
+    "id": "tg_devjobs",
+    "type": "telegram_public",
+    "name": "Dev & QA Jobs",
+    "channel": "@devjobs",
+    "url": "https://t.me/devjobs",
+    "status": "pending",
+    "notes": "General dev jobs, may include QA leadership"
+  },
+  {
+    "id": "tg_djinni_jobs",
+    "type": "telegram_public",
+    "name": "Djinni Jobs",
+    "channel": "@djinnijobs",
+    "url": "https://t.me/djinnijobs",
+    "status": "pending",
+    "notes": "Djinni.co job feed"
+  },
+  {
+    "id": "tg_workintech",
+    "type": "telegram_public",
+    "name": "Work in Tech",
+    "channel": "@workintech",
+    "url": "https://t.me/workintech",
+    "status": "pending",
+    "notes": "Tech jobs, international"
+  }
+]
