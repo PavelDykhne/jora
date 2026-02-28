@@ -8,23 +8,23 @@
 
 ## Шаг 0: Подготовка файлов
 
-Перенести архив `job-hunter-agent.tar.gz` на VPS:
+Перенести архив `jora.tar.gz` на VPS:
 
 ```bash
 # С локальной машины:
-scp job-hunter-agent.tar.gz oc@YOUR_VPS_IP:~/
+scp jora.tar.gz oc@YOUR_VPS_IP:~/
 
 # На VPS:
 cd ~
-tar -xzf job-hunter-agent.tar.gz
-cd job-hunter-agent
+tar -xzf jora.tar.gz
+cd jora
 ```
 
 Или через git (после создания репо):
 ```bash
 cd ~
-git clone https://github.com/YOUR_USER/job-hunter-agent.git
-cd job-hunter-agent
+git clone https://github.com/YOUR_USER/jora.git
+cd jora
 ```
 
 ---
@@ -54,7 +54,7 @@ bash scripts/install.sh
 ## Шаг 2: Создать .env
 
 ```bash
-cd ~/job-hunter-agent/infrastructure
+cd ~/jora/infrastructure
 cp .env.template .env
 nano .env
 ```
@@ -69,7 +69,7 @@ nano .env
 ## Шаг 3: Настроить сканер
 
 ```bash
-cd ~/job-hunter-agent/scanner/config
+cd ~/jora/scanner/config
 
 # Создать default.json из шаблона
 cp default.json.template default.json
@@ -88,7 +88,7 @@ nano default.json
 Сканер — это внешний проект. Нужно скопировать его исходники в `scanner/`:
 
 ```bash
-cd ~/job-hunter-agent
+cd ~/jora
 
 # Клонировать во временную папку и скопировать исходники
 git clone https://github.com/EgorBodnar/job-scanner-tg-notification.git /tmp/job-scanner
@@ -110,7 +110,7 @@ rm -rf /tmp/job-scanner
 ## Шаг 5: Установить OpenClaw skills
 
 ```bash
-cd ~/job-hunter-agent
+cd ~/jora
 
 # Определить путь к skills
 SKILLS_DIR=$(openclaw config get skillsDir 2>/dev/null || echo "${HOME}/.openclaw/workspace/skills")
@@ -129,7 +129,7 @@ ls "$SKILLS_DIR"
 ## Шаг 6: Запустить Docker-стек
 
 ```bash
-cd ~/job-hunter-agent/infrastructure
+cd ~/jora/infrastructure
 
 # Собрать и запустить
 docker compose up -d --build
@@ -171,7 +171,7 @@ openclaw gateway start --foreground
 ## Шаг 8: Проверить
 
 ```bash
-cd ~/job-hunter-agent/infrastructure
+cd ~/jora/infrastructure
 bash scripts/healthcheck.sh
 ```
 
@@ -216,7 +216,7 @@ Result: 5 OK, 0 FAIL
 ## Ежедневные команды
 
 ```bash
-cd ~/job-hunter-agent/infrastructure
+cd ~/jora/infrastructure
 
 make status            # Статус
 make logs              # Логи

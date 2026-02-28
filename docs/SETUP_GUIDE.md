@@ -1,4 +1,4 @@
-# 🎯 OpenClaw Job Hunter Agent v3 — POC
+# 🎯 OpenClaw Job Offer Radar Agent v3 — POC
 
 ## Самообучающийся агент поиска работы: Global Head of QA
 ## Деплой на Ubuntu VPS
@@ -407,7 +407,7 @@ Best, Pavel
 ## Структура файлов POC
 
 ```
-~/job-hunter/                              # Корневая директория проекта
+~/jora/                              # Корневая директория проекта
 │
 ├── docker-compose.yml                     # Объединённый compose
 ├── .env                                   # Секреты (из .env.template)
@@ -499,7 +499,7 @@ curl -fsSL https://get.openclaw.ai | bash
 ### Шаг 3: Проект
 
 ```bash
-mkdir -p ~/job-hunter && cd ~/job-hunter
+mkdir -p ~/jora && cd ~/jora
 
 # Клонируем сканер
 git clone https://github.com/EgorBodnar/job-scanner-tg-notification.git
@@ -559,7 +559,7 @@ nano ~/.openclaw/openclaw.json
 ### Шаг 6: Запуск Docker-стека
 
 ```bash
-cd ~/job-hunter
+cd ~/jora
 docker compose up -d
 
 # Проверка

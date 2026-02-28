@@ -1,4 +1,4 @@
-# 🦞 OpenClaw Job Hunter Agent
+# 🦞 OpenClaw Job Offer Radar Agent
 
 AI-powered job search assistant for **Head of QA / QA Director** roles.
 
@@ -7,8 +7,8 @@ Scans career pages every 30 minutes, enriches vacancies with company data, detec
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USER/job-hunter-agent.git
-cd job-hunter-agent/infrastructure
+git clone https://github.com/YOUR_USER/jora.git
+cd jora/infrastructure
 bash scripts/install.sh
 ```
 

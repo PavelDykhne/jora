@@ -1,4 +1,4 @@
-# 🏗 OpenClaw Job Hunter Agent — Infrastructure & DevOps
+# 🏗 OpenClaw Job Offer Radar Agent — Infrastructure & DevOps
 
 ## Production-Grade Deployment Architecture
 
@@ -17,7 +17,7 @@
 ### Структура репозитория: Monorepo
 
 ```
-job-hunter-agent/
+jora/
 │
 ├── .github/
 │   ├── workflows/
@@ -78,11 +78,11 @@ job-hunter-agent/
 │   ├── grafana/
 │   │   ├── provisioning/
 │   │   │   ├── dashboards/
-│   │   │   │   └── job-hunter.json   # Дашборд: вакансии, источники, API cost
+│   │   │   │   └── jora-dashboard.json   # Дашборд: вакансии, источники, API cost
 │   │   │   └── datasources/
 │   │   │       └── datasources.yml
 │   │   └── dashboards/
-│   │       └── job-hunter.json
+│   │       └── jora-dashboard.json
 │   ├── loki/
 │   │   └── loki-config.yml
 │   ├── promtail/
@@ -198,7 +198,7 @@ CMD ["node", "src/index.js"]
 services:
   # === Scanner ===
   scanner:
-    image: ghcr.io/${GITHUB_USER}/job-hunter-scanner:${VERSION:-latest}
+    image: ghcr.io/${GITHUB_USER}/jora-scanner:${VERSION:-latest}
     build:
       context: ../scanner
     volumes:
@@ -220,7 +220,7 @@ services:
 
   # === Enrichment ===
   enrichment:
-    image: ghcr.io/${GITHUB_USER}/job-hunter-enrichment:${VERSION:-latest}
+    image: ghcr.io/${GITHUB_USER}/jora-enrichment:${VERSION:-latest}
     build:
       context: ../enrichment
     environment:
@@ -357,8 +357,8 @@ clean: ## Удалить все данные (ОСТОРОЖНО!)
 ### Docker Images → GitHub Container Registry (ghcr.io)
 
 ```
-ghcr.io/{user}/job-hunter-scanner:{tag}
-ghcr.io/{user}/job-hunter-enrichment:{tag}
+ghcr.io/{user}/jora-scanner:{tag}
+ghcr.io/{user}/jora-enrichment:{tag}
 ```
 
 ### CI/CD Pipeline
@@ -409,8 +409,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  SCANNER_IMAGE: ${{ github.repository_owner }}/job-hunter-scanner
-  ENRICHMENT_IMAGE: ${{ github.repository_owner }}/job-hunter-enrichment
+  SCANNER_IMAGE: ${{ github.repository_owner }}/jora-scanner
+  ENRICHMENT_IMAGE: ${{ github.repository_owner }}/jora-enrichment
 
 jobs:
   build-and-push:
@@ -480,7 +480,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd ~/job-hunter
+            cd ~/jora
             git pull origin main
             cd infrastructure
             VERSION=${{ inputs.version || 'latest' }} docker compose pull
@@ -593,7 +593,7 @@ receivers:
 ```yaml
 # monitoring/prometheus/alerts.yml
 groups:
-  - name: job-hunter
+  - name: jora
     rules:
       # Сканер не работает
       - alert: ScannerDown
@@ -787,8 +787,8 @@ openclaw setup skill        → интерактивная настройка ч
 set -euo pipefail
 
 # ============================================================
-# OpenClaw Job Hunter Agent — Full Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/{user}/job-hunter-agent/main/infrastructure/scripts/install.sh | bash
+# OpenClaw Job Offer Radar Agent — Full Installer
+# Usage: curl -fsSL https://raw.githubusercontent.com/{user}/jora/main/infrastructure/scripts/install.sh | bash
 # ============================================================
 
 RED='\033[0;31m'
@@ -800,8 +800,8 @@ info()  { echo -e "${GREEN}[INFO]${NC} $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC} $*"; }
 error() { echo -e "${RED}[ERROR]${NC} $*" >&2; }
 
-PROJECT_DIR="${HOME}/job-hunter"
-REPO_URL="https://github.com/{USER}/job-hunter-agent.git"
+PROJECT_DIR="${HOME}/jora"
+REPO_URL="https://github.com/{USER}/jora.git"
 
 # --- Pre-flight checks ---
 preflight() {
@@ -977,7 +977,7 @@ summary() {
 # --- Main ---
 main() {
     echo ""
-    echo "🦞 OpenClaw Job Hunter Agent — Installer"
+    echo "🦞 OpenClaw Job Offer Radar Agent — Installer"
     echo "============================================================"
     echo ""
 
@@ -1036,7 +1036,7 @@ echo "Result: ${OK} OK, ${FAIL} FAIL"
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd ~/job-hunter
+cd ~/jora
 
 echo "📦 Pulling latest code..."
 git pull origin main
@@ -1069,13 +1069,13 @@ BACKUP_DIR="${HOME}/backups/$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 
 echo "📦 Backing up MongoDB..."
-docker exec $(docker compose -f ~/job-hunter/infrastructure/docker-compose.yml ps -q mongo) \
+docker exec $(docker compose -f ~/jora/infrastructure/docker-compose.yml ps -q mongo) \
     mongodump --db job_hunter_db --out /tmp/dump
-docker cp $(docker compose -f ~/job-hunter/infrastructure/docker-compose.yml ps -q mongo):/tmp/dump "$BACKUP_DIR/mongo"
+docker cp $(docker compose -f ~/jora/infrastructure/docker-compose.yml ps -q mongo):/tmp/dump "$BACKUP_DIR/mongo"
 
 echo "📦 Backing up configs..."
-cp -r ~/job-hunter/infrastructure/.env "$BACKUP_DIR/"
-cp -r ~/job-hunter/workspace/jobs/ "$BACKUP_DIR/workspace_jobs/"
+cp -r ~/jora/infrastructure/.env "$BACKUP_DIR/"
+cp -r ~/jora/workspace/jobs/ "$BACKUP_DIR/workspace_jobs/"
 cp -r ~/.openclaw/openclaw.json "$BACKUP_DIR/" 2>/dev/null || true
 
 echo "📦 Compressing..."
