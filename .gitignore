@@ -1,23 +1,46 @@
-# Secrets
-.env
+# ============================================================
+# Secrets & Credentials — NEVER commit these
+# ============================================================
+
+# Environment files with real credentials
+infrastructure/.env
 *.env.local
 
-# User data (not in git)
-workspace/
+# Scanner config with real token and chat_id (use .template)
+scanner/config/default.json
 
-# Runtime
+# Enrichment config with real credentials (use .template)
+enrichment/config/default.json
+
+# Google service account keys and OAuth credentials
+*-credentials.json
+*-service-account*.json
+service_account*.json
+client_secret*.json
+gog-credentials.json
+
+# OpenClaw internal state
+.openclaw/
+openclaw.json
+
+# ============================================================
+# Runtime & Generated
+# ============================================================
+
 node_modules/
 *.log
+npm-debug.log*
 
-# MongoDB data
+# MongoDB volumes
 data/
-
-# Backups
 backups/
 
+# FakeBrowser user data
+fakeBrowserUserData/
+
+# ============================================================
 # OS
+# ============================================================
+
 .DS_Store
 Thumbs.db
-
-# Scanner config with real credentials (template is tracked)
-scanner/config/default.json
