@@ -70,6 +70,16 @@ Config: `~/.openclaw/openclaw.json`
 - [Setup Guide](docs/SETUP_GUIDE.md) — architecture and concepts
 - [Infrastructure](docs/INFRASTRUCTURE.md) — IaC, CI/CD, monitoring
 
+## Monitoring
+
+```bash
+jora-api-stats             # API calls today
+jora-api-stats --yesterday # yesterday
+jora-api-stats --watch     # real-time stream
+```
+
+Shows LLM calls vs tool calls per message, peak RPM, rate limit errors, and model distribution.
+
 ## Cost
 
 ~€26-41/month (VPS €5.85 + Anthropic API $20-35)

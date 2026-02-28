@@ -242,3 +242,33 @@ make backup            # Бэкап
 make restart-scanner   # Перезапустить сканер (после смены конфигов)
 make update            # Обновить из git + перезапустить
 ```
+
+## Мониторинг API
+
+Скрипт `jora-api-stats` показывает сколько вызовов к Anthropic API тратится на каждое сообщение в боте:
+
+```bash
+jora-api-stats             # сегодня
+jora-api-stats --yesterday # вчера
+jora-api-stats --watch     # реальное время — видно каждый вызов
+```
+
+Установка (один раз, если скрипта нет в PATH):
+```bash
+ln -sf /home/oc/.local/bin/jora-api-stats /usr/local/bin/jora-api-stats
+```
+
+Пример вывода:
+```
+  Время  Модель    LLM  Tools  Статус
+  22:51  haiku       2     12  ✅
+  23:01  haiku       3     41  ✅
+─────────────────────────────────────
+  LLM вызовов (API)   : 5   ← считаются в rate limit
+  Tool вызовов        : 53  ← не считаются
+  Среднее LLM/сообщ. : 2.5
+  Пик LLM (1 мин)    : 3
+```
+
+Файл скрипта: `/home/oc/.local/bin/jora-api-stats`
+Логи OpenClaw: `/tmp/openclaw/openclaw-YYYY-MM-DD.log`
