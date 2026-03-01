@@ -6,9 +6,10 @@
     "url": "https://revolut.com/careers/?query=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 8,
     "config": { "jobTitleSelector": ".sc-jMGMwj", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Revolut" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_stripe_jobs",
@@ -17,9 +18,10 @@
     "url": "https://stripe.com/jobs/search?query=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 8,
     "config": { "jobTitleSelector": ".JobsListings__title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Stripe" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_n26_careers",
@@ -28,9 +30,10 @@
     "url": "https://n26.com/en/careers?q=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".job-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "N26" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_wise_careers",
@@ -39,9 +42,10 @@
     "url": "https://www.wise.jobs/search/?t=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".job-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Wise" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_bolt_careers",
@@ -50,9 +54,10 @@
     "url": "https://bolt.eu/en/careers/positions/?search=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".job-position-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Bolt" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_miro_careers",
@@ -61,9 +66,10 @@
     "url": "https://miro.com/careers/open-positions/?searchText=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".position-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Miro" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_jetbrains_greenhouse",
@@ -72,9 +78,10 @@
     "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 7,
     "config": { "jobTitleSelector": ".opening a", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "JetBrains" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_acronis_careers",
@@ -83,9 +90,10 @@
     "url": "https://www.acronis.com/en/careers/?search=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".job-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Acronis" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_semrush_careers",
@@ -94,9 +102,10 @@
     "url": "https://www.semrush.com/company/careers/?query=quality",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".vacancy-title", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "Semrush" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_epam_careers",
@@ -105,9 +114,10 @@
     "url": "https://www.epam.com/careers/job-listings?query=head+of+qa",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 8,
     "config": { "jobTitleSelector": ".search-result__item-name", "antiBotCheck": false },
     "enrichment": { "source_type": "vendor", "company": "EPAM" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_greenhouse_qa_director",
@@ -116,9 +126,10 @@
     "url": "https://boards.greenhouse.io/search?query=qa+director",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 9,
     "config": { "jobTitleSelector": ".opening a", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_lever_head_of_qa",
@@ -127,9 +138,10 @@
     "url": "https://jobs.lever.co/search?query=head+of+qa",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 9,
     "config": { "jobTitleSelector": ".posting-title h5", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_remoteok_qa",
@@ -138,9 +150,10 @@
     "url": "https://remoteok.com/remote-qa-jobs",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 7,
     "config": { "jobTitleSelector": "h2[itemprop='title']", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_weworkremotely_qa",
@@ -149,9 +162,10 @@
     "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 7,
     "config": { "jobTitleSelector": ".title", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_builtin_qa_director",
@@ -160,9 +174,10 @@
     "url": "https://builtin.com/jobs?search=qa+director",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 7,
     "config": { "jobTitleSelector": "[data-id='job-title']", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_ingamejob_qa_director",
@@ -171,9 +186,10 @@
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 5,
     "config": { "jobTitleSelector": ".job-title", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_habr_career",
@@ -182,9 +198,10 @@
     "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 7,
     "config": { "jobTitleSelector": ".vacancy-card__title", "antiBotCheck": false },
     "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "web_djinni",
@@ -193,9 +210,10 @@
     "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
     "status": "active",
     "added_date": "2026-02-27",
+    "priority": 6,
     "config": { "jobTitleSelector": ".profile", "antiBotCheck": false },
-    "enrichment": { "source_type": "aggregator", "company": null },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "enrichment": { "source_type": "vendor", "company": null },
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_first_scan" }
   },
   {
     "id": "tg_remote_qa",
@@ -205,9 +223,10 @@
     "url": "https://t.me/remote_qa_jobs",
     "status": "pending",
     "added_date": "2026-02-27",
+    "priority": 5,
     "config": {},
     "enrichment": { "source_type": "aggregator", "notes": "Needs manual validation — check if channel exists and has relevant posts" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_validation" }
   },
   {
     "id": "tg_qa_vacancies_ru",
@@ -217,9 +236,10 @@
     "url": "https://t.me/qa_vacancies",
     "status": "pending",
     "added_date": "2026-02-27",
+    "priority": 5,
     "config": {},
     "enrichment": { "source_type": "aggregator", "notes": "Russian-language QA vacancies" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_validation" }
   },
   {
     "id": "tg_devjobs",
@@ -229,9 +249,10 @@
     "url": "https://t.me/devjobs",
     "status": "pending",
     "added_date": "2026-02-27",
+    "priority": 4,
     "config": {},
     "enrichment": { "source_type": "aggregator", "notes": "General dev jobs, may include QA leadership" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_validation" }
   },
   {
     "id": "tg_djinni_jobs",
@@ -241,9 +262,10 @@
     "url": "https://t.me/djinnijobs",
     "status": "pending",
     "added_date": "2026-02-27",
+    "priority": 5,
     "config": {},
     "enrichment": { "source_type": "aggregator", "notes": "Djinni.co job feed" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_validation" }
   },
   {
     "id": "tg_workintech",
@@ -253,8 +275,9 @@
     "url": "https://t.me/workintech",
     "status": "pending",
     "added_date": "2026-02-27",
+    "priority": 4,
     "config": {},
     "enrichment": { "source_type": "aggregator", "notes": "Tech jobs, international" },
-    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0 }
+    "stats": { "total_vacancies_found": 0, "last_scan": null, "last_new_vacancy": null, "consecutive_failures": 0, "last_health_check": "2026-03-01T18:00:00Z", "health_status": "pending_validation" }
   }
 ]

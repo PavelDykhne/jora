@@ -36,6 +36,8 @@ const parseJobSites = async (config, jobSites, sources, telegramBot) => {
   const deepScanCutoff = new Date(now.getTime() - DEEP_SCAN_DAYS * 24 * 60 * 60 * 1000);
   let sourcesUpdated = false;
 
+  jobSites.sort((a, b) => (b.priority ?? 5) - (a.priority ?? 5));
+
   for await (const site of jobSites) {
     const source = sources.find(s => s.url === site.url);
     const isFirstScan = source && !source.stats?.last_scan;
@@ -49,7 +51,8 @@ const parseJobSites = async (config, jobSites, sources, telegramBot) => {
     let failed = false;
 
     try {
-      const jobTitles = site.antiBotCheck
+      const usesFakeBrowser = site.scan_method === 'fakebrowser' || site.antiBotCheck;
+      const jobTitles = usesFakeBrowser
         ? await getJobTitlesByFakeBrowser(site)
         : await getJobTitlesByAxios(site);
 

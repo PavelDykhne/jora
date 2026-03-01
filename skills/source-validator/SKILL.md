@@ -2,13 +2,14 @@
 name: source-validator
 description: >
   Manages job vacancy sources. Handle these commands:
-  /sources — show all sources grouped by status with stats
+  /sources — show all sources grouped by status with stats, sorted by priority
   /source N — detailed info on source N from the last /sources list
-  /add_source {url|@channel} — add a new web source or Telegram channel
+  /add_source {url|@channel} — add a new web source or Telegram channel (auto-evaluates priority)
   /remove_source {N|name} — remove a source with confirmation
+  /set_priority {N} {1-10} — manually override priority for source N
   Also triggers on: "approve source", "approve all", "blacklist", "reject source",
-  "source status", "список источников", "добавить источник", "удалить источник",
-  "источники", "покажи источники", "сколько источников".
+  "source status", "приоритет источника", "список источников", "добавить источник",
+  "удалить источник", "источники", "покажи источники", "сколько источников".
 ---
 
 # Source Validator Skill
@@ -41,18 +42,21 @@ Read `sources.json` and display grouped list. Format:
 ```
 📡 Источники (23 total)
 
-🌐 Web — активные (18):
- 1. Revolut Careers ✅  vendor
- 2. Stripe Jobs ✅  vendor
- 3. Greenhouse — QA Director ✅  aggregator
+🌐 Web — активные (18), сортировка по приоритету:
+ 1. Greenhouse — QA Director ✅  aggregator  ⭐9
+ 2. Lever — Head of QA ✅  aggregator  ⭐9
+ 3. Revolut Careers ✅  vendor  ⭐8
+ 4. Stripe Jobs ✅  vendor  ⭐8
+ 5. EPAM Careers ✅  vendor  ⭐8
+ 6. JetBrains Jobs ✅  vendor  ⭐7
  ...
 
 📱 Telegram — ожидают подтверждения (5):
-19. @remote_qa_jobs ⏳
-20. @qa_vacancies ⏳
-21. @devjobs ⏳
-22. @djinnijobs ⏳
-23. @workintech ⏳
+19. @remote_qa_jobs ⏳  ⭐5
+20. @qa_vacancies ⏳  ⭐5
+21. @devjobs ⏳  ⭐4
+22. @djinnijobs ⏳  ⭐5
+23. @workintech ⏳  ⭐4
 
 🚫 Чёрный список: 0
 
@@ -63,10 +67,11 @@ Read `sources.json` and display grouped list. Format:
 ```
 
 Notes:
-- Number sources sequentially for easy reference
+- Number sources sequentially for easy reference; show web active sorted by `priority` descending
 - Store the last numbering in memory for /source N and /remove_source N lookups
 - If `stats.total_vacancies_found > 0`, show it: `✅ 12 вак.`
 - If `stats.consecutive_failures >= 3`, show `⚠️` warning
+- Always show `⭐{priority}` next to each source name
 
 ---
 
@@ -75,12 +80,12 @@ Notes:
 Find source by number from last /sources output. Show full details:
 
 ```
-📡 Revolut Careers (#1)
+📡 Revolut Careers (#3)
 
 🌐 https://revolut.com/careers/?query=quality
 Тип: vendor | Статус: ✅ active
 Добавлен: 2026-02-27
-Селектор: .sc-jMGMwj
+Приоритет: ⭐ 8/10
 
 📊 Статистика:
    Вакансий найдено: 0
@@ -88,7 +93,8 @@ Find source by number from last /sources output. Show full details:
    Последняя новая вакансия: —
    Ошибок подряд: 0
 
-→ /remove_source 1 — удалить
+→ /remove_source 3 — удалить
+→ /set_priority 3 {1-10} — изменить приоритет
 ```
 
 ---
@@ -100,43 +106,134 @@ Find source by number from last /sources output. Show full details:
 - Starts with `http` → Web source
 - Otherwise → ask user to clarify
 
-### Step 2a — Web source
-```python
-import subprocess, json
+### Step 2a — Web source: Initial Probe
 
-# Fetch and probe the page
-result = subprocess.run([
-    'python3', '-c', '''
-import urllib.request, re, sys
-url = sys.argv[1]
-req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+Perform a full probe to determine the scan method before asking user to approve.
+
+**Probe script:**
+```python
+import urllib.request, json, sys
+
+CANDIDATE_SELECTORS = [
+    ".job-title", ".vacancy-title", ".opening a", "h2[itemprop='title']",
+    ".position-title", ".posting-title h5", ".search-result__item-name",
+    "[data-id='job-title']", ".profile", ".vacancy-card__title",
+    "h3 a", ".job-card-title", ".job-position-title", ".sc-jMGMwj",
+]
+
+SPA_MARKERS = [
+    "__NEXT_DATA__", "_next/static", "data-reactroot",  # React/Next
+    "__nuxt", "__vue",                                    # Vue/Nuxt
+    "ng-version", "ng-app",                              # Angular
+    "window.__INITIAL_STATE__", "window.__APP_STATE__",  # Generic SPA
+]
+
+url = "<user_provided_url>"
+req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"})
+
 try:
     html = urllib.request.urlopen(req, timeout=10).read().decode("utf-8", errors="ignore")
-    print(html[:50000])
+    http_status = 200
+except urllib.error.HTTPError as e:
+    http_status = e.code
+    html = ""
 except Exception as e:
-    print("ERROR: " + str(e))
-''', url], capture_output=True, text=True, timeout=15
-)
+    http_status = 0
+    html = ""
 ```
 
-Try common selectors to detect job listings:
-- `.job-title`, `.opening a`, `h2[itemprop='title']`, `.position-title`
-- `.vacancy-title`, `.posting-title h5`, `.search-result__item-name`
-- `[data-id='job-title']`, `.profile`, `h3 a`, `.job-card-title`
+**Determine `scan_method` and `selector`:**
 
-Pick the selector that returns the most results. Count how many job titles found.
+```
+A. http_status == 404 or http_status == 0:
+   → scan_method = "unknown"
+   → Ошибка — сообщи пользователю, НЕ добавляй источник
+   → "❌ URL недоступен (HTTP {status}). Проверьте адрес."
+
+B. http_status in [403, 429, 503] (bot protection):
+   → scan_method = "fakebrowser"
+   → antiBotCheck = True
+   → selector = первый из CANDIDATE_SELECTORS (.job-title) как fallback
+   → Предупредить: "Сайт блокирует HTTP-запросы — будет использован FakeBrowser"
+
+C. http_status == 200:
+   → Проверить SPA_MARKERS в html
+   → Попробовать каждый CANDIDATE_SELECTORS через BeautifulSoup (or simple regex/count)
+   → best_selector = selector с максимальным количеством matches (> 0)
+
+   C1. best_selector найден (matches > 0):
+       → scan_method = "axios"
+       → antiBotCheck = False
+       → selector = best_selector
+
+   C2. best_selector не найден (все 0) ИЛИ найдены SPA_MARKERS:
+       → scan_method = "fakebrowser"
+       → antiBotCheck = True
+       → selector = лучший candidate из простого анализа структуры страницы,
+                   или ".job-title" как fallback
+```
 
 Classify as **vendor** (single company career page) or **aggregator** (multiple companies).
 
-Present to user:
+### Priority Evaluation
+
+After probe, evaluate the source relevance on a scale **1–10** for "Head of QA / QA Director" roles:
+
+| Score | Criteria |
+|-------|----------|
+| 9–10  | ATS aggregator (Greenhouse/Lever) with exact "head of qa" / "qa director" query |
+| 8     | Top-tier tech vendor (well-known company, >5k employees) with QA-targeted URL |
+| 7     | Solid job board / aggregator covering QA leadership roles |
+| 6     | Mid-tier vendor career page; UA/RU market boards with senior filter |
+| 5     | Niche board, remote-only with limited senior coverage; TG channel pending validation |
+| 3–4   | Broad aggregator, low signal-to-noise for leadership roles |
+| 1–2   | Unlikely to post Head of QA / QA Director roles |
+
+Scoring factors:
+- URL search params contain `head+of+qa` or `qa+director` → +2
+- `source_type: aggregator` with cross-company coverage → +1
+- Well-known company (Stripe, Google, Revolut etc.) → +1
+- Niche domain (gaming, crypto-only) → -1
+- TG channel, not yet validated → score = 5
+
+**Present to user** (адаптируй под результат probe):
+
 ```
+# Если axios работает:
 📡 Новый источник обнаружен
 
-🌐 Bolt Careers
-   URL: bolt.eu/en/careers/positions/
-   Тип: Vendor (career page)
-   Селектор: .job-position-title (найдено 83 вакансии)
-   Компания: Bolt
+🌐 Habr Career
+   URL: career.habr.com/vacancies?q=head+of+qa
+   Тип: Aggregator
+   Метод: axios ✅  (найдено 25 вакансий)
+   Селектор: .vacancy-card__title
+   Приоритет: ⭐ 7/10 — агрегатор RU-рынка, точный запрос "head of qa"
+
+→ Approve — добавить
+→ Cancel — отменить
+
+# Если FakeBrowser (JS-rendered):
+📡 Новый источник обнаружен
+
+🌐 Miro Careers
+   URL: miro.com/careers/open-positions/
+   Тип: Vendor (Miro)
+   Метод: FakeBrowser ⚙️  (JS-rendered сайт)
+   Селектор: .position-title (ожидаемый — проверится при сканировании)
+   Приоритет: ⭐ 6/10 — вендор, известная компания
+
+→ Approve — добавить
+→ Cancel — отменить
+
+# Если заблокирован (403):
+📡 Новый источник обнаружен
+
+🌐 Revolut Careers
+   URL: revolut.com/careers/
+   Тип: Vendor (Revolut)
+   Метод: FakeBrowser ⚙️  (сайт блокирует HTTP-запросы)
+   Селектор: .job-title (fallback — проверится при сканировании)
+   Приоритет: ⭐ 8/10 — крупный fintech-вендор
 
 → Approve — добавить
 → Cancel — отменить
@@ -145,6 +242,8 @@ Present to user:
 ### Step 2b — Telegram channel
 Check accessibility via public t.me URL. Note subscriber count if visible.
 
+Priority for TG channels: default **5**. Increase to 6 if channel has >5k subscribers and posts QA leadership roles regularly; decrease to 4 if broad/generic.
+
 Present to user:
 ```
 📡 TG-канал
@@ -152,6 +251,7 @@ Present to user:
 📱 QA Jobs Remote (@qa_jobs_remote)
    Тип: Aggregator
    Язык: предположительно EN
+   Приоритет: ⭐ 5/10 — ожидает валидации
 
 → Approve — добавить в мониторинг
 → Cancel — отменить
@@ -173,30 +273,39 @@ sources.append({
     "url": url,
     "status": "active",
     "added_date": datetime.date.today().isoformat(),
-    "config": {"jobTitleSelector": selector, "antiBotCheck": False},
+    "priority": priority,  # 1-10, evaluated during probe
+    "config": {
+        "jobTitleSelector": selector,
+        "antiBotCheck": scan_method == "fakebrowser",
+        "scan_method": scan_method,  # "axios" | "fakebrowser" | "unknown"
+    },
     "enrichment": {"source_type": source_type, "company": company},
     "stats": {"total_vacancies_found": 0, "last_scan": None, "last_new_vacancy": None, "consecutive_failures": 0}
 })
 open('/home/oc/jora/scanner/config/sources.json', 'w').write(json.dumps(sources, indent=2, ensure_ascii=False))
 ```
 
-**Regenerate jobSites.json** (web only, active only) and tg_sources.json (TG only, active only):
+**Regenerate jobSites.json** (web only, active only, sorted by priority desc) and tg_sources.json (TG only, active only):
 ```python
 import json
 
 sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
 
-web_active = [
-    {"name": s["name"], "url": s["url"],
-     "jobTitleSelector": s["config"]["jobTitleSelector"],
-     "antiBotCheck": s["config"].get("antiBotCheck", False)}
-    for s in sources if s["type"] == "web" and s["status"] == "active"
-]
+web_active = sorted(
+    [{"name": s["name"], "url": s["url"],
+      "jobTitleSelector": s["config"]["jobTitleSelector"],
+      "antiBotCheck": s["config"].get("antiBotCheck", False),
+      "scan_method": s["config"].get("scan_method", "axios"),
+      "priority": s.get("priority", 5)}
+     for s in sources if s["type"] == "web" and s["status"] == "active"],
+    key=lambda x: x["priority"], reverse=True
+)
 open('/home/oc/jora/scanner/config/jobSites.json', 'w').write(json.dumps(web_active, indent=2, ensure_ascii=False))
 
 tg_active = [
     {"id": s["id"], "type": "telegram_public", "name": s["name"],
-     "channel": s["channel"], "url": s["url"], "status": "active"}
+     "channel": s["channel"], "url": s["url"], "status": "active",
+     "priority": s.get("priority", 5)}
     for s in sources if s["type"] == "telegram" and s["status"] == "active"
 ]
 open('/home/oc/jora/scanner/config/tg_sources.json', 'w').write(json.dumps(tg_active, indent=2, ensure_ascii=False))
@@ -266,6 +375,36 @@ open('/home/oc/jora/scanner/config/blacklist.json', 'w').write(json.dumps(bl, in
 
 ---
 
+## Command: /set_priority {N} {1-10}
+
+Override the priority score for a source.
+
+1. Find source by number from last /sources list
+2. Validate value is integer 1–10
+3. Update `sources.json`:
+
+```python
+import json
+
+sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
+for s in sources:
+    if s["id"] == target_id:
+        s["priority"] = new_priority
+        break
+open('/home/oc/jora/scanner/config/sources.json', 'w').write(json.dumps(sources, indent=2, ensure_ascii=False))
+```
+
+4. Regenerate jobSites.json with new priority order (use standard regeneration snippet).
+5. Confirm:
+
+```
+✅ Приоритет Revolut Careers обновлён: ⭐ 8/10 → ⭐ 9/10
+
+Порядок сканирования обновится на следующем цикле (~30 мин).
+```
+
+---
+
 ## Approval Workflow (from source-discovery)
 
 When user sends "Approve all" or "Approve 1,2,3":
@@ -284,20 +423,26 @@ When user sends "Blacklist 5":
 
 ## Regenerate Scanner Configs
 
-Always regenerate **both** files after any status change. Use this python snippet:
+Always regenerate **both** files after any status change. jobSites.json is sorted by `priority` descending so the scanner processes high-priority sources first.
 
 ```python
 import json
 
 sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
 
-web = [{"name": s["name"], "url": s["url"],
-        "jobTitleSelector": s["config"]["jobTitleSelector"],
-        "antiBotCheck": s["config"].get("antiBotCheck", False)}
-       for s in sources if s["type"] == "web" and s["status"] == "active"]
+web = sorted(
+    [{"name": s["name"], "url": s["url"],
+      "jobTitleSelector": s["config"]["jobTitleSelector"],
+      "antiBotCheck": s["config"].get("antiBotCheck", False),
+      "scan_method": s["config"].get("scan_method", "axios"),
+      "priority": s.get("priority", 5)}
+     for s in sources if s["type"] == "web" and s["status"] == "active"],
+    key=lambda x: x["priority"], reverse=True
+)
 
 tg = [{"id": s["id"], "type": "telegram_public", "name": s["name"],
-       "channel": s.get("channel", ""), "url": s["url"], "status": "active"}
+       "channel": s.get("channel", ""), "url": s["url"], "status": "active",
+       "priority": s.get("priority", 5)}
       for s in sources if s["type"] == "telegram" and s["status"] == "active"]
 
 open('/home/oc/jora/scanner/config/jobSites.json', 'w').write(json.dumps(web, indent=2, ensure_ascii=False))
@@ -389,13 +534,19 @@ if to_grey:
         s['grey_since'] = today.isoformat()
         s['grey_reason'] = reason
 
-    # Regenerate scanner configs (exclude grey sources)
-    web = [{"name": s["name"], "url": s["url"],
-            "jobTitleSelector": s["config"]["jobTitleSelector"],
-            "antiBotCheck": s["config"].get("antiBotCheck", False)}
-           for s in sources if s["type"] == "web" and s["status"] == "active"]
+    # Regenerate scanner configs (exclude grey sources), sorted by priority desc
+    web = sorted(
+        [{"name": s["name"], "url": s["url"],
+          "jobTitleSelector": s["config"]["jobTitleSelector"],
+          "antiBotCheck": s["config"].get("antiBotCheck", False),
+          "scan_method": s["config"].get("scan_method", "axios"),
+          "priority": s.get("priority", 5)}
+         for s in sources if s["type"] == "web" and s["status"] == "active"],
+        key=lambda x: x["priority"], reverse=True
+    )
     tg = [{"id": s["id"], "type": "telegram_public", "name": s["name"],
-           "channel": s.get("channel", ""), "url": s["url"], "status": "active"}
+           "channel": s.get("channel", ""), "url": s["url"], "status": "active",
+           "priority": s.get("priority", 5)}
           for s in sources if s["type"] == "telegram" and s["status"] == "active"]
 
     open(SOURCES, 'w').write(json.dumps(sources, indent=2, ensure_ascii=False))
@@ -500,13 +651,18 @@ for s in sources:
 open(SOURCES, 'w').write(json.dumps(sources, indent=2, ensure_ascii=False))
 open(BLACKLIST, 'w').write(json.dumps(blacklist, indent=2, ensure_ascii=False))
 
-# Regenerate scanner configs
-web = [{"name": s["name"], "url": s["url"],
-        "jobTitleSelector": s["config"]["jobTitleSelector"],
-        "antiBotCheck": s["config"].get("antiBotCheck", False)}
-       for s in sources if s["type"] == "web" and s["status"] == "active"]
+# Regenerate scanner configs, sorted by priority desc
+web = sorted(
+    [{"name": s["name"], "url": s["url"],
+      "jobTitleSelector": s["config"]["jobTitleSelector"],
+      "antiBotCheck": s["config"].get("antiBotCheck", False),
+      "priority": s.get("priority", 5)}
+     for s in sources if s["type"] == "web" and s["status"] == "active"],
+    key=lambda x: x["priority"], reverse=True
+)
 tg = [{"id": s["id"], "type": "telegram_public", "name": s["name"],
-       "channel": s.get("channel", ""), "url": s["url"], "status": "active"}
+       "channel": s.get("channel", ""), "url": s["url"], "status": "active",
+       "priority": s.get("priority", 5)}
       for s in sources if s["type"] == "telegram" and s["status"] == "active"]
 open('/home/oc/jora/scanner/config/jobSites.json', 'w').write(json.dumps(web, indent=2, ensure_ascii=False))
 open('/home/oc/jora/scanner/config/tg_sources.json', 'w').write(json.dumps(tg, indent=2, ensure_ascii=False))

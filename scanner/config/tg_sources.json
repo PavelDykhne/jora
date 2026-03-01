@@ -6,7 +6,9 @@
     "channel": "@remote_qa_jobs",
     "url": "https://t.me/remote_qa_jobs",
     "status": "pending",
-    "notes": "Needs manual validation — check if channel exists and has relevant posts"
+    "notes": "Needs manual validation — check if channel exists and has relevant posts",
+    "lastHealthCheck": "2026-03-01T18:00:00Z",
+    "healthStatus": "pending_validation"
   },
   {
     "id": "tg_qa_vacancies_ru",
@@ -15,7 +17,9 @@
     "channel": "@qa_vacancies",
     "url": "https://t.me/qa_vacancies",
     "status": "pending",
-    "notes": "Russian-language QA vacancies"
+    "notes": "Russian-language QA vacancies",
+    "lastHealthCheck": "2026-03-01T18:00:00Z",
+    "healthStatus": "pending_validation"
   },
   {
     "id": "tg_devjobs",
@@ -24,7 +28,9 @@
     "channel": "@devjobs",
     "url": "https://t.me/devjobs",
     "status": "pending",
-    "notes": "General dev jobs, may include QA leadership"
+    "notes": "General dev jobs, may include QA leadership",
+    "lastHealthCheck": "2026-03-01T18:00:00Z",
+    "healthStatus": "pending_validation"
   },
   {
     "id": "tg_djinni_jobs",
@@ -33,7 +39,9 @@
     "channel": "@djinnijobs",
     "url": "https://t.me/djinnijobs",
     "status": "pending",
-    "notes": "Djinni.co job feed"
+    "notes": "Djinni.co job feed",
+    "lastHealthCheck": "2026-03-01T18:00:00Z",
+    "healthStatus": "pending_validation"
   },
   {
     "id": "tg_workintech",
@@ -42,6 +50,8 @@
     "channel": "@workintech",
     "url": "https://t.me/workintech",
     "status": "pending",
-    "notes": "Tech jobs, international"
+    "notes": "Tech jobs, international",
+    "lastHealthCheck": "2026-03-01T18:00:00Z",
+    "healthStatus": "pending_validation"
   }
 ]

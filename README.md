@@ -47,8 +47,9 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 | `Продолжи там где остановился` | Resume sheet scanning from last saved position |
 | `/sources` | List all sources grouped by status |
 | `/source N` | Detailed info on source N |
-| `/add_source {url\|@channel}` | Add a web source or Telegram channel |
+| `/add_source {url\|@channel}` | Add a web source or Telegram channel (auto-assigns priority) |
 | `/remove_source N` | Remove a source (with confirmation) |
+| `/set_priority N {1-10}` | Override priority score for source N |
 | `/docs {id}` | Generate resume + CL + referrals |
 | `/referrals {id}` | Find referrals + recruiters |
 | `/outreach {id}` | Generate outreach messages |
@@ -92,6 +93,25 @@ Sources are managed in `scanner/config/sources.json` (single source of truth).
 **Grey list criteria:** no relevant vacancy in 30+ days, or 3+ consecutive scan failures.
 
 **New source trigger:** first scan runs in deep mode (180-day lookback) to backfill vacancies.
+
+## Source Prioritization
+
+Each source has a `priority` field (1–10) that controls the scan order — highest priority sources are scanned first every cycle.
+
+**Priority is auto-assigned by OpenClaw** when adding a source via `/add_source`, based on relevance to the target role:
+
+| Priority | Criteria | Examples |
+|----------|----------|---------|
+| 9 | ATS aggregator with exact "head of qa" / "qa director" query | Greenhouse, Lever |
+| 8 | Top-tier tech vendor (known brand, large company) | Revolut, Stripe, EPAM |
+| 7 | Solid job board / aggregator covering QA leadership | RemoteOK, Habr Career, BuiltIn |
+| 6 | Mid-tier vendor career page; UA/RU market with senior filter | N26, Djinni, Bolt |
+| 5 | Niche board; TG channel awaiting validation | InGameJob, @qa_vacancies |
+| 3–4 | Broad aggregator, low signal-to-noise | General dev job channels |
+
+**Priority override:** use `/set_priority N {1-10}` to adjust any source manually.
+
+The scanner sorts `jobSites.json` by priority descending at startup of each scan cycle (`index.js:38`). OpenClaw regenerates `jobSites.json` sorted whenever a source is added, removed, or its status changes.
 
 ## Docs
 
