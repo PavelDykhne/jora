@@ -4,82 +4,120 @@ import { MongoClient } from 'mongodb';
 import { getJobTitlesByFakeBrowser, getJobTitlesByAxios } from './jobTitleParser.js';
 
 const MONGODB_URI = 'mongodb://mongo:27017';
+const SOURCES_FILE = './config/sources.json';
+const DEEP_SCAN_DAYS = 180;
 
 const init = async () => {
   const config = JSON.parse(await fs.readFile('./config/default.json', 'utf8'));
   const jobSites = JSON.parse(await fs.readFile('./config/jobSites.json', 'utf8'));
-  return { config, jobSites };
+  let sources = [];
+  try {
+    sources = JSON.parse(await fs.readFile(SOURCES_FILE, 'utf8'));
+  } catch {
+    // sources.json not present — stats tracking disabled
+  }
+  return { config, jobSites, sources };
 };
 
-const parseJobSites = async (config, jobSites, telegramBot) => {
-  const mongo = await MongoClient.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-  });
+const saveSourceStats = async (sources) => {
+  try {
+    await fs.writeFile(SOURCES_FILE, JSON.stringify(sources, null, 2));
+  } catch (e) {
+    console.error('[scanner] Failed to save source stats:', e.message);
+  }
+};
+
+const parseJobSites = async (config, jobSites, sources, telegramBot) => {
+  const mongo = await MongoClient.connect(MONGODB_URI, { useNewUrlParser: true });
   const db = mongo.db('jobnotifications');
-  const viewedJobTitlesCollection = db.collection('viewedJobTitles');
+  const col = db.collection('viewedJobTitles');
+
+  const now = new Date();
+  const deepScanCutoff = new Date(now.getTime() - DEEP_SCAN_DAYS * 24 * 60 * 60 * 1000);
+  let sourcesUpdated = false;
 
   for await (const site of jobSites) {
+    const source = sources.find(s => s.url === site.url);
+    const isFirstScan = source && !source.stats?.last_scan;
+
+    if (isFirstScan) {
+      console.info(`[scanner] ${site.name}: first scan — deep mode (${DEEP_SCAN_DAYS}d lookback)`);
+    }
+
+    let listingsCount = 0;
+    let newVacanciesCount = 0;
+    let failed = false;
+
     try {
-      let jobTitles = [];
-      if (site.antiBotCheck) {
-        jobTitles = await getJobTitlesByFakeBrowser(site);
-      } else {
-        jobTitles = await getJobTitlesByAxios(site);
-      }
+      const jobTitles = site.antiBotCheck
+        ? await getJobTitlesByFakeBrowser(site)
+        : await getJobTitlesByAxios(site);
 
-      console.info(`Parsing ${site.name}'s job list`);
-      if (jobTitles.length === 0) {
-        console.info(`          ===============================`);
-        console.info(`          ${site.name} has no job title`);
-        console.info(`          ===============================`);
-      }
+      listingsCount = jobTitles.length;
+      console.info(`[scanner] ${site.name}: ${listingsCount} listings`);
 
-      for (let i = 0; i < jobTitles.length; i++) {
-        const jobTitle = jobTitles[i].toLowerCase().trim();
+      for (const raw of jobTitles) {
+        const jobTitle = raw.toLowerCase().trim();
+        const isMatch = config.JOB_KEYWORDS.some(kw => jobTitle.includes(kw));
+        if (!isMatch) continue;
 
-        const isMatchingJob = config.JOB_KEYWORDS.some((keyword) =>
-          jobTitle.includes(keyword)
-        );
+        // Deep scan: skip only if seen within last 180 days.
+        // Normal scan: skip if ever seen.
+        const query = isFirstScan
+          ? { title: jobTitle, site: site.url, date: { $gt: deepScanCutoff } }
+          : { title: jobTitle, site: site.url };
 
-        if (isMatchingJob) {
-          console.info('          * Check if the job title has already been viewed');
-          const isViewedJob = await viewedJobTitlesCollection.findOne({
-            title: jobTitle,
-            site: site.url,
-          });
-          if (!isViewedJob) {
-            const message = `      🚀🚀🚀New ${jobTitle.toUpperCase()} job found on ${site.name}: ${site.url}`;
-            console.info(message);
-            console.info('                    Sending data to Telegram chanel');
-            await telegramBot.telegram.sendMessage(config.TELEGRAM.CHAT_ID, message);
-            console.info('                    Insert data to DB as viewed job title');
-            await viewedJobTitlesCollection.insertOne({
-              title: jobTitle,
-              site: site.url,
-              date: new Date(),
-            });
-          }
+        const alreadySeen = await col.findOne(query);
+        if (!alreadySeen) {
+          newVacanciesCount++;
+          const msg = `🚀 New ${jobTitle.toUpperCase()} on ${site.name}: ${site.url}`;
+          console.info(msg);
+          await telegramBot.telegram.sendMessage(config.TELEGRAM.CHAT_ID, msg);
+          await col.insertOne({ title: jobTitle, site: site.url, date: now });
         }
       }
     } catch (error) {
-      console.error(error);
-      continue;
+      console.error(`[scanner] ${site.name} error:`, error.message);
+      failed = true;
+    }
+
+    if (source) {
+      if (!source.stats) source.stats = {};
+      source.stats.last_scan = now.toISOString();
+      source.stats.last_listings_count = failed ? source.stats.last_listings_count ?? null : listingsCount;
+
+      if (failed) {
+        source.stats.consecutive_failures = (source.stats.consecutive_failures ?? 0) + 1;
+      } else {
+        source.stats.consecutive_failures = 0;
+        if (newVacanciesCount > 0) {
+          source.stats.total_vacancies_found = (source.stats.total_vacancies_found ?? 0) + newVacanciesCount;
+          source.stats.last_new_vacancy = now.toISOString();
+        }
+      }
+      sourcesUpdated = true;
     }
   }
+
   await mongo.close();
 
-  // Trigger garbage collection
-  if (global.gc) {
-    global.gc();
+  if (sourcesUpdated) {
+    await saveSourceStats(sources);
   }
+
+  if (global.gc) global.gc();
 };
 
 (async () => {
-  const { config, jobSites } = await init();
-  const telegramBot = new Telegraf(config.TELEGRAM.TOKEN);
+  const { config: baseConfig } = await init();
+  const telegramBot = new Telegraf(baseConfig.TELEGRAM.TOKEN);
   // Polling disabled — OpenClaw handles all incoming messages
-  await parseJobSites(config, jobSites, telegramBot);
-  setInterval(async () => {
-    await parseJobSites(config, jobSites);
-  }, config.SCAN_INTERVAL_MINUTES * 60 * 1000);
+
+  const runScan = async () => {
+    const { config, jobSites, sources } = await init();
+    await parseJobSites(config, jobSites, sources, telegramBot);
+  };
+
+  await runScan();
+  setInterval(runScan, baseConfig.SCAN_INTERVAL_MINUTES * 60 * 1000);
 })();

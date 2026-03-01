@@ -79,31 +79,26 @@ nano default.json
 Подставить `TG_BOT_TOKEN` и `TG_CHAT_ID` в поля `TELEGRAM.TOKEN` и `TELEGRAM.CHAT_ID`.
 
 Ключевые слова (`JOB_KEYWORDS`) уже заполнены 25 вариациями для Head of QA.
-Сайты (`jobSites.json`) — 18 seed-источников.
+
+Конфигурация источников (все файлы уже есть в репо):
+- `sources.json` — единый реестр источников со статусами и статистикой
+- `jobSites.json` — auto-generated из sources.json (active web only), не редактировать вручную
+- `tg_sources.json` — auto-generated из sources.json (active TG only), не редактировать вручную
+- `blacklist.json` — перманентно исключённые источники
 
 ---
 
 ## Шаг 4: Исходники сканера
 
-Сканер — это внешний проект. Нужно скопировать его исходники в `scanner/`:
+Исходники сканера хранятся прямо в репо (`scanner/`). Внешних зависимостей нет.
 
+Если нужно обновить `jobTitleParser.js` из upstream:
 ```bash
-cd ~/jora
-
-# Клонировать во временную папку и скопировать исходники
-git clone https://github.com/EgorBodnar/job-scanner-tg-notification.git /tmp/job-scanner
-cp /tmp/job-scanner/index.js scanner/
-cp /tmp/job-scanner/jobTitleParser.js scanner/
-cp /tmp/job-scanner/package.json scanner/package-upstream.json
-
-# Мержим package.json (берём upstream, наш Dockerfile совместим)
-cp /tmp/job-scanner/package.json scanner/package.json
-cp /tmp/job-scanner/package-lock.json scanner/package-lock.json 2>/dev/null || true
-
-rm -rf /tmp/job-scanner
+curl -o scanner/jobTitleParser.js \
+  https://raw.githubusercontent.com/EgorBodnar/job-scanner-tg-notification/main/jobTitleParser.js
 ```
 
-> **Почему не git submodule?** Для простоты POC. В продакшене — форк или submodule.
+> `scanner/index.js` — форк с добавленной записью статистики и deep scan для новых источников. Не заменять upstream-версией.
 
 ---
 
@@ -148,6 +143,9 @@ scanner     running
 enrichment  running
 mongo       running (healthy)
 ```
+
+> **Bind mount:** сканер монтирует `../scanner/config` напрямую — изменения в `sources.json` подхватываются на следующем цикле без перезапуска контейнера.
+> **MongoDB:** порт 27017 проброшен на `127.0.0.1` — доступен с хоста для OpenClaw skills.
 
 ---
 
@@ -206,6 +204,31 @@ Result: 5 OK, 0 FAIL
 
 ---
 
+## Шаг 8.5: Настроить OpenClaw cron
+
+После запуска gateway добавить автоматические задачи:
+
+```bash
+# Вечерняя проверка источников (ежедневно 18:00)
+openclaw cron add \
+  --name "source-health-check" \
+  --cron "0 18 * * *" \
+  --announce \
+  --message "Выполни вечернюю проверку здоровья источников. Запусти health check: прочитай /home/oc/jora/scanner/config/sources.json, проверь для каждого активного источника поля stats (last_scan, last_new_vacancy, consecutive_failures), переведи в серый список источники без релевантных вакансий более 30 дней или с 3+ ошибками подряд. Обнови sources.json, jobSites.json, tg_sources.json. Отправь отчёт." \
+  --description "Вечерняя проверка актуальности источников → серый список"
+
+# Еженедельная перепроверка серого списка (воскресенье 10:00)
+openclaw cron add \
+  --name "grey-list-recheck" \
+  --cron "0 10 * * 0" \
+  --announce \
+  --message "Выполни еженедельную перепроверку серого списка источников. Прочитай /home/oc/jora/scanner/config/sources.json, найди источники со статусом grey: если grey_since 180+ дней назад — переведи в blacklist и обнови blacklist.json; для остальных попробуй HTTP-запрос к URL и найди keyword-совпадения из default.json — если нашлись релевантные вакансии, верни в active. Обнови sources.json, jobSites.json, tg_sources.json. Отправь отчёт." \
+  --description "Еженедельная перепроверка серого списка → чёрный список после 180 дней"
+
+# Проверить
+openclaw cron list
+```
+
 ## Шаг 9: Первый запуск
 
 Открой Telegram → твой бот → напиши:
@@ -216,6 +239,7 @@ Result: 5 OK, 0 FAIL
 1. Подтвердить ключевые слова (25 штук)
 2. Предложить источники
 3. После одобрения — сканер начнёт работу
+4. Новые источники автоматически получат deep scan (180-дневный lookback)
 
 ---
 
@@ -228,6 +252,9 @@ Result: 5 OK, 0 FAIL
 | Enrichment не шлёт в TG | Проверь `TG_BOT_TOKEN` и `TG_CHAT_ID` в `.env` |
 | MongoDB unhealthy | `docker compose logs mongo` — возможно мало RAM |
 | Skills не триггерятся | `openclaw skills list` — проверь что установились |
+| `/sources` не работает | `make sync-skills` — пересинхронизировать skills в OpenClaw |
+| `sources.json` не обновляется | Сканер пишет stats только через bind mount — проверь `docker compose ps scanner` |
+| Cron не запускается | `openclaw cron list` и `openclaw cron status` |
 
 ---
 

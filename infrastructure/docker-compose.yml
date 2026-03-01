@@ -3,7 +3,7 @@ services:
     build:
       context: ../scanner
     volumes:
-      - scanner_config:/app/config
+      - ../scanner/config:/app/config
     environment:
       - MONGO_URI=mongodb://mongo:27017/job_hunter_db
     depends_on:
@@ -38,6 +38,8 @@ services:
 
   mongo:
     image: mongo:7
+    ports:
+      - "127.0.0.1:27017:27017"
     volumes:
       - mongo_data:/data/db
     healthcheck:
@@ -71,7 +73,6 @@ services:
 volumes:
   mongo_data:
   mongo_backups:
-  scanner_config:
 
 networks:
   backend:
