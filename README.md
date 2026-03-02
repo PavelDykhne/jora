@@ -141,4 +141,6 @@ jora-vacancies --all        # all time
 
 ## Cost
 
-~€26-41/month (VPS €5.85 + Anthropic API $20-35)
+~$30-40/month (VPS ~$10 + Anthropic API $20-30)
+
+> Testing phase: ~$11/week due to interactive sessions. Production (cron-only) significantly lower.
