@@ -10,7 +10,7 @@ const getJobTitlesByFakeBrowser = async (site) => {
     .vanillaLaunchOptions({
       headless: true,
     })
-    .userDataDir('./fakeBrowserUserData');
+    .userDataDir('/tmp/fakeBrowserUserData');
 
   const fakeBrowser = await builder.launch();
   let jobTitles = [];

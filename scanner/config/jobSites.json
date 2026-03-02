@@ -43,7 +43,7 @@
     "priority": 9,
     "config": {
       "jobTitleSelector": "h3[data-job-id]",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -51,7 +51,8 @@
       "estimated_relevance": 5,
       "language": "en",
       "notes": "Highest quality source - most senior roles posted here"
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_revolut_careers",
@@ -97,33 +98,13 @@
     "priority": 8,
     "config": {
       "jobTitleSelector": ".search-result__item-name",
-      "antiBotCheck": false
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "EPAM"
-    }
-  },
-  {
-    "id": "web_91_company_career_pages",
-    "type": "web",
-    "name": "91 Company Career Pages (Direct)",
-    "url": "https://docs.google.com/spreadsheets/d/1AD8oUSjcbSsOaXGeckPKB7XqrDPudagbpgEoNORS2T4/edit",
-    "status": "active",
-    "added_date": "2026-03-02",
-    "priority": 8,
-    "config": {
-      "type": "spreadsheet",
-      "sheet_id": "1AD8oUSjcbSsOaXGeckPKB7XqrDPudagbpgEoNORS2T4",
-      "needs_pagination": false
     },
-    "enrichment": {
-      "source_type": "vendor_aggregated",
-      "estimated_relevance": 5,
-      "language": "en,ru",
-      "companies_count": 91,
-      "notes": "Pre-filtered companies that explicitly hire QA roles"
-    }
+    "antiBotCheck": true
   },
   {
     "id": "web_remocate_pro",
@@ -189,12 +170,13 @@
     "priority": 7,
     "config": {
       "jobTitleSelector": ".title",
-      "antiBotCheck": false
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "aggregator",
       "company": null
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_builtin_qa_director",
@@ -280,7 +262,7 @@
     "priority": 7,
     "config": {
       "jobTitleSelector": "h2.jobTitle a",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -288,7 +270,8 @@
       "estimated_relevance": 4,
       "language": "en",
       "notes": "Good complementary source to LinkedIn"
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_wellfound_qa",
@@ -300,7 +283,7 @@
     "priority": 7,
     "config": {
       "jobTitleSelector": ".job-title",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -308,7 +291,8 @@
       "estimated_relevance": 4,
       "language": "en",
       "notes": "Growth-stage and late-stage startups"
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_n26_careers",
@@ -447,7 +431,8 @@
       "estimated_relevance": 4,
       "language": "en",
       "notes": "Includes salary ranges and company reviews"
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_builtin_qa",
@@ -479,7 +464,7 @@
     "priority": 6,
     "config": {
       "jobTitleSelector": ".job-title a",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -487,7 +472,8 @@
       "estimated_relevance": 3,
       "language": "en",
       "notes": "High-quality remote listings"
-    }
+    },
+    "antiBotCheck": true
   },
   {
     "id": "web_ingamejob_qa_director",
@@ -556,7 +542,7 @@
     "priority": 5,
     "config": {
       "jobTitleSelector": ".-title",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -564,6 +550,7 @@
       "estimated_relevance": 2,
       "language": "en",
       "notes": "Legacy but still has niche roles"
-    }
+    },
+    "antiBotCheck": true
   }
 ]
