@@ -99,7 +99,7 @@
     "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 7,
+    "priority": 9,
     "config": {
       "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
       "antiBotCheck": false
@@ -284,7 +284,7 @@
     "url": "https://wise.jobs/jobs",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 6,
+    "priority": 8,
     "config": {
       "jobTitleSelector": "a[href*='/job/']",
       "antiBotCheck": false
@@ -448,7 +448,7 @@
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 5,
+    "priority": 7,
     "config": {
       "jobTitleSelector": "h5 a",
       "antiBotCheck": false
@@ -485,7 +485,7 @@
     "url": "https://career.habr.com/vacancies?q=Head+of+QA&kind=qa",
     "status": "active",
     "added_date": "2026-03-02",
-    "priority": 5,
+    "priority": 7,
     "config": {
       "jobTitleSelector": ".vacancy-card__title",
       "antiBotCheck": false,

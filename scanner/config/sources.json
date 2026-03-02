@@ -17,7 +17,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -43,7 +43,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -69,7 +69,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -84,7 +84,7 @@
     "url": "https://wise.jobs/jobs",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 6,
+    "priority": 8,
     "config": {
       "jobTitleSelector": "a[href*='/job/']",
       "antiBotCheck": false
@@ -95,7 +95,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -121,7 +121,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -147,7 +147,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -162,7 +162,7 @@
     "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 7,
+    "priority": 9,
     "config": {
       "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
       "antiBotCheck": false
@@ -173,12 +173,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 50
     }
   },
   {
@@ -199,7 +199,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -225,7 +225,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -251,7 +251,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -330,7 +330,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -356,7 +356,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -383,7 +383,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -398,7 +398,7 @@
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
     "status": "active",
     "added_date": "2026-02-27",
-    "priority": 5,
+    "priority": 7,
     "config": {
       "jobTitleSelector": "h5 a",
       "antiBotCheck": false
@@ -409,12 +409,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 2
     }
   },
   {
@@ -435,7 +435,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -461,7 +461,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -605,7 +605,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -635,7 +635,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -664,7 +664,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -723,7 +723,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -753,7 +753,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -783,7 +783,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -812,7 +812,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -842,7 +842,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -871,7 +871,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -914,7 +914,7 @@
     "url": "https://career.habr.com/vacancies?q=Head+of+QA&kind=qa",
     "status": "active",
     "added_date": "2026-03-02",
-    "priority": 5,
+    "priority": 7,
     "config": {
       "jobTitleSelector": ".vacancy-card__title",
       "antiBotCheck": false,
@@ -928,12 +928,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 25
     }
   },
   {
@@ -957,7 +957,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -1257,7 +1257,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:22:19.492Z",
+      "last_scan": "2026-03-02T13:34:06.777Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
