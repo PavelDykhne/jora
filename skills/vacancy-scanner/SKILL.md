@@ -18,6 +18,12 @@ metadata:
 
 **Do NOT scrape websites directly** — they block web-fetch. The Docker scanner handles scraping.
 
+**Do NOT create your own scanner scripts** — do not write jora_scanner.py or any substitute.
+
+**Do NOT invent or hardcode fake vacancy data** — only report real data from `jora-vacancies`.
+
+**If `jora-vacancies` returns empty** — report: "Docker scanner has not found new matches yet. It runs every 30 minutes automatically." Do nothing else.
+
 ```
 Docker scanner (Puppeteer, every 30 min)
   → MongoDB jobnotifications.viewedJobTitles { title, site, date }
