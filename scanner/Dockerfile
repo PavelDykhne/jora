@@ -10,7 +10,7 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --production
+RUN npm install --omit=dev
 COPY . .
 
 USER node

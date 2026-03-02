@@ -18,7 +18,7 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 
 | Component | Role | Tech |
 |-----------|------|------|
-| **scanner** | Web scraping every 30 min | Node.js + Puppeteer |
+| **scanner** | Web scraping every 30 min | Node.js + puppeteer-extra + stealth |
 | **enrichment** | Company data + dedup + scoring | Node.js + MongoDB |
 | **OpenClaw skills** | Keywords, sources, docs, referrals, tracking | Claude AI |
 | **MongoDB** | Shared storage | Docker |

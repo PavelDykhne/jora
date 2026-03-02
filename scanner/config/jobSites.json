@@ -1,39 +1,5 @@
 [
   {
-    "id": "web_greenhouse_qa_director",
-    "type": "web",
-    "name": "Greenhouse — QA Director",
-    "url": "https://boards.greenhouse.io/search?query=qa+director",
-    "status": "active",
-    "added_date": "2026-02-27",
-    "priority": 9,
-    "config": {
-      "jobTitleSelector": ".opening a",
-      "antiBotCheck": false
-    },
-    "enrichment": {
-      "source_type": "aggregator",
-      "company": null
-    }
-  },
-  {
-    "id": "web_lever_head_of_qa",
-    "type": "web",
-    "name": "Lever — Head of QA",
-    "url": "https://jobs.lever.co/search?query=head+of+qa",
-    "status": "active",
-    "added_date": "2026-02-27",
-    "priority": 9,
-    "config": {
-      "jobTitleSelector": ".posting-title h5",
-      "antiBotCheck": false
-    },
-    "enrichment": {
-      "source_type": "aggregator",
-      "company": null
-    }
-  },
-  {
     "id": "web_linkedin_jobs",
     "type": "web",
     "name": "LinkedIn Jobs - QA",
@@ -135,7 +101,7 @@
     "added_date": "2026-02-27",
     "priority": 7,
     "config": {
-      "jobTitleSelector": ".opening a",
+      "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
       "antiBotCheck": false
     },
     "enrichment": {
@@ -315,12 +281,12 @@
     "id": "web_wise_careers",
     "type": "web",
     "name": "Wise Careers",
-    "url": "https://www.wise.jobs/search/?t=quality",
+    "url": "https://wise.jobs/jobs",
     "status": "active",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
-      "jobTitleSelector": ".job-title",
+      "jobTitleSelector": "a[href*='/job/']",
       "antiBotCheck": false
     },
     "enrichment": {
@@ -484,7 +450,7 @@
     "added_date": "2026-02-27",
     "priority": 5,
     "config": {
-      "jobTitleSelector": ".job-title",
+      "jobTitleSelector": "h5 a",
       "antiBotCheck": false
     },
     "enrichment": {
@@ -521,7 +487,7 @@
     "added_date": "2026-03-02",
     "priority": 5,
     "config": {
-      "jobTitleSelector": ".vacancy-item__title",
+      "jobTitleSelector": ".vacancy-card__title",
       "antiBotCheck": false,
       "needs_pagination": true
     },
