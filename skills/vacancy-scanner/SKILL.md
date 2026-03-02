@@ -16,13 +16,16 @@ metadata:
 
 ## Architecture
 
-**Do NOT scrape websites directly** — they block web-fetch. The Docker scanner handles scraping.
+**STRICT RULES — NO EXCEPTIONS:**
 
-**Do NOT create your own scanner scripts** — do not write jora_scanner.py or any substitute.
+1. **Do NOT scrape websites** — web-fetch is blocked by all job boards.
+2. **Do NOT create scanner scripts** — no jora_scanner.py, no substitutes, no workarounds.
+3. **Do NOT modify `/home/oc/.local/bin/jora-vacancies`** — it is a system tool, hands off.
+4. **Do NOT invent, hardcode, or fabricate vacancy data** — fake vacancies are worse than no vacancies.
+5. **Do NOT create `raw_vacancies.jsonl`** — this file must only exist if written by the Docker scanner.
 
-**Do NOT invent or hardcode fake vacancy data** — only report real data from `jora-vacancies`.
-
-**If `jora-vacancies` returns empty** — report: "Docker scanner has not found new matches yet. It runs every 30 minutes automatically." Do nothing else.
+**If `jora-vacancies` returns `[]`:**
+Reply exactly: "Docker scanner hasn't found keyword matches yet — it runs every 30 min automatically. Check back later or run `jora-vacancies --all` to confirm." Then STOP.
 
 ```
 Docker scanner (Puppeteer, every 30 min)
