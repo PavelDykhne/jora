@@ -1,164 +1,569 @@
 [
   {
+    "id": "web_greenhouse_qa_director",
+    "type": "web",
     "name": "Greenhouse — QA Director",
     "url": "https://boards.greenhouse.io/search?query=qa+director",
-    "jobTitleSelector": ".opening a",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 9,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".opening a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_lever_head_of_qa",
+    "type": "web",
     "name": "Lever — Head of QA",
     "url": "https://jobs.lever.co/search?query=head+of+qa",
-    "jobTitleSelector": ".posting-title h5",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 9,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_linkedin_jobs",
+    "type": "web",
+    "name": "LinkedIn Jobs - QA",
+    "url": "https://www.linkedin.com/jobs/search/?keywords=Head+of+QA&location=Remote&f_E=1,2,3",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 9,
+    "config": {
+      "jobTitleSelector": "h3[data-job-id]",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 5,
+      "language": "en",
+      "notes": "Highest quality source - most senior roles posted here"
+    }
+  },
+  {
+    "id": "web_revolut_careers",
+    "type": "web",
     "name": "Revolut Careers",
     "url": "https://revolut.com/careers/?query=quality",
-    "jobTitleSelector": ".sc-jMGMwj",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 8,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".sc-jMGMwj",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Revolut"
+    }
   },
   {
+    "id": "web_stripe_jobs",
+    "type": "web",
     "name": "Stripe Jobs",
     "url": "https://stripe.com/jobs/search?query=quality",
-    "jobTitleSelector": ".JobsListings__title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 8,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".JobsListings__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Stripe"
+    }
   },
   {
+    "id": "web_epam_careers",
+    "type": "web",
     "name": "EPAM Careers",
     "url": "https://www.epam.com/careers/job-listings?query=head+of+qa",
-    "jobTitleSelector": ".search-result__item-name",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 8,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".search-result__item-name",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "EPAM"
+    }
   },
   {
+    "id": "web_91_company_career_pages",
+    "type": "web",
+    "name": "91 Company Career Pages (Direct)",
+    "url": "https://docs.google.com/spreadsheets/d/1AD8oUSjcbSsOaXGeckPKB7XqrDPudagbpgEoNORS2T4/edit",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 8,
+    "config": {
+      "type": "spreadsheet",
+      "sheet_id": "1AD8oUSjcbSsOaXGeckPKB7XqrDPudagbpgEoNORS2T4",
+      "needs_pagination": false
+    },
+    "enrichment": {
+      "source_type": "vendor_aggregated",
+      "estimated_relevance": 5,
+      "language": "en,ru",
+      "companies_count": 91,
+      "notes": "Pre-filtered companies that explicitly hire QA roles"
+    }
+  },
+  {
+    "id": "web_remocate_pro",
+    "type": "web",
+    "name": "Remocate.pro",
+    "url": "https://www.remocate.pro/",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 8,
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en,ru",
+      "notes": "Relocation and remote job board"
+    }
+  },
+  {
+    "id": "web_jetbrains_greenhouse",
+    "type": "web",
     "name": "JetBrains Jobs (Greenhouse)",
     "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
-    "jobTitleSelector": ".opening a",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 7,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".opening a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "JetBrains"
+    }
   },
   {
+    "id": "web_remoteok_qa",
+    "type": "web",
     "name": "RemoteOK — QA",
     "url": "https://remoteok.com/remote-qa-jobs",
-    "jobTitleSelector": "h2[itemprop='title']",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 7,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": "h2[itemprop='title']",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_weworkremotely_qa",
+    "type": "web",
     "name": "WeWorkRemotely — QA",
     "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
-    "jobTitleSelector": ".title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 7,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_builtin_qa_director",
+    "type": "web",
     "name": "BuiltIn — QA Director",
     "url": "https://builtin.com/jobs?search=qa+director",
-    "jobTitleSelector": "[data-id='job-title']",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 7,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": "[data-id='job-title']",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_habr_career",
+    "type": "web",
     "name": "Habr Career — Head of QA",
     "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
-    "jobTitleSelector": ".vacancy-card__title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 7,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".vacancy-card__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
   },
   {
+    "id": "web_greenhouse_jobs",
+    "type": "web",
+    "name": "Greenhouse.io Job Boards (Multi-company)",
+    "url": "https://www.greenhouse.io/jobs?query=head+of+qa",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 7,
+    "config": {
+      "jobTitleSelector": ".opening a",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 5,
+      "language": "en",
+      "notes": "Meta-aggregator of Greenhouse-hosted career pages"
+    }
+  },
+  {
+    "id": "web_lever_jobs",
+    "type": "web",
+    "name": "Lever.co Job Boards (Multi-company)",
+    "url": "https://jobs.lever.co/?query=head+of+qa",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 7,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 5,
+      "language": "en",
+      "notes": "Meta-aggregator of Lever-hosted career pages"
+    }
+  },
+  {
+    "id": "web_indeed_qa",
+    "type": "web",
+    "name": "Indeed - QA Director/Head of QA",
+    "url": "https://www.indeed.com/jobs?q=QA+Director+OR+Head+of+QA&l=Remote&radius=50",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 7,
+    "config": {
+      "jobTitleSelector": "h2.jobTitle a",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en",
+      "notes": "Good complementary source to LinkedIn"
+    }
+  },
+  {
+    "id": "web_wellfound_qa",
+    "type": "web",
+    "name": "Wellfound (AngelList) - Startup QA Roles",
+    "url": "https://wellfound.com/jobs?query=QA%20Director%20OR%20Head%20of%20QA&role=engineering",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 7,
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en",
+      "notes": "Growth-stage and late-stage startups"
+    }
+  },
+  {
+    "id": "web_n26_careers",
+    "type": "web",
     "name": "N26 Careers",
     "url": "https://n26.com/en/careers?q=quality",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "N26"
+    }
   },
   {
+    "id": "web_wise_careers",
+    "type": "web",
     "name": "Wise Careers",
     "url": "https://www.wise.jobs/search/?t=quality",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Wise"
+    }
   },
   {
+    "id": "web_bolt_careers",
+    "type": "web",
     "name": "Bolt Careers",
     "url": "https://bolt.eu/en/careers/positions/?search=quality",
-    "jobTitleSelector": ".job-position-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".job-position-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Bolt"
+    }
   },
   {
+    "id": "web_miro_careers",
+    "type": "web",
     "name": "Miro Careers",
     "url": "https://miro.com/careers/open-positions/?searchText=quality",
-    "jobTitleSelector": ".position-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".position-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Miro"
+    }
   },
   {
+    "id": "web_acronis_careers",
+    "type": "web",
     "name": "Acronis Careers",
     "url": "https://www.acronis.com/en/careers/?search=quality",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Acronis"
+    }
   },
   {
+    "id": "web_semrush_careers",
+    "type": "web",
     "name": "Semrush Careers",
     "url": "https://www.semrush.com/company/careers/?query=quality",
-    "jobTitleSelector": ".vacancy-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".vacancy-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Semrush"
+    }
   },
   {
+    "id": "web_djinni",
+    "type": "web",
     "name": "Djinni — QA Lead/Director",
     "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
-    "jobTitleSelector": ".profile",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 6,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".profile",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": null
+    }
   },
   {
+    "id": "web_glassdoor_qa",
+    "type": "web",
+    "name": "Glassdoor - QA Director/Head of QA",
+    "url": "https://www.glassdoor.com/Job/qa-director-head-of-qa-jobs-SRCH_KO0,30.htm?radius=25&locId=&locKeyword=Remote",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": ".jobTitle",
+      "antiBotCheck": true,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en",
+      "notes": "Includes salary ranges and company reviews"
+    }
+  },
+  {
+    "id": "web_builtin_qa",
+    "type": "web",
+    "name": "BuiltIn - QA Leadership",
+    "url": "https://builtin.com/jobs/qa?remote=true&category=qa",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": "h3.job-title",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en",
+      "notes": "Curated tech company listings, higher quality than Indeed"
+    }
+  },
+  {
+    "id": "web_weworkremotely_qa",
+    "type": "web",
+    "name": "We Work Remotely - QA",
+    "url": "https://weworkremotely.com/remote-jobs/search?term=QA",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": ".job-title a",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "en",
+      "notes": "High-quality remote listings"
+    }
+  },
+  {
+    "id": "web_ingamejob_qa_director",
+    "type": "web",
     "name": "InGameJob — QA Director",
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": false,
+    "status": "active",
+    "added_date": "2026-02-27",
     "priority": 5,
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_first_scan"
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "company": null
+    }
+  },
+  {
+    "id": "web_remoteok_qa",
+    "type": "web",
+    "name": "RemoteOK - Remote QA/Quality",
+    "url": "https://remoteok.com/remote-qa-jobs?source_code=qa",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".job-title h4",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "en",
+      "notes": "Smaller but curated remote listings"
+    }
+  },
+  {
+    "id": "web_habr_career",
+    "type": "web",
+    "name": "Habr Career - QA (RU)",
+    "url": "https://career.habr.com/vacancies?q=Head+of+QA&kind=qa",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".vacancy-item__title",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru",
+      "notes": "Russian tech job board, good for CIS market"
+    }
+  },
+  {
+    "id": "web_stackoverflow_jobs",
+    "type": "web",
+    "name": "Stack Overflow - QA Leadership",
+    "url": "https://stackoverflow.com/jobs?q=qa+director&l=remote",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".-title",
+      "antiBotCheck": false,
+      "needs_pagination": true
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 2,
+      "language": "en",
+      "notes": "Legacy but still has niche roles"
+    }
   }
 ]

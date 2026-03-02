@@ -66,7 +66,7 @@ Check for unfinished sheet imports and notify the user if any are pending:
 ```bash
 python3 -c "
 import json, os
-path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+path = os.path.expanduser('/home/oc/.openclaw/workspace/jobs/import_queue.json')
 if not os.path.exists(path):
     exit(0)
 q = json.loads(open(path).read())
@@ -99,7 +99,7 @@ If any jobs have `status = pending_approval`:
 ```bash
 python3 -c "
 import json, os, datetime
-path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+path = os.path.expanduser('/home/oc/.openclaw/workspace/jobs/import_queue.json')
 q = json.loads(open(path).read())
 for j in q:
     if j['id'] == 'JOB_ID':
@@ -114,5 +114,5 @@ open(path,'w').write(json.dumps(q, ensure_ascii=False, indent=2))
 - `sources.json` — source stats
 - MongoDB `vacancies` — vacancy data
 - MongoDB `applications` — application tracking
-- `~/openclaw/workspace/jobs/applications/` — generated docs
-- `~/.openclaw/workspace/jobs/import_queue.json` — pending sheet imports
+- `/home/oc/.openclaw/workspace/jobs/applications/` — generated docs
+- `/home/oc/.openclaw/workspace/jobs/import_queue.json` — pending sheet imports

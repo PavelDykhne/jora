@@ -31,6 +31,7 @@ The installer handles: Docker, Node.js, OpenClaw, credentials, skills, and servi
 | **keyword-expander** | `"Ищи вакансии Head of QA"` | Generates 25+ keyword variations |
 | **source-discovery** | `"find sources"` | Discovers job boards and career pages |
 | **source-validator** | `/sources`, `/add_source`, `/remove_source` | Manages source lifecycle: add/remove, health check, grey/blacklist |
+| **vacancy-scanner** | `"проверь вакансии"`, `"что нашёл сканер"` | Reads Docker scanner results from MongoDB via `jora-vacancies`; sends daily report |
 | **sheet-importer** | `"импортируй из таблицы"` | Batch-imports companies from Google Sheets (1000 per run, ~3 API calls) |
 | **sheet-scanner** | `"обработай 20 компаний"`, `"продолжи"` | Scans companies from Google Sheets for matching vacancies; auto-reads keywords from config, auto-resumes from last position |
 | **doc-generator** | `/docs {id}` | Resume, cover letter, referrals, outreach |
@@ -71,6 +72,8 @@ OpenClaw is configured to minimise Anthropic API calls:
 
 Config: `~/.openclaw/openclaw.json`
 
+**Session size:** if the bot returns "API rate limit reached" on simple requests, the conversation history has grown too large. Send `/reset` — the bot re-reads its workspace files and continues from saved state.
+
 ## Source Lifecycle
 
 Sources are managed in `scanner/config/sources.json` (single source of truth).
@@ -85,10 +88,11 @@ Sources are managed in `scanner/config/sources.json` (single source of truth).
 
 **Automation (OpenClaw cron):**
 
-| Job | Schedule | Action |
-|-----|----------|--------|
-| `source-health-check` | Daily 18:00 | Reads scanner stats → moves stale sources to grey list |
-| `grey-list-recheck` | Every Sunday 10:00 | Re-checks grey sources; blacklists after 180 days |
+| Job | Schedule (UTC) | Schedule (MSK) | Action |
+|-----|----------------|----------------|--------|
+| `daily-vacancy-scan` | Daily 05:00 | Daily 08:00 | Scans all active sources in priority order, one per minute; sends daily report |
+| `source-health-check` | Daily 18:00 | Daily 21:00 | Reads scanner stats → moves stale sources to grey list |
+| `grey-list-recheck` | Every Sunday 10:00 | Every Sunday 13:00 | Re-checks grey sources; blacklists after 180 days |
 
 **Grey list criteria:** no relevant vacancy in 30+ days, or 3+ consecutive scan failures.
 
@@ -119,15 +123,21 @@ The scanner sorts `jobSites.json` by priority descending at startup of each scan
 - [Setup Guide](docs/SETUP_GUIDE.md) — architecture and concepts
 - [Infrastructure](docs/INFRASTRUCTURE.md) — IaC, CI/CD, monitoring
 
-## Monitoring
+## CLI Tools
 
 ```bash
-jora-api-stats             # API calls today
-jora-api-stats --yesterday # yesterday
-jora-api-stats --watch     # real-time stream
+jora-api-stats              # API calls today
+jora-api-stats --yesterday  # yesterday
+jora-api-stats --watch      # real-time stream
+
+jora-vacancies              # vacancies found by Docker scanner in last 24h
+jora-vacancies --hours 48   # last 48 hours
+jora-vacancies --all        # all time
 ```
 
-Shows LLM calls vs tool calls per message, peak RPM, rate limit errors, and model distribution.
+`jora-api-stats` shows LLM calls vs tool calls per message, peak RPM, rate limit errors, and model distribution.
+
+`jora-vacancies` queries MongoDB (`jobnotifications.viewedJobTitles`) — the store populated by the Docker scanner.
 
 ## Cost
 

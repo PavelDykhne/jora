@@ -21,9 +21,9 @@ Finds, validates, and enriches new sources of job vacancies. Sources can be:
 
 ## Inputs Required
 
-- `~/openclaw/workspace/jobs/keywords.json` — target keywords
-- `~/openclaw/workspace/jobs/sources.json` — existing sources (if any)
-- `~/openclaw/workspace/jobs/blacklist.json` — blacklisted sources
+- `/home/oc/.openclaw/workspace/jobs/keywords.json` — target keywords
+- `/home/oc/jora/scanner/config/sources.json` — existing sources (single source of truth)
+- `/home/oc/jora/scanner/config/blacklist.json` — blacklisted sources
 
 ## Source Types and Discovery Methods
 
@@ -31,7 +31,7 @@ Finds, validates, and enriches new sources of job vacancies. Sources can be:
 
 #### Tier 1: Direct Career Pages (highest quality)
 Search for career pages of target companies. Use the company longlist from:
-`~/openclaw/workspace/jobs/company_targets.json` or ask user.
+`/home/oc/.openclaw/workspace/jobs/company_targets.json` or ask user.
 
 Pattern: `{company_name} careers page QA`
 
@@ -133,7 +133,7 @@ For each discovered source, collect:
 Before recommending a source:
 
 1. **Not blacklisted**: Check against `blacklist.json`
-2. **Not duplicate**: Check URL/channel against existing `sources.json`
+2. **Not duplicate**: Check URL/channel against `/home/oc/jora/scanner/config/sources.json`
 3. **Accessible**: Can be fetched (web) or is public (TG)
 4. **Relevant**: At least some content matches target keywords
 5. **Active**: Has recent posts/listings (< 30 days for aggregators)
@@ -162,21 +162,11 @@ Before recommending a source:
 
 ### To File System
 
-After user approval, update:
+After user approval, update all three files using absolute paths (never use `~`):
 
-1. **`~/openclaw/workspace/jobs/sources.json`** — full source list with metadata
-2. **`scanner-config/jobSites.json`** — web sources in job-scanner-tg format:
-```json
-[
-  {
-    "name": "Revolut Careers",
-    "url": "https://revolut.com/careers/?query=quality",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": false
-  }
-]
-```
-3. **`scanner-config/tg_sources.json`** — Telegram sources (for future TG userbot integration; in POC these are monitored manually or via enrichment-svc)
+1. **`/home/oc/jora/scanner/config/sources.json`** — single source of truth, append new entry with full schema (id, type, name, url, status, added_date, priority, config, enrichment, stats)
+2. **`/home/oc/jora/scanner/config/jobSites.json`** — regenerate: web sources only, status=active, sorted by priority desc, exclude `stats` field
+3. **`/home/oc/jora/scanner/config/tg_sources.json`** — regenerate: telegram sources only, status=active, sorted by priority desc, exclude `stats` field
 
 ## CSS Selector Discovery
 

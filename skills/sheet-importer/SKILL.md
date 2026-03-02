@@ -30,7 +30,7 @@ Total LLM API calls: 3–5 regardless of company count (up to 1000).
 
 All import jobs are stored at:
 ```
-~/.openclaw/workspace/jobs/import_queue.json
+/home/oc/.openclaw/workspace/jobs/import_queue.json
 ```
 
 Schema:
@@ -46,7 +46,7 @@ Schema:
     "sheet_range": "Sheet1!A:Z",
     "total_companies": 42,
     "processed": 42,
-    "results_file": "~/.openclaw/workspace/jobs/imports/import_20260301_143000/results.json"
+    "results_file": "/home/oc/.openclaw/workspace/jobs/imports/import_20260301_143000/results.json"
   }
 ]
 ```
@@ -56,7 +56,7 @@ Statuses: `queued` → `fetching` → `pending_approval` → `done` / `cancelled
 ### Queue helpers (run these as needed)
 
 ```bash
-QUEUE=~/.openclaw/workspace/jobs/import_queue.json
+QUEUE=/home/oc/.openclaw/workspace/jobs/import_queue.json
 
 # Read queue
 cat "$QUEUE" 2>/dev/null || echo "[]"
@@ -80,11 +80,11 @@ open('$QUEUE','w').write(json.dumps(q, ensure_ascii=False, indent=2))
 **Do this first, before reading the sheet.** This ensures state is saved even if something fails.
 
 ```bash
-QUEUE=~/.openclaw/workspace/jobs/import_queue.json
+QUEUE=/home/oc/.openclaw/workspace/jobs/import_queue.json
 JOB_ID="import_$(date +%Y%m%d_%H%M%S)"
-IMPORTS_DIR=~/.openclaw/workspace/jobs/imports/$JOB_ID
+IMPORTS_DIR=/home/oc/.openclaw/workspace/jobs/imports/$JOB_ID
 mkdir -p "$IMPORTS_DIR"
-mkdir -p ~/.openclaw/workspace/jobs
+mkdir -p /home/oc/.openclaw/workspace/jobs
 
 # Create or update queue file
 python3 -c "
@@ -321,7 +321,7 @@ python3 /tmp/jora_batch_fetch.py '<JSON>' > "$IMPORTS_DIR/results.json"
 # Update queue: fetching → pending_approval
 python3 -c "
 import json, os, datetime
-path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+path = os.path.expanduser('/home/oc/.openclaw/workspace/jobs/import_queue.json')
 q = json.loads(open(path).read())
 for j in q:
     if j['id'] == '$JOB_ID':
@@ -381,7 +381,7 @@ print(json.dumps(merged, ensure_ascii=False, indent=2))
 " '<NEW_ENTRIES_JSON>' > /home/oc/jora/scanner/config/jobSites.json
 ```
 
-Also update `~/openclaw/workspace/jobs/sources.json` with full metadata.
+Also update `/home/oc/.openclaw/workspace/jobs/sources.json` with full metadata.
 
 ---
 
@@ -428,7 +428,7 @@ cd /home/oc/jora/infrastructure && docker compose restart job-scanner
 ```bash
 python3 -c "
 import json, os, datetime
-path = os.path.expanduser('~/.openclaw/workspace/jobs/import_queue.json')
+path = os.path.expanduser('/home/oc/.openclaw/workspace/jobs/import_queue.json')
 q = json.loads(open(path).read())
 for j in q:
     if j['id'] == '$JOB_ID':

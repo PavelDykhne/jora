@@ -140,7 +140,7 @@ For each component, produce systematic combinations:
 
 After user approval, write the `flat_list_for_scanner` to `config/default.json` → `JOB_KEYWORDS` array for job-scanner-tg-notification.
 
-Also save the full categorized output to `~/openclaw/workspace/jobs/keywords.json` for reference.
+Also save the full categorized output to `/home/oc/.openclaw/workspace/jobs/keywords.json` for reference.
 
 ## Interaction Flow
 
@@ -178,7 +178,7 @@ Agent:
 
 | File | Path | Purpose |
 |------|------|---------|
-| Full keyword data | `~/openclaw/workspace/jobs/keywords.json` | Reference with categories |
+| Full keyword data | `/home/oc/.openclaw/workspace/jobs/keywords.json` | Reference with categories |
 | Scanner config | `config/default.json` → `JOB_KEYWORDS` | For job-scanner-tg-notification |
 
 ## Notes

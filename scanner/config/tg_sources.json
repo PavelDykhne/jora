@@ -1,57 +1,230 @@
 [
   {
-    "id": "tg_remote_qa",
-    "type": "telegram_public",
-    "name": "Remote QA Jobs",
-    "channel": "@remote_qa_jobs",
-    "url": "https://t.me/remote_qa_jobs",
-    "status": "pending",
-    "notes": "Needs manual validation — check if channel exists and has relevant posts",
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_validation"
+    "id": "tg_rfoundersjobs",
+    "type": "telegram",
+    "name": "R Founders Jobs (Telegram)",
+    "url": "https://t.me/rfoundersjobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 10,
+    "config": {
+      "channel_id": "@rfoundersjobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 5,
+      "language": "ru,en",
+      "notes": "Global teams + recommendations for Middle+/Senior/Lead/Head/C-level - HIGH PRIORITY"
+    }
   },
   {
-    "id": "tg_qa_vacancies_ru",
-    "type": "telegram_public",
-    "name": "QA Вакансии",
-    "channel": "@qa_vacancies",
-    "url": "https://t.me/qa_vacancies",
-    "status": "pending",
-    "notes": "Russian-language QA vacancies",
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_validation"
+    "id": "tg_hiring_by_lukina",
+    "type": "telegram",
+    "name": "Hiring by Lukina (Telegram)",
+    "url": "https://t.me/hiring_by_lukina",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 8,
+    "config": {
+      "channel_id": "@hiring_by_lukina",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "ru,en",
+      "notes": "Vacancies worldwide - high relevance for senior roles"
+    }
   },
   {
-    "id": "tg_devjobs",
-    "type": "telegram_public",
-    "name": "Dev & QA Jobs",
-    "channel": "@devjobs",
-    "url": "https://t.me/devjobs",
-    "status": "pending",
-    "notes": "General dev jobs, may include QA leadership",
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_validation"
+    "id": "tg_zarubezhom_jobs",
+    "type": "telegram",
+    "name": "Zarubezhom Jobs (Telegram)",
+    "url": "https://t.me/zarubezhom_jobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 8,
+    "config": {
+      "channel_id": "@zarubezhom_jobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "ru",
+      "notes": "300+ foreign companies with Russian-speaking founders/teams"
+    }
   },
   {
-    "id": "tg_djinni_jobs",
-    "type": "telegram_public",
-    "name": "Djinni Jobs",
-    "channel": "@djinnijobs",
-    "url": "https://t.me/djinnijobs",
-    "status": "pending",
-    "notes": "Djinni.co job feed",
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_validation"
+    "id": "tg_peersglobaljobs",
+    "type": "telegram",
+    "name": "Peers Global Jobs (Telegram)",
+    "url": "https://t.me/peersglobaljobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 8,
+    "config": {
+      "channel_id": "@peersglobaljobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 4,
+      "language": "en",
+      "notes": "Worldwide opportunities - corporations + startups"
+    }
   },
   {
-    "id": "tg_workintech",
-    "type": "telegram_public",
-    "name": "Work in Tech",
-    "channel": "@workintech",
-    "url": "https://t.me/workintech",
-    "status": "pending",
-    "notes": "Tech jobs, international",
-    "lastHealthCheck": "2026-03-01T18:00:00Z",
-    "healthStatus": "pending_validation"
+    "id": "tg_young_relocate",
+    "type": "telegram",
+    "name": "Young Relocate (Telegram)",
+    "url": "https://t.me/young_relocate",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "channel_id": "@young_relocate",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Young professionals relocation opportunities"
+    }
+  },
+  {
+    "id": "tg_evotym_careers",
+    "type": "telegram",
+    "name": "Evotym Careers (Telegram)",
+    "url": "https://t.me/evotym_careers",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "channel_id": "@evotym_careers",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Evotym career opportunities"
+    }
+  },
+  {
+    "id": "tg_linked_jobs",
+    "type": "telegram",
+    "name": "Linked Jobs (Telegram)",
+    "url": "https://t.me/linked_jobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 6,
+    "config": {
+      "channel_id": "@linked_jobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "en",
+      "notes": "LinkedIn-sourced job opportunities"
+    }
+  },
+  {
+    "id": "tg_qa_jobs",
+    "type": "telegram",
+    "name": "QA Jobs (Telegram)",
+    "url": "https://t.me/qa_jobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "channel_id": "@qa_jobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "en",
+      "notes": "Mix of senior and mid-level roles, global coverage"
+    }
+  },
+  {
+    "id": "tg_remotegeekjob",
+    "type": "telegram",
+    "name": "Remote GeekJob (Telegram)",
+    "url": "https://t.me/remotegeekjob",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "channel_id": "@remotegeekjob",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Remote vacancies for IT and digital specialists"
+    }
+  },
+  {
+    "id": "tg_relocats",
+    "type": "telegram",
+    "name": "Relocats (Telegram)",
+    "url": "https://t.me/Relocats",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "channel_id": "@Relocats",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Vacancies from IT companies with relocation abroad"
+    }
+  },
+  {
+    "id": "tg_remoteit",
+    "type": "telegram",
+    "name": "RemoteIT (Telegram)",
+    "url": "https://t.me/Remoteit",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 5,
+    "config": {
+      "channel_id": "@Remoteit",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Remote vacancies and projects for IT specialists"
+    }
+  },
+  {
+    "id": "tg_evacuatejobs",
+    "type": "telegram",
+    "name": "Evacuate Jobs (Telegram)",
+    "url": "https://t.me/evacuatejobs",
+    "status": "active",
+    "added_date": "2026-03-02",
+    "priority": 4,
+    "config": {
+      "channel_id": "@evacuatejobs",
+      "scan_last_n_posts": 100
+    },
+    "enrichment": {
+      "source_type": "aggregator",
+      "estimated_relevance": 3,
+      "language": "ru,en",
+      "notes": "Relocation, remote work, jobs and vacancies"
+    }
   }
 ]

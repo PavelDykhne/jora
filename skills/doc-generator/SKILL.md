@@ -18,8 +18,8 @@ For a selected vacancy, produce the full application package:
 
 ## Inputs
 
-- `~/openclaw/workspace/jobs/master_resume.json` — structured master resume
-- `~/openclaw/workspace/jobs/candidate_profile.json` — candidate preferences and angles
+- `/home/oc/.openclaw/workspace/jobs/master_resume.json` — structured master resume
+- `/home/oc/.openclaw/workspace/jobs/candidate_profile.json` — candidate preferences and angles
 - Vacancy data from MongoDB (via enrichment-svc) or from notification context
 
 ## Triggers
@@ -218,7 +218,7 @@ Generate personalized LinkedIn messages for each referral and recruiter:
 ## File Structure
 
 ```
-~/openclaw/workspace/jobs/applications/
+/home/oc/.openclaw/workspace/jobs/applications/
 └── {vacancy_id}/
     ├── dossier.md
     ├── resume.pdf

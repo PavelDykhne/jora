@@ -31,7 +31,7 @@ print(json.dumps(cfg['JOB_KEYWORDS']))
 
 ### Scan progress — always check before starting:
 ```bash
-ls ~/openclaw/workspace/jobs/scan_*.json 2>/dev/null
+ls /home/oc/.openclaw/workspace/jobs/scan_*.json 2>/dev/null
 ```
 
 Read all scan files, merge into one dict keyed by row number to know which rows are done.
@@ -42,7 +42,7 @@ Read all scan files, merge into one dict keyed by row number to know which rows 
 ```bash
 python3 -c "
 import json, glob, os
-files = sorted(glob.glob(os.path.expanduser('~/openclaw/workspace/jobs/scan_*.json')))
+files = sorted(glob.glob(os.path.expanduser('/home/oc/.openclaw/workspace/jobs/scan_*.json')))
 if files:
     d = json.load(open(files[-1]))
     # sheet_id is stored in scan file metadata if present
@@ -61,7 +61,7 @@ if files:
 ```bash
 python3 -c "
 import json, glob, os
-files = glob.glob(os.path.expanduser('~/openclaw/workspace/jobs/scan_*.json'))
+files = glob.glob(os.path.expanduser('/home/oc/.openclaw/workspace/jobs/scan_*.json'))
 all_rows = []
 for f in files:
     all_rows.extend(json.load(open(f)))
@@ -204,7 +204,7 @@ After the script runs, save results to a progress file:
 
 ```bash
 # File naming: scan_ROW_START_ROW_END.json
-OUTFILE=~/openclaw/workspace/jobs/scan_${START_ROW}_${END_ROW}.json
+OUTFILE=/home/oc/.openclaw/workspace/jobs/scan_${START_ROW}_${END_ROW}.json
 # Merge with existing file for same range if it exists, otherwise create new
 python3 -c "
 import json, os, sys
@@ -270,7 +270,7 @@ After processing all N companies:
 
 ## State after completion
 
-- Progress file updated: `~/openclaw/workspace/jobs/scan_{start}_{end}.json`
+- Progress file updated: `/home/oc/.openclaw/workspace/jobs/scan_{start}_{end}.json`
 - Google Sheet updated with ✅ markers
 - Ready to resume from `next_row` on the next request
 
