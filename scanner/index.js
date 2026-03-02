@@ -61,7 +61,7 @@ const parseJobSites = async (config, jobSites, sources, telegramBot) => {
 
       for (const raw of jobTitles) {
         const jobTitle = raw.toLowerCase().trim();
-        const isMatch = config.JOB_KEYWORDS.some(kw => jobTitle.includes(kw));
+        const isMatch = config.JOB_KEYWORDS.some(kw => jobTitle.includes(kw.toLowerCase()));
         if (!isMatch) continue;
 
         // Deep scan: skip only if seen within last 180 days.
