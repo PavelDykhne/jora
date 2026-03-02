@@ -1,26 +1,46 @@
 ---
 name: sheet-scanner
 description: >
-  Scan companies from a Google Sheet for relevant job vacancies.
-  Reads keywords automatically from scanner config — never asks the user for them.
-  Tracks progress in local JSON files and resumes from where it left off.
+  Sync companies from a Google Sheet with sources.json, then report vacancy matches from MongoDB.
+  For each company: checks sources.json by URL, adds new source if missing, queries MongoDB for matches.
   Triggers on: "обработай N компаний", "обработай строки X-Y", "продолжи сканирование",
   "продолжи там где остановился", "continue scanning", "проверь компании из таблицы",
-  "обработай следующие N компаний", "найди вакансии в таблице".
+  "обработай следующие N компаний", "найди вакансии в таблице", "обработай таблицу",
+  "добавь компании в сканер".
+metadata:
+  openclaw:
+    requires:
+      bins: ["jora-gapi", "jora-vacancies"]
+      env: []
 ---
 
 # Sheet Scanner Skill
 
 ## Purpose
 
-Scan companies from a Google Sheet for job vacancies matching the user's target keywords.
-Saves progress after every batch so work survives restarts.
+Sync companies from a Google Sheet into the Docker scanner source database, then report any vacancy matches already found by the scanner.
+
+**Flow for each company row:**
+1. Read career URL from Google Sheet
+2. Check if URL exists in `sources.json`
+3. If missing → add new source with default settings
+4. After all companies: query MongoDB for matches from those source URLs
+5. Update sheet with results; report to user
 
 ---
 
-## CRITICAL: Always Read These Automatically (Never Ask the User)
+## STRICT RULES — NO EXCEPTIONS
 
-### Keywords — always load from:
+1. **Do NOT scrape company career pages directly** — the Docker scanner does this
+2. **Do NOT create temporary scanner scripts** (no jora_scanner.py, no urllib fetching)
+3. **Do NOT invent vacancy data** — all matches come from MongoDB via `jora-vacancies`
+4. **Always regenerate jobSites.json** after adding new sources so the Docker scanner picks them up
+5. **jobTitleSelector is required** — use `""` (empty string) for new sources; note to user that scanner needs a selector to extract job titles
+
+---
+
+## Step 0: Load Keywords (Never Ask the User)
+
 ```bash
 python3 -c "
 import json
@@ -29,188 +49,155 @@ print(json.dumps(cfg['JOB_KEYWORDS']))
 "
 ```
 
-### Scan progress — always check before starting:
+---
+
+## Step 1: Read Google Sheet
+
+**Sheet ID** — take from:
+1. User's current message (URL or bare ID)
+2. Fallback from MEMORY.md: `1AD8oUSjcbSsOaXGeckPKB7XqrDPudagbpgEoNORS2T4`
+
 ```bash
-ls /home/oc/.openclaw/workspace/jobs/scan_*.json 2>/dev/null
+/home/oc/.local/bin/jora-gapi sheets read <SHEET_ID> "Sheet1!A:Z"
 ```
 
-Read all scan files, merge into one dict keyed by row number to know which rows are done.
+Parse response:
+- Row 1 = header (detect column indices by name)
+- Look for: "Company" / "Компания" → company name column
+- Look for: "URL" / "Career" / "Site" / "Сайт" → career URL column
+- Look for: "Added" / "Added to sources" / "Добавлен" → mark when newly added to sources.json
+- Look for: "Scanned" / "Просканировано" → mark when Docker scanner has visited
+- Look for: "Vacancies" / "Вакансии" → matched job titles
 
-### Google Sheet ID — take from:
-1. User's current message (if they provided a URL)
-2. Or the most recently used sheet ID found in scan files:
-```bash
-python3 -c "
-import json, glob, os
-files = sorted(glob.glob(os.path.expanduser('/home/oc/.openclaw/workspace/jobs/scan_*.json')))
-if files:
-    d = json.load(open(files[-1]))
-    # sheet_id is stored in scan file metadata if present
-    print(d[0].get('sheet_id', '') if d else '')
-"
-```
+If user specifies rows (e.g. "обработай строки 52-71") — use those rows only.
+Otherwise: process next N unprocessed rows (default batch = 20), determined by resume logic below.
 
 ---
 
-## Step 1: Determine Starting Row
-
-1. Load all scan files and find the **highest row marked `scanned: true`**
-2. Next row to process = highest_scanned_row + 1
-3. If user specified "начни с строки N" or "обработай строки X–Y" — use that
+## Step 2: Determine Resume Position
 
 ```bash
 python3 -c "
-import json, glob, os
-files = glob.glob(os.path.expanduser('/home/oc/.openclaw/workspace/jobs/scan_*.json'))
+import json, glob
+files = glob.glob('/home/oc/.openclaw/workspace/jobs/scan_*.json')
 all_rows = []
 for f in files:
     all_rows.extend(json.load(open(f)))
 scanned = [r['row'] for r in all_rows if r.get('scanned')]
-print('Last scanned row:', max(scanned) if scanned else 0)
-print('Total scanned:', len(scanned))
+print('Next row:', max(scanned)+1 if scanned else 2)
+"
+```
+
+Start from next unprocessed row unless user specified explicit range.
+
+---
+
+## Step 3: Check Each Company in sources.json
+
+Load the full source database:
+
+```bash
+python3 -c "
+import json
+sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
+lookup = {}
+for s in sources:
+    url = s.get('url', '').rstrip('/').lower()
+    if url:
+        lookup[url] = s['name']
+print(json.dumps(lookup))
+"
+```
+
+For each company from the sheet:
+- Normalize career URL: `url.rstrip('/').lower()`
+- Check if normalized URL is in the lookup dict
+- **Found** → record as "existing source", proceed to results query
+- **Not found** → add new source (Step 3a)
+
+### Step 3a: Add New Source
+
+Construct the source object:
+
+```json
+{
+  "name": "<Company Name from sheet>",
+  "url": "<career URL from sheet>",
+  "type": "web",
+  "jobTitleSelector": "",
+  "antiBotCheck": false,
+  "status": "active",
+  "priority": 5,
+  "addedAt": "<current ISO timestamp>",
+  "stats": {
+    "total_found": 0,
+    "last_scan": null,
+    "consecutive_failures": 0
+  }
+}
+```
+
+Append to sources.json:
+
+```bash
+python3 -c "
+import json, sys
+from datetime import datetime, timezone
+sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
+new = json.loads(sys.argv[1])
+new['addedAt'] = datetime.now(timezone.utc).isoformat()
+sources.append(new)
+with open('/home/oc/jora/scanner/config/sources.json', 'w') as f:
+    json.dump(sources, f, ensure_ascii=False, indent=2)
+print('Added:', new['name'])
+" '<NEW_SOURCE_JSON>'
+```
+
+---
+
+## Step 4: Regenerate jobSites.json (if any new sources were added)
+
+```bash
+python3 -c "
+import json
+sources = json.load(open('/home/oc/jora/scanner/config/sources.json'))
+EXCLUDE_FIELDS = {'stats', 'addedAt', 'greyListedAt', 'blacklistedAt', 'blacklistReason'}
+web = [s for s in sources if s.get('type') == 'web' and s.get('status') == 'active']
+web.sort(key=lambda s: s.get('priority', 5), reverse=True)
+job_sites = [{k: v for k, v in s.items() if k not in EXCLUDE_FIELDS} for s in web]
+with open('/home/oc/jora/scanner/config/jobSites.json', 'w') as f:
+    json.dump(job_sites, f, ensure_ascii=False, indent=2)
+print(f'jobSites.json updated: {len(job_sites)} active web sources')
 "
 ```
 
 ---
 
-## Step 2: Read Companies from Sheet
+## Step 5: Query MongoDB for Vacancy Matches
+
+Get all recent matches (last 72h) from the Docker scanner:
 
 ```bash
-DATA=$(/home/oc/.local/bin/jora-gapi sheets read <SHEET_ID> "Sheet1!A:Z")
+jora-vacancies --hours 72
 ```
 
-Parse to get: row number, company name, URL.
-Detect columns automatically (look for "company"/"компания" and "url"/"site"/"сайт" headers).
+Then match results against processed companies by comparing the `site` field to career URLs
+(normalize both sides: `rstrip('/').lower()`; match if one contains the other).
 
-Select the next N rows starting from the determined start row.
+If `jora-vacancies` returns `[]` — Docker scanner has no matches yet for these sources.
+Do NOT fabricate results. Report "no matches found yet" and move on.
 
 ---
 
-## Step 3: Batch-Scan Career Pages (1 bash call)
-
-Write and execute a Python script that processes all N companies at once:
-
-```python
-#!/usr/bin/env python3
-"""
-Batch career page scanner.
-Fetches each company URL and checks for keyword matches.
-"""
-import json, sys, time, re, urllib.request, urllib.error
-
-def fetch(url, timeout=10):
-    try:
-        req = urllib.request.Request(url, headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; JobBot/1.0)'
-        })
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, r.read(65536).decode('utf-8', errors='ignore'), r.url
-    except urllib.error.HTTPError as e:
-        return e.code, '', url
-    except Exception:
-        return 0, '', url
-
-def find_career_url(base_url):
-    """Try base URL and common career page paths."""
-    CAREER_PATHS = [
-        '', '/careers', '/jobs', '/en/jobs', '/en/careers',
-        '/about/jobs', '/work-with-us', '/join-us', '/vacancy',
-        '/vacancies', '/hiring', '/team/jobs', '/company/careers',
-    ]
-    if not base_url.startswith('http'):
-        base_url = 'https://' + base_url
-    base = base_url.rstrip('/')
-    for path in CAREER_PATHS:
-        status, html, final_url = fetch(base + path)
-        if status == 200:
-            return final_url, html
-    return base_url, ''
-
-def check_keywords(html, keywords):
-    """Return list of keywords found in page HTML."""
-    html_lower = html.lower()
-    found = []
-    for kw in keywords:
-        if kw.lower() in html_lower:
-            found.append(kw)
-    return found
-
-def extract_job_titles(html, keywords):
-    """Extract job listing titles that match keywords."""
-    found_jobs = []
-    # Look for job title patterns in HTML
-    patterns = [
-        r'<(?:a|h[1-4]|span|div|li)[^>]*>([^<]{5,120})</(?:a|h[1-4]|span|div|li)>',
-    ]
-    for pattern in patterns:
-        matches = re.findall(pattern, html, re.IGNORECASE)
-        for title in matches:
-            title = title.strip()
-            if any(kw.lower() in title.lower() for kw in keywords):
-                if title not in found_jobs and len(title) < 120:
-                    found_jobs.append(title)
-    return found_jobs[:10]  # max 10 per company
-
-
-data = json.loads(sys.argv[1])
-companies = data['companies']
-keywords = data['keywords']
-results = []
-
-for company in companies:
-    name = company.get('company', '')
-    url = company.get('url', '').strip()
-    row = company.get('row', 0)
-
-    if not url:
-        results.append({'row': row, 'company': name, 'url': url,
-                        'found_jobs': [], 'scanned': True,
-                        'error': 'no_url'})
-        continue
-
-    career_url, html = find_career_url(url)
-    matched_keywords = check_keywords(html, keywords) if html else []
-    found_jobs = extract_job_titles(html, keywords) if html else []
-
-    results.append({
-        'row': row,
-        'company': name,
-        'url': career_url,
-        'original_url': url,
-        'found_jobs': found_jobs,
-        'matched_keywords': matched_keywords,
-        'scanned': True,
-        'http_status': 200 if html else 0,
-    })
-
-    time.sleep(0.2)
-
-print(json.dumps(results, ensure_ascii=False, indent=2))
-```
-
-Run with:
-```bash
-python3 /tmp/jora_sheet_scan.py '{
-  "companies": [{"row": 52, "company": "Acme", "url": "https://acme.com"}, ...],
-  "keywords": ["Head of QA", "QA Director", ...]
-}'
-```
-
----
-
-## Step 4: Save Progress
-
-After the script runs, save results to a progress file:
+## Step 6: Save Progress
 
 ```bash
-# File naming: scan_ROW_START_ROW_END.json
-OUTFILE=/home/oc/.openclaw/workspace/jobs/scan_${START_ROW}_${END_ROW}.json
-# Merge with existing file for same range if it exists, otherwise create new
 python3 -c "
 import json, os, sys
 results = json.loads(sys.argv[1])
-outfile = os.path.expanduser('$OUTFILE')
-# Load existing if file exists, merge by row number
+start_row = results[0]['row']
+end_row = results[-1]['row']
+outfile = f'/home/oc/.openclaw/workspace/jobs/scan_{start_row}_{end_row}.json'
 existing = {}
 if os.path.exists(outfile):
     for r in json.load(open(outfile)):
@@ -218,69 +205,74 @@ if os.path.exists(outfile):
 for r in results:
     existing[r['row']] = r
 merged = sorted(existing.values(), key=lambda x: x['row'])
-open(outfile, 'w').write(json.dumps(merged, ensure_ascii=False, indent=2))
-print(f'Saved {len(results)} results to $OUTFILE')
+with open(outfile, 'w') as f:
+    json.dump(merged, f, ensure_ascii=False, indent=2)
+print(f'Saved to {outfile}')
 " '<RESULTS_JSON>'
 ```
 
+Each result object:
+```json
+{
+  "row": 52,
+  "company": "Revolut",
+  "url": "https://careers.revolut.com",
+  "source_status": "added",
+  "vacancies_found": ["Head of QA"],
+  "scanned": true
+}
+```
+
+`source_status` is either `"added"` (newly registered) or `"existing"` (was already in sources.json).
+
 ---
 
-## Step 5: Update Google Sheet
+## Step 7: Update Google Sheet
 
-Mark each processed company in the sheet. Use column mapping:
-- If there's a "Scanned" / "Статус" column → write ✅ or "Scanned"
-- If there's a "Vacancies" / "Вакансии" column → write found job titles (comma-separated)
-- If no status column → append ✅ to the company name cell
+Write results to corresponding columns (only if column exists in sheet):
 
 ```bash
-# Write status to the Scanned column (detect column from header row)
-/home/oc/.local/bin/jora-gapi sheets write <SHEET_ID> "Sheet1!<STATUS_COL><ROW>" '[["✅"]]'
+# "Added to sources" column — write ✅ for newly added sources
+/home/oc/.local/bin/jora-gapi sheets write <SHEET_ID> "Sheet1!<ADDED_COL><ROW>" '[["✅"]]'
 
-# If vacancies found, also write them
-/home/oc/.local/bin/jora-gapi sheets write <SHEET_ID> "Sheet1!<JOBS_COL><ROW>" '[["Head of QA — open"]]'
+# "Vacancies found" column — write matched titles (if any)
+/home/oc/.local/bin/jora-gapi sheets write <SHEET_ID> "Sheet1!<VACANCIES_COL><ROW>" '[["Head of QA"]]'
 ```
 
 ---
 
-## Step 6: Report to User
-
-After processing all N companies:
+## Step 8: Report to User
 
 ```
-🔍 Сканирование компаний — строки {start}–{end}
+🔍 Sheet Scanner — строки {start}–{end}
 
-✅ Обработано: {total} компаний
+📊 Обработано: {total} компаний
 
-🎯 Найдены совпадения ({match_count}):
-1. Revolut (строка 52)
-   → "Head of QA" — careers.revolut.com/jobs/12345
-2. Wise (строка 58)
-   → "QA Director" — wise.jobs/opening/qa-director
+📥 Добавлено в базу источников: {new_count}
+✅ Уже в базе: {existing_count}
 
-📭 Вакансий не найдено: {empty_count} компаний
-❌ Недоступны: {error_count} (сайт не ответил)
+🎯 Вакансии найдены ({match_count}):
+• Revolut — "Head of QA"
+  🔗 https://careers.revolut.com
+  🕐 2026-03-02 08:15
 
-Следующая необработанная строка: {next_row}
-→ "Следующие 20" — продолжить с строки {next_row}
-→ "Детали 1" — подробнее по Revolut
-→ "/docs [id]" — подготовить документы
+📭 Совпадений не найдено: {no_match_count} компаний
+
+ℹ️  {new_count} новых источников зарегистрировано.
+   Docker сканер проверит их в следующем цикле (каждые 30 мин).
+
+Следующая строка: {next_row}
+→ "Следующие 20" — продолжить
 ```
+
+If any new sources have empty `jobTitleSelector`, add:
+> ⚠️  Новые источники добавлены с пустым jobTitleSelector. Без него сканер посетит сайт, но не сможет извлечь заголовки вакансий. Укажи CSS-селектор в sources.json для каждого нового сайта.
 
 ---
 
-## State after completion
+## Notes
 
-- Progress file updated: `/home/oc/.openclaw/workspace/jobs/scan_{start}_{end}.json`
-- Google Sheet updated with ✅ markers
-- Ready to resume from `next_row` on the next request
-
----
-
-## Resume Logic (if OpenClaw restarted mid-scan)
-
-On any trigger phrase ("продолжи", "continue", "следующие N"):
-1. Read ALL scan files → find max scanned row
-2. Read sheet starting from max_row + 1
-3. Proceed with Step 3 — no need to re-scan already-scanned rows
-
-Never ask the user "where did you stop?" — compute it from the scan files.
+- **`jobTitleSelector`**: CSS selector the Docker scanner uses to find job title elements. Without it, the scanner visits the URL but returns no results. Must be configured manually per site (e.g. `.job-title`, `h2.position-name`).
+- **Batch size**: 20 rows by default unless user specifies
+- **Docker scanner cycle**: every 30 min — new sources appear in results on the next cycle
+- **MongoDB deduplication**: same title+site is never stored twice
