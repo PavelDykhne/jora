@@ -4,6 +4,7 @@
     "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
     "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 9
   },
@@ -12,6 +13,7 @@
     "url": "https://www.linkedin.com/jobs/search/?keywords=Head+of+QA&location=Remote&f_E=1,2,3",
     "jobTitleSelector": "h3[data-job-id]",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 9
   },
@@ -20,6 +22,7 @@
     "url": "https://revolut.com/careers/?query=quality",
     "jobTitleSelector": ".sc-jMGMwj",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 8
   },
@@ -28,6 +31,7 @@
     "url": "https://stripe.com/jobs/search?query=quality",
     "jobTitleSelector": "a.JobsListings__link",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 8
   },
@@ -36,22 +40,7 @@
     "url": "https://wise.jobs/jobs?q=quality",
     "jobTitleSelector": "a.attrax-vacancy-tile__title",
     "antiBotCheck": true,
-    "scan_method": "axios",
-    "priority": 8
-  },
-  {
-    "name": "EPAM Careers",
-    "url": "https://www.epam.com/careers/job-listings?query=head+of+qa",
-    "jobTitleSelector": ".search-result__item-name",
-    "antiBotCheck": true,
-    "scan_method": "axios",
-    "priority": 8
-  },
-  {
-    "name": "Remocate.pro",
-    "url": "https://www.remocate.pro/jobs",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 8
   },
@@ -60,6 +49,7 @@
     "url": "https://remoteok.com/remote-qa-jobs",
     "jobTitleSelector": "h2[itemprop='title']",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -68,6 +58,7 @@
     "url": "https://builtin.com/jobs?search=qa+director",
     "jobTitleSelector": "[data-id='job-title']",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -76,6 +67,7 @@
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
     "jobTitleSelector": "h5 a",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -84,6 +76,7 @@
     "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
     "jobTitleSelector": ".vacancy-card__title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -92,14 +85,7 @@
     "url": "https://www.indeed.com/jobs?q=QA+Director+OR+Head+of+QA&l=Remote&radius=50",
     "jobTitleSelector": "h2.jobTitle a",
     "antiBotCheck": true,
-    "scan_method": "axios",
-    "priority": 7
-  },
-  {
-    "name": "Wellfound (AngelList) - Startup QA Roles",
-    "url": "https://wellfound.com/jobs?query=QA%20Director%20OR%20Head%20of%20QA&role=engineering",
-    "jobTitleSelector": ".job-title",
-    "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -108,6 +94,7 @@
     "url": "https://career.habr.com/vacancies?q=Head+of+QA&kind=qa",
     "jobTitleSelector": ".vacancy-card__title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 7
   },
@@ -116,6 +103,7 @@
     "url": "https://n26.com/en/careers?q=quality",
     "jobTitleSelector": "a[href*='/careers/positions/'] > div",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -124,14 +112,16 @@
     "url": "https://bolt.eu/en/careers/positions/?search=quality",
     "jobTitleSelector": ".rt-Heading",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
   {
     "name": "Miro Careers",
     "url": "https://miro.com/careers/open-positions/?searchText=quality",
-    "jobTitleSelector": "a[href*='/careers/vacancy/'] > h3",
-    "antiBotCheck": true,
+    "jobTitleSelector": "a[href*='/careers/vacancy/'] h3",
+    "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -140,6 +130,7 @@
     "url": "https://www.acronis.com/en/careers/?search=quality",
     "jobTitleSelector": ".job-title",
     "antiBotCheck": false,
+    "jsonLd": true,
     "scan_method": "axios",
     "priority": 6
   },
@@ -148,6 +139,7 @@
     "url": "https://careers.semrush.com/?query=quality",
     "jobTitleSelector": ".vacancy-title",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -156,6 +148,7 @@
     "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
     "jobTitleSelector": "script[type=\"application/ld+json\"]",
     "antiBotCheck": false,
+    "jsonLd": true,
     "scan_method": "axios",
     "priority": 6
   },
@@ -164,6 +157,7 @@
     "url": "https://www.glassdoor.com/Job/qa-director-head-of-qa-jobs-SRCH_KO0,30.htm?radius=25&locId=&locKeyword=Remote",
     "jobTitleSelector": ".jobTitle",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -172,6 +166,7 @@
     "url": "https://builtin.com/jobs/qa?remote=true&category=qa",
     "jobTitleSelector": "h3.job-title",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -180,6 +175,7 @@
     "url": "https://career.luxoft.com/",
     "jobTitleSelector": "a.ol-carousel > div.ol-carousel__title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 6
   },
@@ -188,6 +184,7 @@
     "url": "https://playkot.com/jobs",
     "jobTitleSelector": "span.vacancy-list__position",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -196,6 +193,7 @@
     "url": "https://careers.softswiss.com/",
     "jobTitleSelector": "a.job-link h2",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -204,6 +202,7 @@
     "url": "https://jobs.lever.co/airslate",
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -212,6 +211,7 @@
     "url": "https://careers.mitgo.com/vacancies/",
     "jobTitleSelector": "td.name-postion span.name",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -220,6 +220,7 @@
     "url": "https://socialdiscoverygroup.com/vacancies",
     "jobTitleSelector": "h2.vacancy-title",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -228,6 +229,7 @@
     "url": "https://aiby.com/careers/",
     "jobTitleSelector": ".job-card h2",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -236,6 +238,7 @@
     "url": "https://easybrain.com/careers",
     "jobTitleSelector": ".jobs-list-item h3",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -244,6 +247,7 @@
     "url": "https://flo.health/careers-listing",
     "jobTitleSelector": "h3",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -252,6 +256,7 @@
     "url": "https://www.rapyd.net/company/careers-search/",
     "jobTitleSelector": ".c-position-details",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 5
   },
@@ -260,6 +265,7 @@
     "url": "https://www.jettycloud.com/vacancies",
     "jobTitleSelector": ".keEIDd a h3",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -268,6 +274,7 @@
     "url": "https://softteco.com/current-job-openings",
     "jobTitleSelector": ".job-title",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -276,6 +283,7 @@
     "url": "https://glera-games.com/jobs/",
     "jobTitleSelector": ".job-item h2",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -284,6 +292,7 @@
     "url": "https://www.inktech.org/career",
     "jobTitleSelector": ".vacancy-item h2",
     "antiBotCheck": true,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -292,6 +301,7 @@
     "url": "https://www.unlimit.com/careers/",
     "jobTitleSelector": "a[href*='jobs.lever.co']",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -300,6 +310,7 @@
     "url": "https://jobs.eu.lever.co/coinspaid",
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -308,6 +319,7 @@
     "url": "https://finom.jobs.personio.de/",
     "jobTitleSelector": "[data-jobid] a",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 4
   },
@@ -316,6 +328,7 @@
     "url": "https://qatarlivingjobs.com/company/snoonu/",
     "jobTitleSelector": "h2.jobsearch-pst-title a",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -324,6 +337,7 @@
     "url": "https://alberblanc.com/careers",
     "jobTitleSelector": "span.ab-job-title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -332,6 +346,7 @@
     "url": "https://kosmos.games/jobs/",
     "jobTitleSelector": "div.CompanyVacancies__block h3",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -340,6 +355,7 @@
     "url": "https://www.monetha.io/careers/",
     "jobTitleSelector": "h3.elementor-post__title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -348,6 +364,7 @@
     "url": "https://onde.app/careers",
     "jobTitleSelector": "h3.vacancies__title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -356,6 +373,7 @@
     "url": "https://career.solveva.com/",
     "jobTitleSelector": ".hrm-job-list-link",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -364,6 +382,7 @@
     "url": "https://amma-family.breezy.hr/",
     "jobTitleSelector": "li.position a",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -372,6 +391,7 @@
     "url": "https://ru.asodesk.com/careers",
     "jobTitleSelector": "a[href*='/careers/']",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -380,6 +400,7 @@
     "url": "https://jobs.lever.co/CollectlyInc",
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -388,6 +409,7 @@
     "url": "https://careers.firstlinesoftware.com/career/vacancies",
     "jobTitleSelector": ".vacancy-title",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   },
@@ -396,6 +418,7 @@
     "url": "https://portal.ventor.tech/jobs",
     "jobTitleSelector": "h3.text-secondary",
     "antiBotCheck": false,
+    "jsonLd": false,
     "scan_method": "axios",
     "priority": 3
   }

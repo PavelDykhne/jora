@@ -40,7 +40,7 @@ const getJobTitlesByAxios = async (site) => {
     const html = response.data;
     const $ = cheerio.load(html);
 
-    if (site.config?.jsonLd) {
+    if (site.jsonLd || site.config?.jsonLd) {
       const jobs = [];
       $('script[type="application/ld+json"]').each((_, el) => {
         try {
