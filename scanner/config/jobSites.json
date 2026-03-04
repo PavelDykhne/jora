@@ -49,9 +49,9 @@
   },
   {
     "name": "Remocate.pro",
-    "url": "https://www.remocate.pro/",
+    "url": "https://www.remocate.pro/jobs",
     "jobTitleSelector": ".job-title",
-    "antiBotCheck": false,
+    "antiBotCheck": true,
     "scan_method": "axios",
     "priority": 8
   },
@@ -59,14 +59,6 @@
     "name": "RemoteOK — QA",
     "url": "https://remoteok.com/remote-qa-jobs",
     "jobTitleSelector": "h2[itemprop='title']",
-    "antiBotCheck": false,
-    "scan_method": "axios",
-    "priority": 7
-  },
-  {
-    "name": "WeWorkRemotely — QA",
-    "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
-    "jobTitleSelector": ".title",
     "antiBotCheck": true,
     "scan_method": "axios",
     "priority": 7
@@ -75,7 +67,7 @@
     "name": "BuiltIn — QA Director",
     "url": "https://builtin.com/jobs?search=qa+director",
     "jobTitleSelector": "[data-id='job-title']",
-    "antiBotCheck": false,
+    "antiBotCheck": true,
     "scan_method": "axios",
     "priority": 7
   },
@@ -91,22 +83,6 @@
     "name": "Habr Career — Head of QA",
     "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
     "jobTitleSelector": ".vacancy-card__title",
-    "antiBotCheck": false,
-    "scan_method": "axios",
-    "priority": 7
-  },
-  {
-    "name": "Greenhouse.io Job Boards (Multi-company)",
-    "url": "https://www.greenhouse.io/jobs?query=head+of+qa",
-    "jobTitleSelector": ".opening a",
-    "antiBotCheck": false,
-    "scan_method": "axios",
-    "priority": 7
-  },
-  {
-    "name": "Lever.co Job Boards (Multi-company)",
-    "url": "https://jobs.lever.co/?query=head+of+qa",
-    "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
     "scan_method": "axios",
     "priority": 7
@@ -178,7 +154,7 @@
   {
     "name": "Djinni — QA Lead/Director",
     "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
-    "jobTitleSelector": ".profile",
+    "jobTitleSelector": "script[type=\"application/ld+json\"]",
     "antiBotCheck": false,
     "scan_method": "axios",
     "priority": 6
@@ -195,14 +171,6 @@
     "name": "BuiltIn - QA Leadership",
     "url": "https://builtin.com/jobs/qa?remote=true&category=qa",
     "jobTitleSelector": "h3.job-title",
-    "antiBotCheck": false,
-    "scan_method": "axios",
-    "priority": 6
-  },
-  {
-    "name": "We Work Remotely - QA",
-    "url": "https://weworkremotely.com/remote-jobs/search?term=QA",
-    "jobTitleSelector": ".job-title a",
     "antiBotCheck": true,
     "scan_method": "axios",
     "priority": 6
@@ -214,14 +182,6 @@
     "antiBotCheck": false,
     "scan_method": "axios",
     "priority": 6
-  },
-  {
-    "name": "RemoteOK - Remote QA/Quality",
-    "url": "https://remoteok.com/remote-qa-jobs?source_code=qa",
-    "jobTitleSelector": ".job-title h4",
-    "antiBotCheck": true,
-    "scan_method": "axios",
-    "priority": 5
   },
   {
     "name": "Playkot Jobs",
@@ -331,14 +291,6 @@
     "name": "Unlimit Careers",
     "url": "https://www.unlimit.com/careers/",
     "jobTitleSelector": "a[href*='jobs.lever.co']",
-    "antiBotCheck": false,
-    "scan_method": "axios",
-    "priority": 4
-  },
-  {
-    "name": "Appodeal Careers (BambooHR)",
-    "url": "https://appodeal.bamboohr.com/careers",
-    "jobTitleSelector": ".BambooHR-ATS-department-item-open-positions a",
     "antiBotCheck": false,
     "scan_method": "axios",
     "priority": 4

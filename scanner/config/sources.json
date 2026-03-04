@@ -332,7 +332,7 @@
     "priority": 7,
     "config": {
       "jobTitleSelector": "h2[itemprop='title']",
-      "antiBotCheck": false
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "aggregator",
@@ -353,7 +353,7 @@
     "type": "web",
     "name": "WeWorkRemotely — QA",
     "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 7,
     "config": {
@@ -385,7 +385,7 @@
     "priority": 7,
     "config": {
       "jobTitleSelector": "[data-id='job-title']",
-      "antiBotCheck": false
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "aggregator",
@@ -462,8 +462,9 @@
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
-      "jobTitleSelector": ".profile",
-      "antiBotCheck": false
+      "jobTitleSelector": "script[type=\"application/ld+json\"]",
+      "antiBotCheck": false,
+      "jsonLd": true
     },
     "enrichment": {
       "source_type": "vendor",
@@ -629,7 +630,7 @@
     "type": "web",
     "name": "Greenhouse.io Job Boards (Multi-company)",
     "url": "https://www.greenhouse.io/jobs?query=head+of+qa",
-    "status": "active",
+    "status": "inactive",
     "added_date": "2026-03-02",
     "priority": 7,
     "config": {
@@ -658,7 +659,7 @@
     "type": "web",
     "name": "Lever.co Job Boards (Multi-company)",
     "url": "https://jobs.lever.co/?query=head+of+qa",
-    "status": "active",
+    "status": "inactive",
     "added_date": "2026-03-02",
     "priority": 7,
     "config": {
@@ -782,7 +783,7 @@
     "priority": 6,
     "config": {
       "jobTitleSelector": "h3.job-title",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -836,7 +837,7 @@
     "type": "web",
     "name": "RemoteOK - Remote QA/Quality",
     "url": "https://remoteok.com/remote-qa-jobs?source_code=qa",
-    "status": "active",
+    "status": "inactive",
     "added_date": "2026-03-02",
     "priority": 5,
     "config": {
@@ -865,7 +866,7 @@
     "type": "web",
     "name": "We Work Remotely - QA",
     "url": "https://weworkremotely.com/remote-jobs/search?term=QA",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-02",
     "priority": 6,
     "config": {
@@ -1250,13 +1251,13 @@
     "id": "web_remocate_pro",
     "type": "web",
     "name": "Remocate.pro",
-    "url": "https://www.remocate.pro/",
+    "url": "https://www.remocate.pro/jobs",
     "status": "active",
     "added_date": "2026-03-02",
     "priority": 8,
     "config": {
       "jobTitleSelector": ".job-title",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -2381,7 +2382,7 @@
     "type": "web",
     "name": "Appodeal Careers (BambooHR)",
     "url": "https://appodeal.bamboohr.com/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
