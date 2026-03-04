@@ -18,6 +18,10 @@ const getJobTitlesByFakeBrowser = async (site) => {
   try {
     const page = await browser.newPage();
     await page.goto(site.url, { waitUntil: 'networkidle2', timeout: 30000 });
+    const waitSelector = site.config?.waitSelector;
+    if (waitSelector) {
+      await page.waitForSelector(waitSelector, { timeout: 10000 }).catch(() => {});
+    }
     jobTitles = await page.$$eval(selector,
       elements => elements.map(item => item.textContent?.trim()).filter(Boolean));
     await browser.close();
@@ -31,19 +35,32 @@ const getJobTitlesByFakeBrowser = async (site) => {
 
 const getJobTitlesByAxios = async (site) => {
   const selector = site.config?.jobTitleSelector || site.jobTitleSelector;
-  try{
-    const response = await axios.get(site.url, { headers: { 'User-Agent': faker.internet.userAgent() }  });
+  try {
+    const response = await axios.get(site.url, { headers: { 'User-Agent': faker.internet.userAgent() } });
     const html = response.data;
-    const $ = await cheerio.load(html);
+    const $ = cheerio.load(html);
+
+    if (site.config?.jsonLd) {
+      const jobs = [];
+      $('script[type="application/ld+json"]').each((_, el) => {
+        try {
+          const data = JSON.parse($(el).html());
+          const items = Array.isArray(data) ? data : [data];
+          for (const item of items) {
+            if (item['@type'] === 'JobPosting' && item.title) jobs.push(item.title);
+          }
+        } catch {}
+      });
+      return jobs;
+    }
 
     let jobTitles = [];
-    const jobTitlesElements = await $(selector);
+    const jobTitlesElements = $(selector);
     for (let i = 0; i < jobTitlesElements.length; i++) {
       jobTitles[i] = $(jobTitlesElements[i]).text();
     }
     return jobTitles;
-  }
-  catch (error) {
+  } catch (error) {
     console.error(`===============================Parsing ${site.name} returned ERROR:${error}===============================`);
     return [];
   }

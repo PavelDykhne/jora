@@ -17,7 +17,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -34,21 +34,22 @@
     "added_date": "2026-02-27",
     "priority": 8,
     "config": {
-      "jobTitleSelector": ".JobsListings__title",
-      "antiBotCheck": false
+      "jobTitleSelector": "a.JobsListings__link",
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "Stripe"
     },
+    "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 6
     }
   },
   {
@@ -60,47 +61,50 @@
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
-      "jobTitleSelector": ".job-title",
-      "antiBotCheck": false
+      "jobTitleSelector": "a[href*='/careers/positions/'] > div",
+      "waitSelector": "a[href*='/careers/positions/']",
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "N26"
     },
+    "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 10
     }
   },
   {
     "id": "web_wise_careers",
     "type": "web",
     "name": "Wise Careers",
-    "url": "https://wise.jobs/jobs",
+    "url": "https://wise.jobs/jobs?q=quality",
     "status": "active",
     "added_date": "2026-02-27",
     "priority": 8,
     "config": {
-      "jobTitleSelector": "a[href*='/job/']",
-      "antiBotCheck": false
+      "jobTitleSelector": "a.attrax-vacancy-tile__title",
+      "antiBotCheck": true
     },
+    "antiBotCheck": true,
     "enrichment": {
       "source_type": "vendor",
       "company": "Wise"
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 36
+      "last_listings_count": 12
     }
   },
   {
@@ -112,21 +116,23 @@
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
-      "jobTitleSelector": ".job-position-title",
-      "antiBotCheck": false
+      "jobTitleSelector": ".rt-Heading",
+      "waitSelector": ".rt-Heading",
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "Bolt"
     },
+    "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "last_listings_count": 1
     }
   },
   {
@@ -138,16 +144,18 @@
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
-      "jobTitleSelector": ".position-title",
-      "antiBotCheck": false
+      "jobTitleSelector": "a[href*='/careers/vacancy/'] > h3",
+      "waitSelector": "a[href*='/careers/vacancy/']",
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "Miro"
     },
+    "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -173,7 +181,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -191,6 +199,7 @@
     "priority": 6,
     "config": {
       "jobTitleSelector": ".job-title",
+      "jsonLd": true,
       "antiBotCheck": false
     },
     "enrichment": {
@@ -199,7 +208,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -211,21 +220,22 @@
     "id": "web_semrush_careers",
     "type": "web",
     "name": "Semrush Careers",
-    "url": "https://www.semrush.com/company/careers/?query=quality",
+    "url": "https://careers.semrush.com/?query=quality",
     "status": "active",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
       "jobTitleSelector": ".vacancy-title",
-      "antiBotCheck": false
+      "antiBotCheck": true
     },
     "enrichment": {
       "source_type": "vendor",
       "company": "Semrush"
     },
+    "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -251,7 +261,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -330,7 +340,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -356,7 +366,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -383,7 +393,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -409,12 +419,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
       "health_status": "pending_first_scan",
-      "last_listings_count": 2
+      "last_listings_count": 1
     }
   },
   {
@@ -435,7 +445,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -461,7 +471,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": "2026-03-01T18:00:00Z",
@@ -605,7 +615,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -635,7 +645,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -664,7 +674,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -722,9 +732,9 @@
       "notes": "Good complementary source to LinkedIn"
     },
     "stats": {
-      "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
-      "last_new_vacancy": null,
+      "total_vacancies_found": 5,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": "2026-03-04T10:13:05.925Z",
       "consecutive_failures": 0,
       "last_health_check": null,
       "health_status": "pending_first_scan",
@@ -753,7 +763,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -783,7 +793,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -812,7 +822,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -831,7 +841,7 @@
     "priority": 5,
     "config": {
       "jobTitleSelector": ".job-title h4",
-      "antiBotCheck": false,
+      "antiBotCheck": true,
       "needs_pagination": true
     },
     "enrichment": {
@@ -842,7 +852,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -871,7 +881,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -928,7 +938,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -941,7 +951,7 @@
     "type": "web",
     "name": "Stack Overflow - QA Leadership",
     "url": "https://stackoverflow.com/jobs?q=qa+director&l=remote",
-    "status": "active",
+    "status": "inactive",
     "added_date": "2026-03-02",
     "priority": 5,
     "config": {
@@ -957,7 +967,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -1257,7 +1267,7 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-02T13:34:06.777Z",
+      "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "last_health_check": null,
@@ -1290,6 +1300,2326 @@
       "consecutive_failures": 0,
       "last_health_check": null,
       "health_status": "pending_first_scan"
+    }
+  },
+  {
+    "id": "web_dataart_careers",
+    "type": "web",
+    "name": "DataArt Careers",
+    "url": "https://www.dataart.team/vacancies",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "React/Vite SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "DataArt",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_exness_careers",
+    "type": "web",
+    "name": "Exness Careers",
+    "url": "https://exness-careers.com/jobs/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Next.js SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Exness",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_g42_careers",
+    "type": "web",
+    "name": "G42 Careers",
+    "url": "https://careers.g42.ai/careers-home/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Cloudflare 303 redirect, blocks bots"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "G42",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_griddynamics_careers",
+    "type": "web",
+    "name": "Grid Dynamics Careers",
+    "url": "https://careers.griddynamics.com/discover-openings",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Grid Dynamics",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_indrive_careers",
+    "type": "web",
+    "name": "inDrive Careers",
+    "url": "https://indrive.com/en/career/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Cloudflare 403 Forbidden"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "inDrive",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_luxoft_careers",
+    "type": "web",
+    "name": "Luxoft Careers",
+    "url": "https://career.luxoft.com/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": "a.ol-carousel > div.ol-carousel__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Luxoft",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 3
+    }
+  },
+  {
+    "id": "web_playkot_careers",
+    "type": "web",
+    "name": "Playkot Jobs",
+    "url": "https://playkot.com/jobs",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "span.vacancy-list__position",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Playkot",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 3
+    }
+  },
+  {
+    "id": "web_playrix_careers",
+    "type": "web",
+    "name": "Playrix Jobs",
+    "url": "https://playrix.com/job/open/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "React SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Playrix",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_softswiss_careers",
+    "type": "web",
+    "name": "SOFTSWISS Careers",
+    "url": "https://careers.softswiss.com/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "a.job-link h2",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "SOFTSWISS",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_tenable_careers",
+    "type": "web",
+    "name": "Tenable Careers",
+    "url": "https://www.tenable.com/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 6,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Tenable",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_thesoul_careers",
+    "type": "web",
+    "name": "TheSoul Publishing Jobs",
+    "url": "https://www.jointhesoul.com/jobs/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Wix SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "TheSoul Publishing",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_wargaming_careers",
+    "type": "web",
+    "name": "Wargaming Careers",
+    "url": "https://wargaming.com/en/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "React SPA (legacy data-reactid); selector TBD"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Wargaming",
+      "size": "1001+"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_airslate_careers",
+    "type": "web",
+    "name": "airSlate Careers (Lever)",
+    "url": "https://jobs.lever.co/airslate",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "airSlate",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 15
+    }
+  },
+  {
+    "id": "web_anydesk_careers",
+    "type": "web",
+    "name": "AnyDesk Career",
+    "url": "https://anydesk.com/en/career",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Cloudflare challenge (cf-mitigated)"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "AnyDesk",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_brainrocket_careers",
+    "type": "web",
+    "name": "BrainRocket Careers",
+    "url": "https://www.brainrocket.com/career",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "301 redirects to /career (no s)"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "BrainRocket",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_bumble_careers",
+    "type": "web",
+    "name": "Bumble Careers (Workday)",
+    "url": "https://bumble.wd3.myworkdayjobs.com/Bumble_Careers",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "a[data-automation-id=\"jobTitle\"]",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Bumble",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T10:58:03.916Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_g5_careers",
+    "type": "web",
+    "name": "G5 Entertainment Jobs",
+    "url": "https://jobs.g5.com/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "G5 Entertainment",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_jettycloud_careers",
+    "type": "web",
+    "name": "JettyCloud Vacancies",
+    "url": "https://www.jettycloud.com/vacancies",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".keEIDd a h3",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "JettyCloud",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 29
+    }
+  },
+  {
+    "id": "web_mitgo_careers",
+    "type": "web",
+    "name": "Mitgo Group Careers",
+    "url": "https://careers.mitgo.com/vacancies/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "td.name-postion span.name",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Mitgo Group",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 13
+    }
+  },
+  {
+    "id": "web_sdg_careers",
+    "type": "web",
+    "name": "Social Discovery Group Vacancies",
+    "url": "https://socialdiscoverygroup.com/vacancies",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "h2.vacancy-title",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Social Discovery Group",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_softteco_careers",
+    "type": "web",
+    "name": "SoftTeco Job Openings",
+    "url": "https://softteco.com/current-job-openings",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".job-title",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "SoftTeco",
+      "size": "501-1000"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_aiby_careers",
+    "type": "web",
+    "name": "AIBY Careers",
+    "url": "https://aiby.com/careers/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".job-card h2",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "AIBY",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_altoros_careers",
+    "type": "web",
+    "name": "Altoros Labs Careers",
+    "url": "https://www.altoroslabs.com/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "URL may need /careers path — needs validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Altoros",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_easybrain_careers",
+    "type": "web",
+    "name": "Easybrain Careers",
+    "url": "https://easybrain.com/careers",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".jobs-list-item h3",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Easybrain",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 18
+    }
+  },
+  {
+    "id": "web_flo_health_careers",
+    "type": "web",
+    "name": "Flo Health Careers",
+    "url": "https://flo.health/careers-listing",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": "h3",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Flo Health",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 41
+    }
+  },
+  {
+    "id": "web_glera_careers",
+    "type": "web",
+    "name": "Glera Games Jobs",
+    "url": "https://glera-games.com/jobs/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".job-item h2",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Glera Games",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_inktech_careers",
+    "type": "web",
+    "name": "Inktech Career",
+    "url": "https://www.inktech.org/career",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".vacancy-item h2",
+      "antiBotCheck": true
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Inktech",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_kolesa_careers",
+    "type": "web",
+    "name": "Kolesa Group Career",
+    "url": "https://kolesa.group/career/job",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Nuxt/Vue SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Kolesa Group",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_mayflower_careers",
+    "type": "web",
+    "name": "Mayflower Vacancies",
+    "url": "https://mayflower.work/vacancies",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Next.js SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Mayflower",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_movavi_careers",
+    "type": "web",
+    "name": "Movavi Jobs",
+    "url": "https://job.movavi.ru/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "404 after redirect to job.movavi.com/ru/"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Movavi",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_nexters_careers",
+    "type": "web",
+    "name": "Nexters Jobs",
+    "url": "https://nexters.com/en/career",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "301 redirects to /career; no listings visible yet"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Nexters",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_osome_careers",
+    "type": "web",
+    "name": "Osome Careers",
+    "url": "https://careers.osome.com/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Osome",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_rapyd_careers",
+    "type": "web",
+    "name": "Rapyd Careers",
+    "url": "https://www.rapyd.net/company/careers-search/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 5,
+    "config": {
+      "jobTitleSelector": ".c-position-details",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Rapyd",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 51
+    }
+  },
+  {
+    "id": "web_snoonu_careers",
+    "type": "web",
+    "name": "Snoonu Jobs (Qatar Living)",
+    "url": "https://qatarlivingjobs.com/company/snoonu/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "h2.jobsearch-pst-title a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Snoonu",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 5
+    }
+  },
+  {
+    "id": "web_strikerz_careers",
+    "type": "web",
+    "name": "Strikerz Careers",
+    "url": "https://www.strikerz.inc/welcome#theteam",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "URL points to team page — needs correct jobs URL"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Strikerz",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_unlimint_careers",
+    "type": "web",
+    "name": "Unlimit Careers",
+    "url": "https://www.unlimit.com/careers/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": "a[href*='jobs.lever.co']",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Unlimint",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 10
+    }
+  },
+  {
+    "id": "web_wheely_careers",
+    "type": "web",
+    "name": "Wheely Careers",
+    "url": "https://wheely.com/en/careers/open-roles",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Next.js SPA; jobs on /open-roles subpage"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Wheely",
+      "size": "201-500"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_alberblanc_careers",
+    "type": "web",
+    "name": "Alber Blanc Careers",
+    "url": "https://alberblanc.com/careers",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "span.ab-job-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Alber Blanc CAPITAL",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 22
+    }
+  },
+  {
+    "id": "web_altenar_careers",
+    "type": "web",
+    "name": "Altenar Career",
+    "url": "https://altenar.com/career/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Altenar",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_appodeal_careers",
+    "type": "web",
+    "name": "Appodeal Careers (BambooHR)",
+    "url": "https://appodeal.bamboohr.com/careers",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".BambooHR-ATS-department-item-open-positions a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Appodeal",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_appquantum_careers",
+    "type": "web",
+    "name": "AppQuantum Careers",
+    "url": "https://appquantum.com/careers/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "404 Not Found"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "AppQuantum",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_coinspaid_careers",
+    "type": "web",
+    "name": "CoinsPaid Careers (Lever EU)",
+    "url": "https://jobs.eu.lever.co/coinspaid",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "CoinsPaid",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 35
+    }
+  },
+  {
+    "id": "web_conundrum_careers",
+    "type": "web",
+    "name": "Conundrum Careers",
+    "url": "https://conundrum.ai/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Conundrum",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_finom_careers",
+    "type": "web",
+    "name": "Finom Careers (Personio)",
+    "url": "https://finom.jobs.personio.de/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": "[data-jobid] a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Finom",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_homebuddy_careers",
+    "type": "web",
+    "name": "HomeBuddy Careers",
+    "url": "https://www.homebuddy.com/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "HomeBuddy",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_improvado_careers",
+    "type": "web",
+    "name": "Improvado Careers (Lever)",
+    "url": "https://jobs.lever.co/improvadoio",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false,
+      "notes": "404 — Lever slug /improvadoio and /improvado both invalid"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Improvado",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T08:52:28.749Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_infomediji_careers",
+    "type": "web",
+    "name": "Infomediji Careers",
+    "url": "https://infomediji.com/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Infomediji",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_kosmos_careers",
+    "type": "web",
+    "name": "Kosmos Games Jobs",
+    "url": "https://kosmos.games/jobs/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "div.CompanyVacancies__block h3",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Kosmos",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 7
+    }
+  },
+  {
+    "id": "web_mellow_careers",
+    "type": "web",
+    "name": "Mellow Career",
+    "url": "https://www.mellow.io/career",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Mellow",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_monetha_careers",
+    "type": "web",
+    "name": "Monetha Careers",
+    "url": "https://www.monetha.io/careers/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "h3.elementor-post__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Monetha",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 8
+    }
+  },
+  {
+    "id": "web_nordbeaver_careers",
+    "type": "web",
+    "name": "Nord Beaver Careers",
+    "url": "https://nordbeaver.com/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "403 Forbidden"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Nord Beaver",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_onde_careers",
+    "type": "web",
+    "name": "Onde Careers",
+    "url": "https://onde.app/careers",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "h3.vacancies__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Onde",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 7
+    }
+  },
+  {
+    "id": "web_onemarketdata_careers",
+    "type": "web",
+    "name": "OneMarketData Careers",
+    "url": "https://www.onetick.com/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "OneMarketData",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_ornament_careers",
+    "type": "web",
+    "name": "Ornament Health Career",
+    "url": "https://ornament.health/ru/career",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "React/Next.js SPA; selector TBD"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Ornament Health",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_alludo_careers",
+    "type": "web",
+    "name": "Alludo (Parallels) Careers",
+    "url": "https://www.alludo.com/en/careers/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Connection timeout (bot protection)"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Parallels / Alludo",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_royalark_careers",
+    "type": "web",
+    "name": "Royal Ark Vacancies",
+    "url": "https://royalarkgames.com/vacancies/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "DDoS-Guard JS challenge"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Royal Ark",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_secreate_careers",
+    "type": "web",
+    "name": "Secreate Work With Us",
+    "url": "https://en.secreate.io/work-with-us/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Secreate",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_solveva_careers",
+    "type": "web",
+    "name": "Solveva Career",
+    "url": "https://career.solveva.com/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": ".hrm-job-list-link",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Solveva",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 5
+    }
+  },
+  {
+    "id": "web_stenn_careers",
+    "type": "web",
+    "name": "Stenn Careers",
+    "url": "https://www.stenn.com/careers",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "404 Not Found at /careers"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Stenn",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_synder_careers",
+    "type": "web",
+    "name": "Synder Careers",
+    "url": "https://synder.com/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Synder",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_tabby_careers",
+    "type": "web",
+    "name": "Tabby Careers",
+    "url": "https://tabby.ai/en-AE/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Next.js SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Tabby",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_tangem_careers",
+    "type": "web",
+    "name": "Tangem Company (careers link unknown)",
+    "url": "https://tangem.com/en/company/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "403 + wrong URL (company page, not careers)"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Tangem",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_tapclap_careers",
+    "type": "web",
+    "name": "TAPCLAP Careers",
+    "url": "https://tapclap.com/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "URL is main site — find actual careers URL"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "TAPCLAP",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_velvetech_careers",
+    "type": "web",
+    "name": "Velvetech Careers",
+    "url": "https://www.velvetech.com/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Velvetech",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_volka_careers",
+    "type": "web",
+    "name": "VOLKA GAMES Careers (Lever)",
+    "url": "https://jobs.lever.co/volka",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 4,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false,
+      "notes": "404 — Lever slug /volka and /volkagames both invalid"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "VOLKA GAMES",
+      "size": "51-200"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T08:52:28.749Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_adapty_careers",
+    "type": "web",
+    "name": "Adapty Jobs",
+    "url": "https://adapty.io/jobs/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Adapty",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_algobrains_careers",
+    "type": "web",
+    "name": "AlgoBrains Careers",
+    "url": "https://algobrains.pro/about-us/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 2,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "URL is about page — find actual jobs URL"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "AlgoBrains",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_amma_careers",
+    "type": "web",
+    "name": "AMMA Careers (Breezy HR)",
+    "url": "https://amma-family.breezy.hr/",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "li.position a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "AMMA",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 2
+    }
+  },
+  {
+    "id": "web_asodesk_careers",
+    "type": "web",
+    "name": "Asodesk Careers",
+    "url": "https://ru.asodesk.com/careers",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "a[href*='/careers/']",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Asodesk",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 6
+    }
+  },
+  {
+    "id": "web_b9_careers",
+    "type": "web",
+    "name": "B9 Careers",
+    "url": "https://bnine.com/careers/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "403 Forbidden"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "B9",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_brask_careers",
+    "type": "web",
+    "name": "Brask Join Us",
+    "url": "https://brask.notion.site/Join-Brask-ai-e1f9dd23043741c2922a6546c5369602",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 2,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Notion page — not scrapeable; find direct jobs link"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Brask",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_collectly_careers",
+    "type": "web",
+    "name": "Collectly Careers (Lever)",
+    "url": "https://jobs.lever.co/CollectlyInc",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": ".posting-title h5",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Collectly",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 9
+    }
+  },
+  {
+    "id": "web_crystal_blockchain_careers",
+    "type": "web",
+    "name": "Crystal Blockchain Careers",
+    "url": "https://crystalintelligence.com/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Rebranded to Crystal Intelligence; needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Crystal Blockchain",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_firstline_careers",
+    "type": "web",
+    "name": "First Line Software Vacancies",
+    "url": "https://careers.firstlinesoftware.com/career/vacancies",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": ".vacancy-title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "First Line Software",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 5
+    }
+  },
+  {
+    "id": "web_gaviti_careers",
+    "type": "web",
+    "name": "Gaviti Careers",
+    "url": "https://gaviti.com/careers/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Gaviti",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_orderofmeta_careers",
+    "type": "web",
+    "name": "Order of Meta Jobs",
+    "url": "https://www.orderofmeta.com/jobs",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "h3.t578__title",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Order of Meta",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T10:58:03.916Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_originalgames_careers",
+    "type": "web",
+    "name": "Original Games Careers",
+    "url": "https://originalgames.io/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Tilda + DDoS-Guard; selector TBD"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Original Games",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_podcastle_careers",
+    "type": "web",
+    "name": "Podcastle Careers",
+    "url": "https://podcastle.ai/careers",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Redirects to async.com/careers — different company"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Podcastle",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_sanas_careers",
+    "type": "web",
+    "name": "Sanas Careers",
+    "url": "https://www.sanas.ai/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": true,
+      "notes": "Next.js SPA; selector TBD after puppeteer render"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Sanas",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_seamm_careers",
+    "type": "web",
+    "name": "Seamm Jobs (Wellfound)",
+    "url": "https://wellfound.com/company/seamm/jobs",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 2,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "Wellfound blocked by DataDome (403)"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Seamm",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "grey",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_ventortech_careers",
+    "type": "web",
+    "name": "VentorTech Jobs",
+    "url": "https://portal.ventor.tech/jobs",
+    "status": "active",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "h3.text-secondary",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "VentorTech",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T11:04:58.639Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 6
+    }
+  },
+  {
+    "id": "web_waxbill_careers",
+    "type": "web",
+    "name": "Waxbill Technologies Careers",
+    "url": "https://waxbilltechnologies.com/",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 2,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "URL is main site — find careers page"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Waxbill Technologies",
+      "size": "11-50"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_praktika_careers",
+    "type": "web",
+    "name": "Praktika.ai Careers (BambooHR)",
+    "url": "https://praktika.bamboohr.com/jobs/",
+    "status": "grey",
+    "added_date": "2026-03-04",
+    "priority": 3,
+    "config": {
+      "jobTitleSelector": "li.BambooHR-ATS-Jobs-Item a",
+      "antiBotCheck": false
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "Praktika.ai",
+      "size": "1-10"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": "2026-03-04T10:58:03.916Z",
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_first_scan",
+      "last_listings_count": 0
+    }
+  },
+  {
+    "id": "web_sleepdoctor_careers",
+    "type": "web",
+    "name": "SleepDoctor Careers",
+    "url": "https://sleepdoctor.fr/en/careers",
+    "status": "pending",
+    "added_date": "2026-03-04",
+    "priority": 2,
+    "config": {
+      "jobTitleSelector": null,
+      "antiBotCheck": false,
+      "notes": "needs selector validation"
+    },
+    "enrichment": {
+      "source_type": "vendor",
+      "company": "SleepDoctor",
+      "size": "1-10"
+    },
+    "stats": {
+      "total_vacancies_found": 0,
+      "last_scan": null,
+      "last_new_vacancy": null,
+      "consecutive_failures": 0,
+      "last_health_check": null,
+      "health_status": "pending_validation",
+      "last_listings_count": 0
     }
   }
 ]

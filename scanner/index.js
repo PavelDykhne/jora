@@ -116,9 +116,16 @@ const parseJobSites = async (config, jobSites, sources, telegramBot) => {
   const telegramBot = new Telegraf(baseConfig.TELEGRAM.TOKEN);
   // Polling disabled — OpenClaw handles all incoming messages
 
+  let scanIteration = 0;
+
   const runScan = async () => {
+    scanIteration++;
+    const startedAt = new Date();
     const { config, jobSites, sources } = await init();
+    console.info(`[scanner] ════ Scan #${scanIteration} started at ${startedAt.toISOString()} | ${jobSites.length} sites ════`);
     await parseJobSites(config, jobSites, sources, telegramBot);
+    const elapsed = Math.round((Date.now() - startedAt) / 1000);
+    console.info(`[scanner] ════ Scan #${scanIteration} complete in ${elapsed}s ════`);
   };
 
   await runScan();
