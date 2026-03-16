@@ -4,7 +4,7 @@
     "type": "web",
     "name": "Revolut Careers",
     "url": "https://revolut.com/careers/?query=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 8,
     "config": {
@@ -17,11 +17,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -44,12 +44,12 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 6
+      "consecutive_failures": 6,
+      "health_status": "ok",
+      "last_listings_count": 6,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -57,7 +57,7 @@
     "type": "web",
     "name": "N26 Careers",
     "url": "https://n26.com/en/careers?q=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
@@ -72,12 +72,13 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 10
+      "consecutive_failures": 521,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "excessive_failures_grey",
+      "last_listings_count": 10,
+      "note": "excessive_failures (474)"
     }
   },
   {
@@ -99,12 +100,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 12
+      "consecutive_failures": 6,
+      "health_status": "ok",
+      "last_listings_count": 12,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -112,7 +113,7 @@
     "type": "web",
     "name": "Bolt Careers",
     "url": "https://bolt.eu/en/careers/positions/?search=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
@@ -127,12 +128,13 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 1
+      "consecutive_failures": 521,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "excessive_failures_grey",
+      "last_listings_count": 0,
+      "note": "excessive_failures (474)"
     }
   },
   {
@@ -155,12 +157,12 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "health_status": "ok",
+      "last_listings_count": 12,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -181,12 +183,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 50
+      "health_status": "ok",
+      "last_listings_count": 50,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -194,7 +196,7 @@
     "type": "web",
     "name": "Acronis Careers",
     "url": "https://www.acronis.com/en/careers/?search=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
@@ -208,11 +210,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -221,7 +223,7 @@
     "type": "web",
     "name": "Semrush Careers",
     "url": "https://careers.semrush.com/?query=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 6,
     "config": {
@@ -235,12 +237,13 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 0
+      "consecutive_failures": 521,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "excessive_failures_grey",
+      "last_listings_count": 0,
+      "note": "excessive_failures (474)"
     }
   },
   {
@@ -264,7 +267,7 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -291,7 +294,7 @@
       "last_scan": "2026-03-02T13:10:31.112Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -317,7 +320,7 @@
       "last_scan": "2026-03-02T13:10:31.112Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -340,12 +343,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 50
+      "consecutive_failures": 6,
+      "health_status": "ok",
+      "last_listings_count": 50,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -369,7 +372,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -380,7 +383,7 @@
     "type": "web",
     "name": "BuiltIn — QA Director",
     "url": "https://builtin.com/jobs?search=qa+director",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 7,
     "config": {
@@ -393,11 +396,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -419,12 +422,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 1
+      "health_status": "ok",
+      "last_listings_count": 1,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -445,12 +448,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 25
+      "health_status": "ok",
+      "last_listings_count": 25,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -472,12 +475,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
-      "health_status": "pending_first_scan",
-      "last_listings_count": 1
+      "health_status": "ok",
+      "last_listings_count": 1,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -499,7 +502,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation"
     }
   },
@@ -522,7 +525,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation"
     }
   },
@@ -545,7 +548,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation"
     }
   },
@@ -568,7 +571,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation"
     }
   },
@@ -591,7 +594,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-01T18:00:00Z",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation"
     }
   },
@@ -600,7 +603,7 @@
     "type": "web",
     "name": "LinkedIn Jobs - QA",
     "url": "https://www.linkedin.com/jobs/search/?keywords=Head+of+QA&location=Remote&f_E=1,2,3",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-02",
     "priority": 9,
     "config": {
@@ -616,11 +619,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -649,7 +652,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -678,7 +681,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -708,8 +711,8 @@
       "last_scan": "2026-03-02T08:35:05.372Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -718,7 +721,7 @@
     "type": "web",
     "name": "Indeed - QA Director/Head of QA",
     "url": "https://www.indeed.com/jobs?q=QA+Director+OR+Head+of+QA&l=Remote&radius=50",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-02",
     "priority": 7,
     "config": {
@@ -734,12 +737,13 @@
     },
     "stats": {
       "total_vacancies_found": 5,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": "2026-03-04T10:13:05.925Z",
-      "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 16
+      "consecutive_failures": 521,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "excessive_failures_grey",
+      "last_listings_count": 0,
+      "note": "excessive_failures (474)"
     },
     "antiBotCheck": true
   },
@@ -748,7 +752,7 @@
     "type": "web",
     "name": "Glassdoor - QA Director/Head of QA",
     "url": "https://www.glassdoor.com/Job/qa-director-head-of-qa-jobs-SRCH_KO0,30.htm?radius=25&locId=&locKeyword=Remote",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-02",
     "priority": 6,
     "config": {
@@ -764,11 +768,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -778,7 +782,7 @@
     "type": "web",
     "name": "BuiltIn - QA Leadership",
     "url": "https://builtin.com/jobs/qa?remote=true&category=qa",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-02",
     "priority": 6,
     "config": {
@@ -794,11 +798,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -826,7 +830,7 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -856,7 +860,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -885,7 +889,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -914,8 +918,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -939,12 +943,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 25
+      "health_status": "ok",
+      "last_listings_count": 25,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -971,7 +975,7 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -1000,8 +1004,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1027,8 +1031,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1054,8 +1058,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1081,8 +1085,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1108,8 +1112,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1135,8 +1139,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1162,8 +1166,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1189,8 +1193,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1216,8 +1220,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1243,8 +1247,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1271,7 +1275,7 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -1299,8 +1303,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan"
+      "last_health_check": "2026-03-16T18:00:00Z",
+      "health_status": "ok"
     }
   },
   {
@@ -1326,7 +1330,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1354,7 +1358,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1382,7 +1386,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -1410,7 +1414,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1438,7 +1442,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -1462,12 +1466,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 3
+      "health_status": "ok",
+      "last_listings_count": 0,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1489,12 +1493,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 3
+      "health_status": "ok",
+      "last_listings_count": 3,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1520,7 +1524,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1530,7 +1534,7 @@
     "type": "web",
     "name": "SOFTSWISS Careers",
     "url": "https://careers.softswiss.com/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1544,11 +1548,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -1575,7 +1579,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1603,7 +1607,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1631,7 +1635,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1655,12 +1659,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 15
+      "health_status": "ok",
+      "last_listings_count": 13,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1686,7 +1690,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -1714,7 +1718,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1741,7 +1745,7 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -1769,7 +1773,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1793,12 +1797,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 29
+      "consecutive_failures": 6,
+      "health_status": "ok",
+      "last_listings_count": 29,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1820,12 +1824,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 13
+      "health_status": "ok",
+      "last_listings_count": 13,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1833,7 +1837,7 @@
     "type": "web",
     "name": "Social Discovery Group Vacancies",
     "url": "https://socialdiscoverygroup.com/vacancies",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1847,11 +1851,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -1860,7 +1864,7 @@
     "type": "web",
     "name": "SoftTeco Job Openings",
     "url": "https://softteco.com/current-job-openings",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -1874,11 +1878,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -1887,7 +1891,7 @@
     "type": "web",
     "name": "AIBY Careers",
     "url": "https://aiby.com/careers/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1901,11 +1905,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -1932,7 +1936,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -1956,12 +1960,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 18
+      "health_status": "ok",
+      "last_listings_count": 15,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1983,12 +1987,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 41
+      "consecutive_failures": 6,
+      "health_status": "ok",
+      "last_listings_count": 41,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -1996,7 +2000,7 @@
     "type": "web",
     "name": "Glera Games Jobs",
     "url": "https://glera-games.com/jobs/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2010,11 +2014,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -2023,7 +2027,7 @@
     "type": "web",
     "name": "Inktech Career",
     "url": "https://www.inktech.org/career",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2037,11 +2041,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -2068,7 +2072,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2096,7 +2100,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2124,7 +2128,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2152,7 +2156,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2180,7 +2184,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2204,12 +2208,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 51
+      "health_status": "ok",
+      "last_listings_count": 52,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2231,12 +2235,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 5
+      "health_status": "ok",
+      "last_listings_count": 5,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2262,7 +2266,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2286,12 +2290,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 10
+      "health_status": "ok",
+      "last_listings_count": 10,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2317,7 +2321,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2341,12 +2345,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 22
+      "health_status": "ok",
+      "last_listings_count": 20,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2372,7 +2376,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2399,7 +2403,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -2427,7 +2431,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2451,12 +2455,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 36
+      "health_status": "ok",
+      "last_listings_count": 33,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2482,7 +2486,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2492,7 +2496,7 @@
     "type": "web",
     "name": "Finom Careers (Personio)",
     "url": "https://finom.jobs.personio.de/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2506,11 +2510,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "health_status": "no_recent_vacancies",
       "last_listings_count": 0
     }
   },
@@ -2537,7 +2541,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2565,7 +2569,7 @@
       "last_scan": "2026-03-04T08:52:28.749Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2593,7 +2597,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2617,12 +2621,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 7
+      "health_status": "ok",
+      "last_listings_count": 7,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2648,7 +2652,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2672,12 +2676,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 8
+      "health_status": "ok",
+      "last_listings_count": 8,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2703,7 +2707,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2727,12 +2731,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 7
+      "health_status": "ok",
+      "last_listings_count": 7,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2758,7 +2762,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2786,7 +2790,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2814,7 +2818,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2842,7 +2846,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2870,7 +2874,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2894,12 +2898,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 5
+      "health_status": "ok",
+      "last_listings_count": 5,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -2925,7 +2929,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -2953,7 +2957,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -2981,7 +2985,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3009,7 +3013,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -3037,7 +3041,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3065,7 +3069,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3093,7 +3097,7 @@
       "last_scan": "2026-03-04T08:52:28.749Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -3121,7 +3125,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3149,7 +3153,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3173,12 +3177,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 2
+      "health_status": "ok",
+      "last_listings_count": 2,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -3200,12 +3204,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 6
+      "health_status": "ok",
+      "last_listings_count": 6,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -3231,7 +3235,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -3259,7 +3263,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3283,12 +3287,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 9
+      "health_status": "ok",
+      "last_listings_count": 5,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -3314,7 +3318,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3338,12 +3342,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 5
+      "health_status": "ok",
+      "last_listings_count": 6,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -3369,7 +3373,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3396,7 +3400,7 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -3424,7 +3428,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3452,7 +3456,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -3480,7 +3484,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3508,7 +3512,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "grey",
       "last_listings_count": 0
     }
@@ -3532,12 +3536,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-04T11:38:37.434Z",
+      "last_scan": "2026-03-16T20:08:45.963Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
-      "health_status": "pending_first_scan",
-      "last_listings_count": 6
+      "health_status": "ok",
+      "last_listings_count": 6,
+      "last_health_check": "2026-03-16T18:00:00Z"
     }
   },
   {
@@ -3563,7 +3567,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
@@ -3590,7 +3594,7 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -3618,7 +3622,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": null,
+      "last_health_check": "2026-03-15T18:00:27.736Z",
       "health_status": "pending_validation",
       "last_listings_count": 0
     }
