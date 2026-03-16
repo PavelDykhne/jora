@@ -2,13 +2,21 @@
 
 _Дата: 2026-03-16_
 
-## Фаза 0 — Активация готового (нулевые усилия)
+## ✅ Фаза 0 — Активация готового (ВЫПОЛНЕНО 2026-03-16)
 
-**42 pending источника** уже сконфигурированы, просто не активированы.
-Запустить `source-validator` в OpenClaw → включить рабочие.
+Все 42 pending источника провалидированы вручную (HTTP-запросы + анализ HTML). Коммит `c71e8b8`.
 
-- 39 корпоративных страниц (DataArt, Exness, Playrix, Wargaming, Tabby, Grid Dynamics, Nexters, Osome, Wheely, Kolesa, Tabby, BrainRocket...)
-- 3 TG канала (Remote QA Jobs, QA Вакансии, Dev & QA Jobs)
+**Результат:**
+- Web источников: **30 → 56** (+26 активировано)
+- TG каналов: **12 → 15** (+3: @remote_qa_jobs, @qa_vacancies, @devjobs)
+- Inactive (убрано): conundrum.ai (фейк), Nexters (rebrand→GDEV), AlgoBrains (DNS dead), @djinnijobs и @workintech (неверные каналы)
+- Grey: Tapclap, Waxbill, Altoros, Brask, Secreate, Gaviti, HomeBuddy, Grid Dynamics (не нанимают / не парсятся)
+
+**Из новых 26 веб-источников подтверждены листинги:**
+Wheely (40), Strikerz (36), Adapty (20), Velvetech (18), Osome (18), Mayflower/SPA, DataArt/SPA, Exness/SPA, Playrix/SPA, Wargaming/SPA и др.
+Текущих совпадений по ключевым словам Head of QA / QA Director: **0** (рынок пуст)
+
+**Замечание по валидации:** при массовой проверке источников эффективнее собирать HTML батчем через Python/requests, затем отправлять в Claude API одним запросом — вместо последовательных tool calls на каждый источник.
 
 ## Фаза 1 — Крупные агрегаторы СНГ/Европы
 
@@ -61,8 +69,8 @@ _Дата: 2026-03-16_
 ## Приоритизация
 
 ```
-Неделя 1:  Фаза 0 — активировать pending (42 источника)
-Неделя 2:  Фаза 1 — hh.ru + Remotive + Himalayas + Relocate.me
-Неделя 3:  Фаза 3 — новые TG каналы
-Неделя 4+: Фаза 2 (ревив grey) + Фаза 4 (нестандартные)
+✅ Неделя 1:  Фаза 0 — выполнено 2026-03-16 (56 web + 15 TG активно)
+   Неделя 2:  Фаза 1 — hh.ru + Remotive + Himalayas + Relocate.me
+   Неделя 3:  Фаза 3 — новые TG каналы
+   Неделя 4+: Фаза 2 (ревив grey) + Фаза 4 (нестандартные)
 ```
