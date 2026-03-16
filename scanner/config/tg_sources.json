@@ -1,74 +1,101 @@
 [
   {
+    "name": "Remote QA Jobs",
+    "url": "https://t.me/remote_qa_jobs",
+    "priority": 5
+  },
+  {
+    "name": "QA \u0412\u0430\u043a\u0430\u043d\u0441\u0438\u0438",
+    "url": "https://t.me/qa_vacancies",
+    "priority": 5
+  },
+  {
+    "name": "Dev & QA Jobs",
+    "url": "https://t.me/devjobs",
+    "priority": 4
+  },
+  {
     "name": "QA Jobs (Telegram)",
     "url": "https://t.me/qa_jobs",
-    "channel": null,
-    "priority": 5
+    "priority": 5,
+    "channel_id": "@qa_jobs",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Remote GeekJob (Telegram)",
     "url": "https://t.me/remotegeekjob",
-    "channel": null,
-    "priority": 5
+    "priority": 5,
+    "channel_id": "@remotegeekjob",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Evacuate Jobs (Telegram)",
     "url": "https://t.me/evacuatejobs",
-    "channel": null,
-    "priority": 4
+    "priority": 4,
+    "channel_id": "@evacuatejobs",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Relocats (Telegram)",
     "url": "https://t.me/Relocats",
-    "channel": null,
-    "priority": 5
+    "priority": 5,
+    "channel_id": "@Relocats",
+    "scan_last_n_posts": 100
   },
   {
     "name": "RemoteIT (Telegram)",
     "url": "https://t.me/Remoteit",
-    "channel": null,
-    "priority": 5
+    "priority": 5,
+    "channel_id": "@Remoteit",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Hiring by Lukina (Telegram)",
     "url": "https://t.me/hiring_by_lukina",
-    "channel": null,
-    "priority": 8
+    "priority": 8,
+    "channel_id": "@hiring_by_lukina",
+    "scan_last_n_posts": 100
   },
   {
     "name": "R Founders Jobs (Telegram)",
     "url": "https://t.me/rfoundersjobs",
-    "channel": null,
-    "priority": 10
+    "priority": 10,
+    "channel_id": "@rfoundersjobs",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Zarubezhom Jobs (Telegram)",
     "url": "https://t.me/zarubezhom_jobs",
-    "channel": null,
-    "priority": 8
+    "priority": 8,
+    "channel_id": "@zarubezhom_jobs",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Peers Global Jobs (Telegram)",
     "url": "https://t.me/peersglobaljobs",
-    "channel": null,
-    "priority": 8
+    "priority": 8,
+    "channel_id": "@peersglobaljobs",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Young Relocate (Telegram)",
     "url": "https://t.me/young_relocate",
-    "channel": null,
-    "priority": 6
+    "priority": 6,
+    "channel_id": "@young_relocate",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Evotym Careers (Telegram)",
     "url": "https://t.me/evotym_careers",
-    "channel": null,
-    "priority": 6
+    "priority": 6,
+    "channel_id": "@evotym_careers",
+    "scan_last_n_posts": 100
   },
   {
     "name": "Linked Jobs (Telegram)",
     "url": "https://t.me/linked_jobs",
-    "channel": null,
-    "priority": 6
+    "priority": 6,
+    "channel_id": "@linked_jobs",
+    "scan_last_n_posts": 100
   }
 ]

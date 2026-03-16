@@ -1,11 +1,20 @@
 [
   {
+    "name": "JetBrains Jobs (Greenhouse)",
+    "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
+    "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 9
+  },
+  {
     "name": "Stripe Jobs",
     "url": "https://stripe.com/jobs/search?query=quality",
     "jobTitleSelector": "a.JobsListings__link",
     "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 8
   },
   {
@@ -14,26 +23,8 @@
     "jobTitleSelector": "a.attrax-vacancy-tile__title",
     "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 8
-  },
-  {
-    "name": "Miro Careers",
-    "url": "https://miro.com/careers/open-positions/?searchText=quality",
-    "jobTitleSelector": "a[href*='/careers/vacancy/'] h3",
-    "antiBotCheck": false,
-    "jsonLd": false,
-    "scan_method": "css",
-    "priority": 6
-  },
-  {
-    "name": "JetBrains Jobs (Greenhouse)",
-    "url": "https://job-boards.eu.greenhouse.io/jetbrains?q=quality",
-    "jobTitleSelector": "a[href*='/jetbrains/jobs/']",
-    "antiBotCheck": false,
-    "jsonLd": false,
-    "scan_method": "css",
-    "priority": 9
   },
   {
     "name": "RemoteOK \u2014 QA",
@@ -41,7 +32,7 @@
     "jobTitleSelector": "h2[itemprop='title']",
     "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 7
   },
   {
@@ -50,7 +41,7 @@
     "jobTitleSelector": "h5 a",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 7
   },
   {
@@ -59,17 +50,8 @@
     "jobTitleSelector": ".vacancy-card__title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 7
-  },
-  {
-    "name": "Djinni \u2014 QA Lead/Director",
-    "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
-    "jobTitleSelector": "script[type=\"application/ld+json\"]",
-    "antiBotCheck": false,
-    "jsonLd": true,
-    "scan_method": "css",
-    "priority": 6
   },
   {
     "name": "Habr Career - QA (RU)",
@@ -77,8 +59,44 @@
     "jobTitleSelector": ".vacancy-card__title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 7
+  },
+  {
+    "name": "Miro Careers",
+    "url": "https://miro.com/careers/open-positions/?searchText=quality",
+    "jobTitleSelector": "a[href*='/careers/vacancy/'] h3",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 6
+  },
+  {
+    "name": "Djinni \u2014 QA Lead/Director",
+    "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
+    "jobTitleSelector": "script[type=\"application/ld+json\"]",
+    "antiBotCheck": false,
+    "jsonLd": true,
+    "scan_method": "axios",
+    "priority": 6
+  },
+  {
+    "name": "DataArt Careers",
+    "url": "https://www.dataart.team/vacancies",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"job-title\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 6
+  },
+  {
+    "name": "Exness Careers",
+    "url": "https://exness-careers.com/jobs/",
+    "jobTitleSelector": "h2, [class*=\"position\"], [class*=\"vacanc\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 6
   },
   {
     "name": "Luxoft Careers",
@@ -86,7 +104,25 @@
     "jobTitleSelector": "a.ol-carousel > div.ol-carousel__title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 6
+  },
+  {
+    "name": "Playrix Jobs",
+    "url": "https://playrix.com/job/open/",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"opening\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 6
+  },
+  {
+    "name": "Tenable Careers",
+    "url": "https://www.tenable.com/careers",
+    "jobTitleSelector": "h2, [class*=\"job\"], [class*=\"position\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 6
   },
   {
@@ -95,7 +131,25 @@
     "jobTitleSelector": "span.vacancy-list__position",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 5
+  },
+  {
+    "name": "TheSoul Publishing Jobs",
+    "url": "https://www.jointhesoul.com/jobs/",
+    "jobTitleSelector": "h2, [class*=\"job\"], [class*=\"position\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 5
+  },
+  {
+    "name": "Wargaming Careers",
+    "url": "https://wargaming.com/en/careers/",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"job-title\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 5
   },
   {
@@ -104,17 +158,26 @@
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 5
   },
   {
-    "name": "JettyCloud Vacancies",
-    "url": "https://www.jettycloud.com/vacancies",
-    "jobTitleSelector": ".keEIDd a h3",
+    "name": "BrainRocket Careers",
+    "url": "https://www.brainrocket.com/career",
+    "jobTitleSelector": "h2, [class*=\"position\"], [class*=\"job\"]",
     "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
-    "priority": 4
+    "scan_method": "axios",
+    "priority": 5
+  },
+  {
+    "name": "G5 Entertainment Jobs",
+    "url": "https://jobs.g5.com/remote",
+    "jobTitleSelector": "[class*=\"position\"]",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 5
   },
   {
     "name": "Mitgo Group Careers",
@@ -122,7 +185,7 @@
     "jobTitleSelector": "td.name-postion span.name",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 5
   },
   {
@@ -131,7 +194,7 @@
     "jobTitleSelector": ".jobs-list-item h3",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 5
   },
   {
@@ -140,7 +203,25 @@
     "jobTitleSelector": "h3",
     "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 5
+  },
+  {
+    "name": "Kolesa Group Career",
+    "url": "https://kolesa.group/career/job",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"title\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 5
+  },
+  {
+    "name": "Osome Careers",
+    "url": "https://careers.osome.com/jobs/",
+    "jobTitleSelector": "a[href*=\"/jobs/\"]",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 5
   },
   {
@@ -149,17 +230,35 @@
     "jobTitleSelector": ".c-position-details",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 5
   },
   {
-    "name": "Snoonu Jobs (Qatar Living)",
-    "url": "https://qatarlivingjobs.com/company/snoonu/",
-    "jobTitleSelector": "h2.jobsearch-pst-title a",
+    "name": "JettyCloud Vacancies",
+    "url": "https://www.jettycloud.com/vacancies",
+    "jobTitleSelector": ".keEIDd a h3",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 4
+  },
+  {
+    "name": "Mayflower Vacancies",
+    "url": "https://mayflower.work/vacancies",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"position\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 4
+  },
+  {
+    "name": "Strikerz Careers",
+    "url": "https://www.strikerz.inc/jobs/",
+    "jobTitleSelector": "h2, a[href*=\"/jobs/\"]",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
-    "priority": 3
+    "scan_method": "axios",
+    "priority": 4
   },
   {
     "name": "Unlimit Careers",
@@ -167,17 +266,26 @@
     "jobTitleSelector": "a[href*='jobs.lever.co']",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 4
   },
   {
-    "name": "Alber Blanc Careers",
-    "url": "https://alberblanc.com/careers",
-    "jobTitleSelector": "span.ab-job-title",
-    "antiBotCheck": false,
+    "name": "Wheely Careers",
+    "url": "https://wheely.com/en/careers/open-roles",
+    "jobTitleSelector": "[class*=\"position\"] a, h3",
+    "antiBotCheck": true,
     "jsonLd": false,
-    "scan_method": "css",
-    "priority": 3
+    "scan_method": "axios",
+    "priority": 4
+  },
+  {
+    "name": "Altenar Career",
+    "url": "https://altenar.com/career/",
+    "jobTitleSelector": "h2, [class*=\"position\"], [class*=\"job\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 4
   },
   {
     "name": "CoinsPaid Careers (Lever EU)",
@@ -185,8 +293,44 @@
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 4
+  },
+  {
+    "name": "Tabby Careers",
+    "url": "https://tabby.ai/en-AE/careers",
+    "jobTitleSelector": "h2, [class*=\"job\"], [class*=\"role\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 4
+  },
+  {
+    "name": "Snoonu Jobs (Qatar Living)",
+    "url": "https://qatarlivingjobs.com/company/snoonu/",
+    "jobTitleSelector": "h2.jobsearch-pst-title a",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Alber Blanc Careers",
+    "url": "https://alberblanc.com/careers",
+    "jobTitleSelector": "span.ab-job-title",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Infomediji Careers",
+    "url": "https://infomediji.com/careers/",
+    "jobTitleSelector": "h2, [class*=\"job\"], [class*=\"vacanc\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
   },
   {
     "name": "Kosmos Games Jobs",
@@ -194,7 +338,16 @@
     "jobTitleSelector": "div.CompanyVacancies__block h3",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Mellow Career",
+    "url": "https://www.mellow.io/career",
+    "jobTitleSelector": "a[href*=\"vacanc\"]",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -203,7 +356,7 @@
     "jobTitleSelector": "h3.elementor-post__title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -212,7 +365,25 @@
     "jobTitleSelector": "h3.vacancies__title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "OneMarketData Careers",
+    "url": "https://www.onetick.com/careers",
+    "jobTitleSelector": "h2, h3, [class*=\"job\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Ornament Health Career",
+    "url": "https://ornament.health/ru/career",
+    "jobTitleSelector": "h2, [class*=\"vacanc\"], [class*=\"job\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -221,7 +392,34 @@
     "jobTitleSelector": ".hrm-job-list-link",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Synder Careers",
+    "url": "https://synder.com/careers/",
+    "jobTitleSelector": "h2, h3, [class*=\"job\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Velvetech Careers",
+    "url": "https://www.velvetech.com/careers/",
+    "jobTitleSelector": "h3, .job-title",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Adapty Jobs",
+    "url": "https://adapty.io/careers/",
+    "jobTitleSelector": "h3",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -230,7 +428,7 @@
     "jobTitleSelector": "li.position a",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -239,7 +437,7 @@
     "jobTitleSelector": "a[href*='/careers/']",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -248,7 +446,16 @@
     "jobTitleSelector": ".posting-title h5",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Crystal Blockchain Careers",
+    "url": "https://crystalintelligence.teamtailor.com/jobs",
+    "jobTitleSelector": "[class*=\"position\"] a, h3",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -257,7 +464,25 @@
     "jobTitleSelector": ".vacancy-title",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Original Games Careers",
+    "url": "https://originalgames.io/careers",
+    "jobTitleSelector": "h2, [class*=\"position\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 3
+  },
+  {
+    "name": "Sanas Careers",
+    "url": "https://www.sanas.ai/careers",
+    "jobTitleSelector": "h2, [class*=\"job\"], [class*=\"position\"]",
+    "antiBotCheck": true,
+    "jsonLd": false,
+    "scan_method": "axios",
     "priority": 3
   },
   {
@@ -266,7 +491,16 @@
     "jobTitleSelector": "h3.text-secondary",
     "antiBotCheck": false,
     "jsonLd": false,
-    "scan_method": "css",
+    "scan_method": "axios",
     "priority": 3
+  },
+  {
+    "name": "SleepDoctor Careers",
+    "url": "https://sleepdoctor.fr/en/careers",
+    "jobTitleSelector": "h2, h3",
+    "antiBotCheck": false,
+    "jsonLd": false,
+    "scan_method": "axios",
+    "priority": 2
   }
 ]
