@@ -20,8 +20,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -30,7 +30,7 @@
     "type": "web",
     "name": "Stripe Jobs",
     "url": "https://stripe.com/jobs/search?query=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 8,
     "config": {
@@ -44,12 +44,12 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 7,
-      "health_status": "ok",
+      "consecutive_failures": 49,
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 6,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -75,7 +75,7 @@
       "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
       "consecutive_failures": 521,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "excessive_failures_grey",
       "last_listings_count": 10,
       "note": "excessive_failures (474)"
@@ -86,7 +86,7 @@
     "type": "web",
     "name": "Wise Careers",
     "url": "https://wise.jobs/jobs?q=quality",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 8,
     "config": {
@@ -100,12 +100,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 7,
-      "health_status": "ok",
+      "consecutive_failures": 49,
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 12,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -131,7 +131,7 @@
       "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
       "consecutive_failures": 521,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "excessive_failures_grey",
       "last_listings_count": 0,
       "note": "excessive_failures (474)"
@@ -157,12 +157,12 @@
     "antiBotCheck": true,
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 12,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -183,12 +183,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 50,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -213,8 +213,8 @@
       "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -240,7 +240,7 @@
       "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": null,
       "consecutive_failures": 521,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "excessive_failures_grey",
       "last_listings_count": 0,
       "note": "excessive_failures (474)"
@@ -267,8 +267,8 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -276,7 +276,7 @@
   {
     "id": "web_greenhouse_qa_director",
     "type": "web",
-    "name": "Greenhouse \u2014 QA Director",
+    "name": "Greenhouse — QA Director",
     "url": "https://boards.greenhouse.io/search?query=qa+director",
     "status": "inactive",
     "added_date": "2026-02-27",
@@ -294,7 +294,7 @@
       "last_scan": "2026-03-02T13:10:31.112Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -302,7 +302,7 @@
   {
     "id": "web_lever_head_of_qa",
     "type": "web",
-    "name": "Lever \u2014 Head of QA",
+    "name": "Lever — Head of QA",
     "url": "https://jobs.lever.co/search?query=head+of+qa",
     "status": "inactive",
     "added_date": "2026-02-27",
@@ -320,7 +320,7 @@
       "last_scan": "2026-03-02T13:10:31.112Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -328,9 +328,9 @@
   {
     "id": "web_remoteok_qa",
     "type": "web",
-    "name": "RemoteOK \u2014 QA",
+    "name": "RemoteOK — QA",
     "url": "https://remoteok.com/remote-qa-jobs",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-02-27",
     "priority": 7,
     "config": {
@@ -343,18 +343,18 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 7,
-      "health_status": "ok",
+      "consecutive_failures": 49,
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 50,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
     "id": "web_weworkremotely_qa",
     "type": "web",
-    "name": "WeWorkRemotely \u2014 QA",
+    "name": "WeWorkRemotely — QA",
     "url": "https://weworkremotely.com/remote-jobs/search?term=head+of+qa",
     "status": "grey",
     "added_date": "2026-02-27",
@@ -372,8 +372,8 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -381,7 +381,7 @@
   {
     "id": "web_builtin_qa_director",
     "type": "web",
-    "name": "BuiltIn \u2014 QA Director",
+    "name": "BuiltIn — QA Director",
     "url": "https://builtin.com/jobs?search=qa+director",
     "status": "grey",
     "added_date": "2026-02-27",
@@ -399,15 +399,15 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
   {
     "id": "web_ingamejob_qa_director",
     "type": "web",
-    "name": "InGameJob \u2014 QA Director",
+    "name": "InGameJob — QA Director",
     "url": "https://ingamejob.com/en/jobs/p/qa-director",
     "status": "active",
     "added_date": "2026-02-27",
@@ -422,18 +422,18 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 1,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
     "id": "web_habr_career",
     "type": "web",
-    "name": "Habr Career \u2014 Head of QA",
+    "name": "Habr Career — Head of QA",
     "url": "https://career.habr.com/vacancies?q=head+of+qa&type=all",
     "status": "active",
     "added_date": "2026-02-27",
@@ -448,18 +448,18 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 25,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
     "id": "web_djinni",
     "type": "web",
-    "name": "Djinni \u2014 QA Lead/Director",
+    "name": "Djinni — QA Lead/Director",
     "url": "https://djinni.co/jobs/?primary_keyword=QA&exp_level=5y",
     "status": "active",
     "added_date": "2026-02-27",
@@ -475,12 +475,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 1,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -495,21 +495,21 @@
     "config": {},
     "enrichment": {
       "source_type": "aggregator",
-      "notes": "Needs manual validation \u2014 check if channel exists and has relevant posts"
+      "notes": "Needs manual validation — check if channel exists and has relevant posts"
     },
     "stats": {
       "total_vacancies_found": 0,
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
   {
     "id": "tg_qa_vacancies_ru",
     "type": "telegram",
-    "name": "QA \u0412\u0430\u043a\u0430\u043d\u0441\u0438\u0438",
+    "name": "QA Вакансии",
     "channel": "@qa_vacancies",
     "url": "https://t.me/qa_vacancies",
     "status": "active",
@@ -525,7 +525,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -548,7 +548,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -571,8 +571,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "Wrong channel \u2014 @djinnijobs is unrelated"
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
+      "health_status": "Wrong channel — @djinnijobs is unrelated"
     }
   },
   {
@@ -594,7 +594,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "Private contact, not a public jobs channel"
     }
   },
@@ -622,8 +622,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -652,7 +652,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -681,7 +681,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -711,7 +711,7 @@
       "last_scan": "2026-03-02T08:35:05.372Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
       "last_listings_count": 0
     }
@@ -740,7 +740,7 @@
       "last_scan": "2026-03-16T17:08:45.930Z",
       "last_new_vacancy": "2026-03-04T10:13:05.925Z",
       "consecutive_failures": 521,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "excessive_failures_grey",
       "last_listings_count": 0,
       "note": "excessive_failures (474)"
@@ -771,8 +771,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -801,8 +801,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -830,8 +830,8 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -860,7 +860,7 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     }
@@ -889,8 +889,8 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     },
     "antiBotCheck": true
@@ -918,7 +918,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -943,12 +943,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 25,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -975,7 +975,7 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "pending_first_scan",
       "last_listings_count": 0
     },
@@ -1004,7 +1004,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1031,7 +1031,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1058,7 +1058,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1085,7 +1085,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1112,7 +1112,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1139,7 +1139,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1166,7 +1166,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1193,7 +1193,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1220,7 +1220,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1247,7 +1247,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1275,8 +1275,8 @@
       "last_scan": "2026-03-04T11:38:37.434Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1303,7 +1303,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-16T18:00:00Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok"
     }
   },
@@ -1312,7 +1312,7 @@
     "type": "web",
     "name": "DataArt Careers",
     "url": "https://www.dataart.team/vacancies",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 6,
     "config": {
@@ -1328,11 +1328,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1341,7 +1341,7 @@
     "type": "web",
     "name": "Exness Careers",
     "url": "https://exness-careers.com/jobs/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 6,
     "config": {
@@ -1357,11 +1357,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1388,8 +1388,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1416,8 +1416,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no CSS selector found (jobs in plain text), needs custom scraper",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1444,8 +1444,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1468,12 +1468,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 3,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1495,12 +1495,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 3,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 4,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1508,7 +1508,7 @@
     "type": "web",
     "name": "Playrix Jobs",
     "url": "https://playrix.com/job/open/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 6,
     "config": {
@@ -1524,11 +1524,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1554,8 +1554,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1564,7 +1564,7 @@
     "type": "web",
     "name": "Tenable Careers",
     "url": "https://www.tenable.com/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 6,
     "config": {
@@ -1580,11 +1580,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1593,7 +1593,7 @@
     "type": "web",
     "name": "TheSoul Publishing Jobs",
     "url": "https://www.jointhesoul.com/jobs/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1609,11 +1609,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1622,7 +1622,7 @@
     "type": "web",
     "name": "Wargaming Careers",
     "url": "https://wargaming.com/en/careers/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1638,11 +1638,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1665,12 +1665,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 13,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 16,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1696,8 +1696,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1706,7 +1706,7 @@
     "type": "web",
     "name": "BrainRocket Careers",
     "url": "https://www.brainrocket.com/career",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1722,11 +1722,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -1752,8 +1752,8 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1778,12 +1778,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 31
     }
   },
   {
@@ -1791,7 +1791,7 @@
     "type": "web",
     "name": "JettyCloud Vacancies",
     "url": "https://www.jettycloud.com/vacancies",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -1805,12 +1805,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 7,
-      "health_status": "ok",
+      "consecutive_failures": 49,
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 29,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1832,12 +1832,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 13,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 12,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1862,8 +1862,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1889,8 +1889,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1916,8 +1916,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1932,7 +1932,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "URL may need /careers path \u2014 needs validation"
+      "notes": "URL may need /careers path — needs validation"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -1944,8 +1944,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no careers section found on site",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -1968,12 +1968,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 15,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -1981,7 +1981,7 @@
     "type": "web",
     "name": "Flo Health Careers",
     "url": "https://flo.health/careers-listing",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -1995,12 +1995,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 7,
-      "health_status": "ok",
+      "consecutive_failures": 49,
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 41,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2025,8 +2025,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2052,8 +2052,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2062,7 +2062,7 @@
     "type": "web",
     "name": "Kolesa Group Career",
     "url": "https://kolesa.group/career/job",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 5,
     "config": {
@@ -2078,11 +2078,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2091,7 +2091,7 @@
     "type": "web",
     "name": "Mayflower Vacancies",
     "url": "https://mayflower.work/vacancies",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2107,11 +2107,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2138,8 +2138,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2166,7 +2166,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "Company rebranded to GDEV Inc., URL dead",
       "last_listings_count": 0
     }
@@ -2192,12 +2192,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 18
     }
   },
   {
@@ -2219,12 +2219,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 51,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 48,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2246,12 +2246,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 5,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2265,7 +2265,7 @@
     "config": {
       "jobTitleSelector": "h2, a[href*=\"/jobs/\"]",
       "antiBotCheck": false,
-      "notes": "URL points to team page \u2014 needs correct jobs URL",
+      "notes": "URL points to team page — needs correct jobs URL",
       "jsonLd": false
     },
     "enrichment": {
@@ -2275,12 +2275,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 16
     }
   },
   {
@@ -2302,12 +2302,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 10,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2315,7 +2315,7 @@
     "type": "web",
     "name": "Wheely Careers",
     "url": "https://wheely.com/en/careers/open-roles",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2331,11 +2331,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2358,12 +2358,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 20,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2371,7 +2371,7 @@
     "type": "web",
     "name": "Altenar Career",
     "url": "https://altenar.com/career/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -2387,11 +2387,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2417,8 +2417,8 @@
       "last_scan": "2026-03-04T11:04:58.639Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2445,8 +2445,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2469,12 +2469,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 33,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 35,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2500,7 +2500,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "Webflow placeholder template, not a real company",
       "last_listings_count": 0
     }
@@ -2527,8 +2527,8 @@
       "last_scan": "2026-03-04T17:38:38.510Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "no_recent_vacancies",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2555,8 +2555,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "0 open positions",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2571,7 +2571,7 @@
     "config": {
       "jobTitleSelector": ".posting-title h5",
       "antiBotCheck": false,
-      "notes": "404 \u2014 Lever slug /improvadoio and /improvado both invalid"
+      "notes": "404 — Lever slug /improvadoio and /improvado both invalid"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -2583,8 +2583,8 @@
       "last_scan": "2026-03-04T08:52:28.749Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2593,7 +2593,7 @@
     "type": "web",
     "name": "Infomediji Careers",
     "url": "https://infomediji.com/careers/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -2609,11 +2609,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2636,12 +2636,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 7,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 3,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2665,12 +2665,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 4
     }
   },
   {
@@ -2692,12 +2692,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 0,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 8,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2723,8 +2723,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2747,12 +2747,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 7,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2760,7 +2760,7 @@
     "type": "web",
     "name": "OneMarketData Careers",
     "url": "https://www.onetick.com/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -2776,11 +2776,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2789,7 +2789,7 @@
     "type": "web",
     "name": "Ornament Health Career",
     "url": "https://ornament.health/ru/career",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -2805,11 +2805,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2836,8 +2836,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2864,8 +2864,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2892,8 +2892,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "career ladder page only, no open positions",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2916,12 +2916,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 5,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -2947,8 +2947,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -2957,7 +2957,7 @@
     "type": "web",
     "name": "Synder Careers",
     "url": "https://synder.com/careers/",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -2973,11 +2973,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -2986,7 +2986,7 @@
     "type": "web",
     "name": "Tabby Careers",
     "url": "https://tabby.ai/en-AE/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 4,
     "config": {
@@ -3002,11 +3002,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -3033,8 +3033,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3049,7 +3049,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "URL is main site \u2014 find actual careers URL"
+      "notes": "URL is main site — find actual careers URL"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3061,8 +3061,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "email-only hiring, no careers page",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3087,12 +3087,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 4
     }
   },
   {
@@ -3106,7 +3106,7 @@
     "config": {
       "jobTitleSelector": ".posting-title h5",
       "antiBotCheck": false,
-      "notes": "404 \u2014 Lever slug /volka and /volkagames both invalid"
+      "notes": "404 — Lever slug /volka and /volkagames both invalid"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3118,8 +3118,8 @@
       "last_scan": "2026-03-04T08:52:28.749Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3144,12 +3144,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
-      "last_listings_count": 0
+      "last_listings_count": 43
     }
   },
   {
@@ -3163,7 +3163,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "URL is about page \u2014 find actual jobs URL"
+      "notes": "URL is about page — find actual jobs URL"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3175,7 +3175,7 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-18T18:00:09.355957+00:00",
       "health_status": "DNS failure, site unreachable",
       "last_listings_count": 0
     }
@@ -3199,12 +3199,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 2,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 0,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -3226,12 +3226,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 6,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -3257,8 +3257,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3273,7 +3273,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "Notion page \u2014 not scrapeable; find direct jobs link"
+      "notes": "Notion page — not scrapeable; find direct jobs link"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3285,8 +3285,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "Notion page, not scrapeable",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3309,12 +3309,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 5,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 8,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -3338,10 +3338,10 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
       "last_listings_count": 0
     }
@@ -3365,12 +3365,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
-      "last_listings_count": 6,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_listings_count": 4,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -3396,8 +3396,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "only 1 unrelated job, no QA potential",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3423,8 +3423,8 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3433,7 +3433,7 @@
     "type": "web",
     "name": "Original Games Careers",
     "url": "https://originalgames.io/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -3449,11 +3449,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -3468,7 +3468,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "Redirects to async.com/careers \u2014 different company"
+      "notes": "Redirects to async.com/careers — different company"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3480,8 +3480,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3490,7 +3490,7 @@
     "type": "web",
     "name": "Sanas Careers",
     "url": "https://www.sanas.ai/careers",
-    "status": "active",
+    "status": "grey",
     "added_date": "2026-03-04",
     "priority": 3,
     "config": {
@@ -3506,11 +3506,11 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-17T17:38:46.183Z",
       "last_new_vacancy": null,
-      "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "ok",
+      "consecutive_failures": 42,
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "excessive_failures_grey",
       "last_listings_count": 0
     }
   },
@@ -3537,8 +3537,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "grey",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3561,12 +3561,12 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": "2026-03-16T20:38:46.024Z",
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
       "health_status": "ok",
       "last_listings_count": 6,
-      "last_health_check": "2026-03-16T18:00:00Z"
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00"
     }
   },
   {
@@ -3580,7 +3580,7 @@
     "config": {
       "jobTitleSelector": null,
       "antiBotCheck": false,
-      "notes": "URL is main site \u2014 find careers page"
+      "notes": "URL is main site — find careers page"
     },
     "enrichment": {
       "source_type": "vendor",
@@ -3592,8 +3592,8 @@
       "last_scan": null,
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "explicitly not hiring now",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3619,8 +3619,8 @@
       "last_scan": "2026-03-04T10:58:03.916Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
-      "health_status": "pending_first_scan",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
+      "health_status": "ok",
       "last_listings_count": 0
     }
   },
@@ -3645,10 +3645,10 @@
     },
     "stats": {
       "total_vacancies_found": 0,
-      "last_scan": null,
+      "last_scan": "2026-03-20T21:38:46.952Z",
       "last_new_vacancy": null,
       "consecutive_failures": 0,
-      "last_health_check": "2026-03-15T18:00:27.736Z",
+      "last_health_check": "2026-03-20T18:00:11.586839+00:00",
       "health_status": "ok",
       "last_listings_count": 0
     }
